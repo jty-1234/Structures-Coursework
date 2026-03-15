@@ -10,7 +10,6 @@
 \usepackage{caption}   
 \usepackage{float}    
 \usepackage{microtype}
-\usepackage{tikz}
 \microtypesetup{expansion=false}
 
 \title{\textbf{Structures}}
@@ -29,171 +28,23 @@ alalal
 
 \newpage
 \section{Deliverable 1: Geometry}
-The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then idealised for use in GSA. Figure~\ref{fig:geom_coordinates} shows the reconstructed nodal layout. Points labelled \textit{R} describe the roof profile, while points labelled \textit{S} describe the support system and the lower restraint points. The geometry is approximately symmetric about midspan, so the reconstructed coordinates were checked against the original drawing on both sides of the roof.
+The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}, points labelled \textit{R} define the roof profile, while points labelled \textit{S} define the support system and lower restraint points. The reconstructed model was checked against the original drawing on both sides of the roof and the overall geometric deviation was approximately 0.5\%, which is acceptable for global FE modelling.
 
-The overall geometric deviation of the reconstructed model is approximately 0.5\%. This difference is mainly due to manual scaling and point picking from the original drawing, but it is sufficiently small for the purposes of global structural modelling. The reconstructed geometry captures the changing roof curvature, the inclined support legs, and the position of the high nodes that anchor the main tie system.
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[x=0.065cm,y=0.12cm,font=\scriptsize]
-\draw[dashed,gray] (0,-2) -- (0,45);
-\draw[dashed,gray] (-12,0) -- (170,0);
-
-\coordinate (R1) at (-9.3,27.4);
-\coordinate (R2) at (10.6,28.3);
-\coordinate (R3) at (19.8,29.7);
-\coordinate (R4) at (28.7,31.5);
-\coordinate (R5) at (37.4,33.6);
-\coordinate (R6) at (46.5,35.4);
-\coordinate (R7) at (55.6,36.7);
-\coordinate (R8) at (64.6,37.6);
-\coordinate (R9) at (73.6,38.0);
-\coordinate (R10) at (82.9,38.0);
-\coordinate (R11) at (91.9,37.6);
-\coordinate (R12) at (100.9,36.7);
-\coordinate (R13) at (110.0,35.4);
-\coordinate (R14) at (119.1,33.6);
-\coordinate (R15) at (127.8,31.5);
-\coordinate (R16) at (136.7,29.7);
-\coordinate (R17) at (145.9,28.3);
-\coordinate (R18) at (165.7,27.4);
-\coordinate (S1) at (0,0);
-\coordinate (S2) at (-3.2,27.4);
-\coordinate (S3) at (4.8,20.6);
-\coordinate (S4) at (28.7,31.5);
-\coordinate (S5) at (131.3,29.7);
-\coordinate (S6) at (151.8,20.6);
-\coordinate (S7) at (156.6,0);
-\coordinate (S8) at (159.8,27.4);
-
-\draw[thick] (R1)--(R2)--(R3)--(R4)--(R5)--(R6)--(R7)--(R8)--(R9)--(R10)--(R11)--(R12)--(R13)--(R14)--(R15)--(R16)--(R17)--(R18);
-\draw[thick] (S2)--(S3)--(S1);
-\draw[thick] (S2)--(R2);
-\draw[thick] (R1)--(S2);
-\draw[thick] (S3)--(R4);
-\draw[thick] (S4)--(R4);
-\draw[thick] (S8)--(S6)--(S7);
-\draw[thick] (R17)--(S8)--(R18);
-\draw[thick] (S6)--(R16);
-\draw[thick] (S5)--(R15);
-
-\foreach \P in {R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15,R16,R17,R18,S1,S2,S3,S4,S5,S6,S7,S8}
-  \fill (\P) circle (0.8pt);
-
-\node[anchor=east] at (R1) {R1(-9.3, 27.4)};
-\node[anchor=south] at (R2) {R2(10.6, 28.3)};
-\node[anchor=north] at (R3) {R3(19.8, 29.7)};
-\node[anchor=south] at (R4) {R4(28.7, 31.5)};
-\node[anchor=north] at (R5) {R5(37.4, 33.6)};
-\node[anchor=south] at (R6) {R6(46.5, 35.4)};
-\node[anchor=north] at (R7) {R7(55.6, 36.7)};
-\node[anchor=south] at (R8) {R8(64.6, 37.6)};
-\node[anchor=north] at (R9) {R9(73.6, 38.0)};
-\node[anchor=south] at (R10) {R10(82.9, 38.0)};
-\node[anchor=north] at (R11) {R11(91.9, 37.6)};
-\node[anchor=south] at (R12) {R12(100.9, 36.7)};
-\node[anchor=north] at (R13) {R13(110.0, 35.4)};
-\node[anchor=south] at (R14) {R14(119.1, 33.6)};
-\node[anchor=north] at (R15) {R15(127.8, 31.5)};
-\node[anchor=south] at (R16) {R16(136.7, 29.7)};
-\node[anchor=north] at (R17) {R17(145.9, 28.3)};
-\node[anchor=west] at (R18) {R18(165.7, 27.4)};
-\node[anchor=south] at (S1) {S1(0, 0)};
-\node[anchor=west] at (S2) {S2(-3.2, 27.4)};
-\node[anchor=west] at (S3) {S3(4.8, 20.6)};
-\node[anchor=south] at (S4) {S4(28.7, 31.5)};
-\node[anchor=south] at (S5) {S5(131.3, 29.7)};
-\node[anchor=west] at (S6) {S6(151.8, 20.6)};
-\node[anchor=west] at (S7) {S7(156.6, 0)};
-\node[anchor=west] at (S8) {S8(159.8, 27.4)};
-\end{tikzpicture}
-\caption{Reconstructed geometry and nodal coordinates used to define the FE model}
-\label{fig:geom_coordinates}
-\end{figure}
-
-Figure~\ref{fig:geom_members} shows the same geometry after it was converted into an FE idealisation. The curved top chord was divided into arch and tusk rafter segments, while the lower tie, straps, legs, wings and arms were represented as line members connected at the major nodes. This idealisation preserves the global load path of the real roof while remaining simple enough for efficient mesh refinement and sensitivity studies.
-
-For the roof profile, each R-point corresponds to a measured section position along the curved rafter. In GSA, adjacent points were connected by straight beam elements, so the curved geometry is represented by a series of short linear segments. This is a standard approximation in frame modelling, and later mesh refinement was used to check that the adopted segmentation was sufficiently accurate.
+The second diagram shows the FE idealisation adopted for analysis. The curved roof was represented by short straight beam elements between adjacent roof nodes, while the high tie, straps, legs, arms and wings were represented as line members connected at the major nodes. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[x=0.065cm,y=0.12cm,font=\scriptsize,>=stealth]
-\coordinate (R1) at (-9.3,27.4);
-\coordinate (R2) at (10.6,28.3);
-\coordinate (R3) at (19.8,29.7);
-\coordinate (R4) at (28.7,31.5);
-\coordinate (R5) at (37.4,33.6);
-\coordinate (R6) at (46.5,35.4);
-\coordinate (R7) at (55.6,36.7);
-\coordinate (R8) at (64.6,37.6);
-\coordinate (R9) at (73.6,38.0);
-\coordinate (R10) at (82.9,38.0);
-\coordinate (R11) at (91.9,37.6);
-\coordinate (R12) at (100.9,36.7);
-\coordinate (R13) at (110.0,35.4);
-\coordinate (R14) at (119.1,33.6);
-\coordinate (R15) at (127.8,31.5);
-\coordinate (R16) at (136.7,29.7);
-\coordinate (R17) at (145.9,28.3);
-\coordinate (R18) at (165.7,27.4);
-\coordinate (S1) at (0,0);
-\coordinate (S2) at (-3.2,27.4);
-\coordinate (S3) at (4.8,20.6);
-\coordinate (S4) at (28.7,31.5);
-\coordinate (S5) at (131.3,29.7);
-\coordinate (S6) at (151.8,20.6);
-\coordinate (S7) at (156.6,0);
-\coordinate (S8) at (159.8,27.4);
+\includegraphics[width=\textwidth,trim={70 30 60 25},clip]{Weixin Image_20260315183303.png}
 
-\draw[thick] (R1)--(R2)--(R3)--(R4)--(R5)--(R6)--(R7)--(R8)--(R9)--(R10)--(R11)--(R12)--(R13)--(R14)--(R15)--(R16)--(R17)--(R18);
-\draw[thick] (S2)--(S3)--(S1);
-\draw[thick] (S8)--(S6)--(S7);
-\draw[thick] (S3)--(R4);
-\draw[thick] (S6)--(R16);
-\draw[red,very thick] (S2)--(S1);
-\draw[red,very thick] (S8)--(S7);
-\draw[red,very thick] (S4)--(S5);
+\small (a) Reconstructed nodal geometry
 
-\foreach \P/\L in {R1/R1,R2/R2,R3/R3,R4/R4,S4/S4,R5/R5,R6/R6,R7/R7,R8/R8,R9/R9,R10/R10,R11/R11,R12/R12,R13/R13,R14/R14,R15/R15,R16/R16,S5/S5,R17/R17,R18/R18,S1/S1,S2/S2,S3/S3,S6/S6,S7/S7,S8/S8}
-{
-  \fill (\P) circle (0.7pt);
-  \node[anchor=south] at (\P) {\L};
-}
+\vspace{0.4em}
+\includegraphics[width=\textwidth,trim={70 30 60 25},clip]{Weixin Image_20260315183313.png}
 
-\draw[<->] (-3.2,42) -- (159.8,42);
-\node[fill=white,inner sep=1pt] at (78,43.5) {163\,m};
-\draw[<->] (0,-4) -- (156.6,-4);
-\node[fill=white,inner sep=1pt] at (78,-5.5) {156\,m};
-\draw[<->] (28.7,31.5) -- (131.3,31.5);
-\node[fill=white,inner sep=1pt] at (80,33.0) {106.16\,m};
-\draw[<->] (-8,0) -- (-8,27.8);
-\node[fill=white,inner sep=1pt,rotate=90] at (-11,13.9) {27.80\,m};
-\draw[<->] (28.7,0) -- (28.7,25.22);
-\node[fill=white,inner sep=1pt,rotate=90] at (31.5,12.6) {25.22\,m};
-\node at (64,34.2) {Central arch rafter};
-\node at (16,30.2) {Tusk rafter};
-\node at (80,28.5) {High tie};
-\node[rotate=78] at (-2,11) {Strap};
-\node[rotate=-78] at (160,11) {Strap};
-\node at (2,18.2) {Leg};
-\node at (12.5,21.8) {Arm};
-\node at (0,24.5) {Wing};
-\node at (10,17.2) {Torso node};
-\node at (32,27.7) {High node};
-\node at (129,27.7) {High node};
-\node at (146,18.2) {Arm};
-\node at (158,24.5) {Wing};
-\node at (151.5,17.2) {Torso node};
-\node[anchor=west] at (S1) {Foot node};
-\node[anchor=west] at (S7) {Foot node};
-\node[anchor=south] at (S2) {Wingtip node};
-\node[anchor=south west] at (S8) {Wingtip node};
-\end{tikzpicture}
-\caption{Idealised FE geometry showing the principal members and controlling dimensions}
-\label{fig:geom_members}
+\small (b) Idealised FE member layout
+\caption{Geometry adopted for the global model.}
+\label{fig:geometry_overview}
 \end{figure}
-
-The final geometry model therefore provided both the coordinates needed for numerical analysis and a clear structural idealisation of the load-carrying system. These two figures were used as the basis for defining member connectivity, support positions, tie locations and the tributary frame width used in the later loading and sensitivity analysis.
 
 
 \newpage
