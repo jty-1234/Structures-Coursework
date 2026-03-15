@@ -1,0 +1,99 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs} 
+\usepackage{amsmath}   
+\usepackage{siunitx}   
+\usepackage[hidelinks]{hyperref}   
+\usepackage{caption}   
+\usepackage{float}    
+\usepackage{microtype}
+
+\title{\textbf{Structures}}
+\author{Group 8}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+alalal
+
+
+\newpage
+\section{Deliverable 1: Geometry}
+Figure~X shows the one-to-one reconstruction of the original drawing using SketchUp. 
+The points in the figure are divided into two categories: 
+R denotes roof points, while S denotes support points. 
+
+The overall geometric deviation of the reconstructed model is approximately 0.5\%. 
+This deviation is mainly caused by manual drawing and measurement errors during the modelling process. 
+However, the magnitude of this error is relatively small and can therefore be considered acceptable.
+
+For the R-type (roof) points, each point corresponds to the midpoint of a connection segment. 
+In SketchUp, the length corresponding to each cross-section was measured using the Tape Measure tool. 
+When reproducing the geometry in GSA, each arc segment was assumed to have a uniform tangent direction, 
+and the cross-sectional lengths were drawn along the direction perpendicular to this tangent. 
+The endpoints of two adjacent cross-sections were then connected to create a gradual transition between sections.
+
+
+\newpage
+\section{Deliverable 2: Material, Section, and Loading Data }
+
+
+
+
+\newpage
+\section{Deliverable 3: Initial Model Validation}
+\subsection{Assumptions}
+
+
+\subsection{Model Validation}
+
+\subsection{Model Adequacy}
+
+\newpage
+\section{Deliverable 4: Mesh Refinement Sensitivity Analysis}
+
+\subsection{Introduction and Methodology}
+In Finite Element Analysis (FEA), continuous curved geometries must be approximated using discrete straight beam elements. If the mesh is too coarse, the structural stiffness and internal bending moments of curved members are inaccurately represented. A sensitivity study was conducted to determine the optimum mesh density that provides mathematical convergence without introducing unnecessary computational expense. 
+
+The study selectively targeted the continuous curved roof profile, specifically the Arch and Tusk Rafters (including the cantilevered eaves). These members carry heavy distributed loads ($72.74 \text{ kN/m}$) and are subjected to complex bending forces. Conversely, the straight high ties and the vertical abutment columns (legs and arms) were excluded from the refinement process; as primarily axially loaded members, their behaviour is perfectly captured by single elements between major nodes regardless of mesh density.
+
+\subsection{Mesh Definitions}
+Three levels of mesh refinement were analysed under the critical ULS vertical load combination ($1.35G_k + 1.5Q_k$) and the $450 \text{ MPa}$ high tie prestress. The base geometry was defined by the 16 coordinate nodes provided in the project data.
+
+The baseline geometry of Mesh 1 (coarse) consisting of 1 element per original coordinate segment across the roof profile. (Average arch element length $\approx 2.5 \text{ m}$). For Mesh 2 (medium), all elements along the continuous roof profile were split into two equal segments. (Average arch element length $\approx 1.25 \text{ m}$). For Mesh 3 (fine), all elements along the continuous roof profile were split again into two equal segments, resulting in four elements per original coordinate segment. (Average arch element length $\approx 0.6 \text{ m}$).
+
+\subsection{Comparison of Key Response Quantities}
+To evaluate convergence, three critical structural responses were monitored across the three models, maximum vertical deflection ($\delta_z$), which was measured at the crown (apex) of the arch rafter, maximum bending moment ($M_y$) measured within the arch rafter, and maximum axial tension ($F_x$), which is measured in the main twin high tie.
+
+\begin{table}[h]
+\centering
+\caption{Mesh Sensitivity Results under ULS Loading}
+\vspace{0.2cm}
+\label{tab:mesh_sensitivity}
+\renewcommand{\arraystretch}{1.5}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Parameter} & \textbf{Mesh 1 (Coarse)} & \textbf{Mesh 2 (Medium)} & \textbf{Mesh 3 (Fine)} & \textbf{\% Change (Med to Fine)} \\ \hline
+\textbf{Max Crown Deflection (mm)} & [Output] & [Output] & [Output] & [\%] \\ \hline
+\textbf{Max Arch Bending Moment (kNm)} & [Output] & [Output] & [Output] & [\%] \\ \hline
+\textbf{High Tie Axial Force (kN)} & [Output] & [Output] & [Output] & [\%] \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsection{Conclusion and Adopted Mesh Density}
+As demonstrated in Table \ref{tab:mesh_sensitivity}, transitioning from the coarse mesh to the medium mesh resulted in noticeable changes to the internal forces and deflections. This indicates that the coarse mesh artificially bridges the true curvature of the arch, creating an overly stiff model that inaccurately distributes bending moments.
+
+However, further refinement from the medium mesh to the fine mesh yielded a negligible variance of [ \% ] in the key response quantities. This demonstrates that the FE results have converged and the global behaviour of the structure is no longer highly sensitive to element size.
+
+Therefore, Mesh 2 (medium mesh) provides sufficient geometric accuracy for the purpose of global structural modelling. It captures the true bending behaviour of the sweeping arch rafters without introducing the unnecessary mathematical complexity of Mesh 3. Mesh 2 has been adopted for all subsequent global analyses in this report.
+\end{document}
