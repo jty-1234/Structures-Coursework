@@ -1,0 +1,244 @@
+                                            Structures
+                                                  Group 8
+
+
+                                             March 15, 2026
+
+
+
+
+Contents
+1 Introduction                                                                                               1
+2 Deliverable 1: Geometry                                                                                    2
+3 Deliverable 2: Material, Section, and Loading Data                                                         3
+4 Deliverable 3: Initial Model Validation                                                                    4
+   4.1 Assumptions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     4
+   4.2 Model Validation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    4
+   4.3 Model Adequacy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      4
+5 Deliverable 4: Mesh Renement Sensitivity Analysis                                                         5
+   5.1   Introduction and Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      5
+   5.2   Mesh Denitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   5
+   5.3   Comparison of Key Response Quantities . . . . . . . . . . . . . . . . . . . . . . . . . . . .       5
+   5.4   Conclusion and Adopted Mesh Density . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       5
+6 Deliverable 5: Inuence of Prestressing Assumptions                                                        6
+7 Deliverable 6: Boundary Conditions for More Detailed Analysis                                              7
+
+1 Introduction
+alalal
+
+
+
+
+                                                      1
+2 Deliverable 1: Geometry
+The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp
+model and then transferred into GSA. As shown in Figure 1, points labelled R dene the roof prole,
+while points labelled S dene the support system and lower restraint points. The reconstructed model
+was checked against the original drawing on both sides of the roof and the overall geometric deviation
+was approximately 0.5%, which is acceptable for global FE modelling.
+   The second diagram shows the FE idealisation adopted for analysis. The curved roof was represented
+by short straight beam elements between adjacent roof nodes, while the high tie, straps, legs, arms
+and wings were represented as line members connected at the major nodes. This idealisation captures
+the main load path and preserves the key dimensions required for later loading, validation and mesh
+sensitivity studies.
+
+
+
+
+                                   (a) Reconstructed nodal geometry
+
+
+
+
+                                    (b) Idealised FE member layout
+                          Figure 1: Geometry adopted for the global model.
+
+
+
+
+                                                  2
+3 Deliverable 2: Material, Section, and Loading Data
+The global FE model was dened using linear-elastic steel. In accordance with the coursework brief,
+all members were assigned an elastic modulus of 200 GPa. A Poisson's ratio of 0.30 and density of
+7850 kg m−3 were adopted so that self-weight could be included automatically in GSA. S355 steel was
+used for the primary roof members, which is consistent with the Heathrow T5 project information. The
+high tie was modelled with an initial prestress of 450 MPa.
+    Only vertical symmetric loading was considered. The characteristic permanent roof load was taken as
+the sum of the aluminium standing seam roof (0.10 kPa), structural deck (0.15 kPa), insulation/acoustic
+layers (0.40 kPa) and services allowance (0.15 kPa), giving Gk = 0.80 kPa. The characteristic imposed
+roof live load was taken as Qk = 0.60 kPa. Therefore, the governing vertical ULS combination used in
+the model was
+                          1.35Gk + 1.5Qk = 1.35(0.80) + 1.5(0.60) = 1.98 kPa.
+Using a tributary width of 36 m for one transverse frame, this corresponds to an equivalent applied line
+load of 71.28 kN m−1 , in addition to the self-weight of the primary members.
+   The strap members were modelled as rod elements. Therefore, only their axial stiness was repre-
+sented in the global model, using an equivalent steel area of A = 2 × 500 × 40 = 40 000 mm2 . The spacing
+between the two plates was neglected in this idealisation because rod elements do not carry bending.
+
+                          Table 1: Section data adopted for the global model
+
+ Member                     Section                              Modelling note
+ Arch rafter                Welded box, 800 mm wide, 50 mm       Depth varies from about 1.8 m to 3.8 m
+                            wall thickness                       along the roof prole
+ Tusk rafter                Welded I-section, 50 mm plate        Overall depth varies from about 0.9 m to
+                            thickness                            3.8 m
+ Legs and arms              CHS 914 mm × 40 mm            Taken directly from the supplementary
+                                                          sketch
+ Wings                      CHS 711 mm × 50 mm            Taken directly from the supplementary
+                                                          sketch
+ Internal/external ties     CHS 457 mm × 40 mm            Thickness not stated in the source, so
+                                                          40 mm was assumed
+ High tie                   Twin locked-coil strands, 2 × Prestressed to 450 MPa
+                            115 mm
+ Straps                     Equivalent rod area 40 000 mm2       Based on two 500 mm × 40 mm plates;
+                                                                 bending stiness neglected
+
+   The main assumptions were therefore a linear-elastic S355 steel model, uniform wall thickness where
+required by the brief, a 36 m tributary width for each transverse frame, automatic inclusion of self-weight
+through the material density, and axial-only idealisation of the strap members.
+
+
+
+
+                                                    3
+4 Deliverable 3: Initial Model Validation
+4.1 Assumptions
+4.2 Model Validation
+4.3 Model Adequacy
+
+
+
+
+                               4
+5 Deliverable 4: Mesh Renement Sensitivity Analysis
+5.1 Introduction and Methodology
+In Finite Element Analysis (FEA), continuous curved geometries must be approximated using discrete
+straight beam elements. If the mesh is too coarse, the structural stiness and internal bending mo-
+ments of curved members are inaccurately represented. A sensitivity study was conducted to determine
+the optimum mesh density that provides mathematical convergence without introducing unnecessary
+computational expense.
+    The study selectively targeted the continuous curved roof prole, specically the Arch and Tusk
+Rafters (including the cantilevered eaves). These members carry heavy distributed loads (72.74 kN/m)
+and are subjected to complex bending forces. Conversely, the straight high ties and the vertical abutment
+columns (legs and arms) were excluded from the renement process; as primarily axially loaded members,
+their behaviour is perfectly captured by single elements between major nodes regardless of mesh density.
+
+5.2 Mesh Denitions
+Three levels of mesh renement were analysed under the critical ULS vertical load combination (1.35Gk +
+1.5Qk ) and the 450 MPa high tie prestress. The base geometry was dened by the 16 coordinate nodes
+provided in the project data.
+   The baseline geometry of Mesh 1 (coarse) consisting of 1 element per original coordinate segment
+across the roof prole. (Average arch element length ≈ 2.5 m). For Mesh 2 (medium), all elements along
+the continuous roof prole were split into two equal segments. (Average arch element length ≈ 1.25 m).
+For Mesh 3 (ne), all elements along the continuous roof prole were split again into two equal segments,
+resulting in four elements per original coordinate segment. (Average arch element length ≈ 0.6 m).
+
+5.3 Comparison of Key Response Quantities
+To evaluate convergence, three critical structural responses were monitored across the three models,
+maximum vertical deection (δz ), which was measured at the crown (apex) of the arch rafter, maximum
+bending moment (My ) measured within the arch rafter, and maximum axial tension (Fx ), which is
+measured in the main twin high tie.
+                         Table 2: Mesh Sensitivity Results under ULS Loading
+
+ Parameter                     Mesh 1 (Coarse) Mesh 2 (Medium) Mesh 3 (Fine) % Change (Med to Fine)
+ Max Crown Deection (mm)         [Output]         [Output]      [Output]             [%]
+ Max Arch Bending Moment (kNm)    [Output]         [Output]      [Output]             [%]
+ High Tie Axial Force (kN)        [Output]         [Output]      [Output]             [%]
+
+
+
+5.4 Conclusion and Adopted Mesh Density
+As demonstrated in Table 2, transitioning from the coarse mesh to the medium mesh resulted in noticeable
+changes to the internal forces and deections. This indicates that the coarse mesh articially bridges the
+true curvature of the arch, creating an overly sti model that inaccurately distributes bending moments.
+    However, further renement from the medium mesh to the ne mesh yielded a negligible variance of [
+% ] in the key response quantities. This demonstrates that the FE results have converged and the global
+behaviour of the structure is no longer highly sensitive to element size.
+    Therefore, Mesh 2 (medium mesh) provides sucient geometric accuracy for the purpose of global
+structural modelling. It captures the true bending behaviour of the sweeping arch rafters without intro-
+ducing the unnecessary mathematical complexity of Mesh 3. Mesh 2 has been adopted for all subsequent
+global analyses in this report.
+
+
+
+
+                                                    5
+6 Deliverable 5: Inuence of Prestressing Assumptions
+This section compares two prestressing assumptions for the main high tie under the same vertical loading. Model
+A applies prestress after full erection, following the coursework simplication. Model B represents the real
+construction sequence in a simplied way, so that the inuence of earlier stressing and load transfer can be
+assessed. The comparison should focus on whether the prestressing assumption changes the global response
+enough to aect interpretation of the roof behaviour.
+
+                             Table 3: Comparison of prestressing assumptions
+
+                 Response quantity                          Model A Model B % Di.
+                 Maximum crown deection (mm)                  []            []           []
+                 Maximum arch bending moment                   []            []           []
+                 (kNm)
+                 Maximum high tie axial force (kN)             []            []           []
+                 Maximum leg/support force (kN)                []            []           []
+
+    Table 3 should be used to compare the two models quantitatively. If Model B gives lower arch bending
+moments and dierent locked-in tie forces, this would suggest that the construction-stage stressing process re-
+distributes part of the self-weight response before the nal structure is formed. If the dierences are small, the
+simplied post-erection prestress assumption is likely to be acceptable for global analysis.
+   Key observations to add after analysis
+Crown deection: [Insert comment].
+Arch bending response: [Insert comment].
+High tie axial force: [Insert comment].
+Support/leg response: [Insert comment].
+
+   Implications
+Design implication: [Insert conclusion].
+Construction tolerance implication: [Insert conclusion].
+Adopted assumption for the remainder of the report: [Insert choice and brief justication].
+
+
+
+
+                                                        6
+7 Deliverable 6: Boundary Conditions for More Detailed Analy-
+  sis
+For a more detailed FE study, the rafter splice between the tusk rafter and arch rafter should be extracted
+from the global frame model and analysed as a local submodel. The purpose of the local model would be
+to resolve the stress distribution in the splice plates, bolts or welds, and the adjacent box and I-section
+walls, which cannot be captured accurately by the beam idealisation used in the global model.
+    The local model should include a short length of member on each side of the splice so that the boundary
+conditions are applied away from the connection itself. This reduces articial stress concentrations caused
+by restraining the model too close to the detail. A practical choice would be to include approximately
+one section depth of the arch rafter and one section depth of the tusk rafter beyond the splice on either
+side.
+
+                    Arch rafter cut face                    Splice region        Tusk rafter cut face
+                                                             splice plates
+                                                            bolts / welds
+                    ux , u y , u z , r x , r y , r z   local solid/shell model   ux , u y , u z , r x , r y , r z
+                    from global model                                            from global model
+
+                Figure 2: Recommended boundary conditions for the local splice model
+
+    The preferred boundary condition is to impose the displacement and rotation components extracted
+from the global beam model at the two cut faces of the local model. In practice, each cut face can be
+coupled to a reference node so that the sectional deformation remains compatible with the global model.
+The six kinematic quantities imposed at each end are the three translations (ux , uy , uz ) and the three
+rotations (rx , ry , rz ). This approach is preferable to simply xing one end, because it reproduces the
+actual deformation state of the connection and avoids introducing articial restraint moments.
+    The corresponding section forces should also be checked against the global model outputs. The main
+actions expected at the splice are axial force N , vertical shear V , bending moment M , and a smaller
+torsional component due to the curved roof geometry and eccentricity of the connection detail. If the
+software or modelling approach makes direct displacement transfer dicult, an acceptable alternative is
+to apply the equivalent set of sectional resultants at the two cut faces, provided that overall equilibrium
+is maintained.
+    To prevent rigid body motion in the local model, one reference node may be lightly stabilised after the
+global displacements have been assigned. This stabilisation should only remove numerical singularities
+and must not alter the transferred load path. Contact, bolt preload, or weld representation can then be
+added depending on the intended level of detail. For the purposes of this coursework, the key requirement
+is that the splice boundaries are driven by the global model response rather than by arbitrary xed
+supports.
+
+
+
+
+                                                                 7
+

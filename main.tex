@@ -132,6 +132,45 @@ However, further refinement from the medium mesh to the fine mesh yielded a negl
 Therefore, Mesh 2 (medium mesh) provides sufficient geometric accuracy for the purpose of global structural modelling. It captures the true bending behaviour of the sweeping arch rafters without introducing the unnecessary mathematical complexity of Mesh 3. Mesh 2 has been adopted for all subsequent global analyses in this report.
 
 \newpage
+\section{Deliverable 5: Influence of Prestressing Assumptions}
+This section compares two prestressing assumptions for the main high tie under the same vertical loading. \textbf{Model A} applies prestress after full erection, following the coursework simplification. \textbf{Model B} represents the real construction sequence in a simplified way so that the influence of earlier stressing and load transfer can be assessed.
+
+The aim of the comparison is to determine whether the simplified post-erection prestress assumption is sufficient for global analysis, or whether the construction-stage stressing process produces meaningful differences in internal force distribution, deflection and sensitivity to erection tolerances. Both models should therefore use the same geometry, mesh density and vertical loading so that the prestressing assumption is the only significant variable.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of prestressing assumptions}
+\label{tab:prestress_comparison}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|p{0.34\textwidth}|c|c|c|}
+\hline
+\textbf{Response quantity} & \textbf{Model A} & \textbf{Model B} & \textbf{\% Diff.} \\ \hline
+Maximum crown deflection (mm) & [ ] & [ ] & [ ] \\ \hline
+Maximum arch bending moment (kNm) & [ ] & [ ] & [ ] \\ \hline
+Maximum high tie axial force (kN) & [ ] & [ ] & [ ] \\ \hline
+Maximum leg/support force (kN) & [ ] & [ ] & [ ] \\ \hline
+Support spread / horizontal movement (mm) & [ ] & [ ] & [ ] \\ \hline
+Any other critical response & [ ] & [ ] & [ ] \\ \hline
+\end{tabular}
+\end{table}
+
+Table \ref{tab:prestress_comparison} should be used to compare the two models quantitatively. If Model B gives lower arch bending moments and different locked-in tie forces, this would suggest that the construction-stage stressing process redistributes part of the self-weight response before the final structure is formed. If the differences are small, the simplified post-erection prestress assumption is likely to be acceptable for global analysis.
+
+The numerical comparison should then be supported by a brief qualitative discussion of the deformed shape and force flow. Particular attention should be paid to the crown deflection, the support spread, the force carried by the high tie, and whether the arch becomes more or less bending-dominated under the two assumptions.
+
+\textbf{Key observations to add after analysis} \\
+Crown deflection: [Insert comment]. \\
+Arch bending response: [Insert comment]. \\
+High tie axial force: [Insert comment]. \\
+Support/leg response: [Insert comment]. \\
+Overall difference in global behaviour: [Insert comment]. \\
+
+\textbf{Implications} \\
+Design implication: [Insert conclusion]. \\
+Construction tolerance implication: [Insert conclusion]. \\
+Adopted assumption for the remainder of the report: [Insert choice and brief justification].
+
+\newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
 
 For a more detailed FE study, the rafter splice between the tusk rafter and arch rafter should be extracted from the global frame model and analysed as a local submodel. The purpose of the local model would be to resolve the stress distribution in the splice plates, bolts or welds, and the adjacent box and I-section walls, which cannot be captured accurately by the beam idealisation used in the global model.
