@@ -199,12 +199,12 @@ For a more detailed FE study, the rafter splice between the tusk rafter and arch
 
 The local model should include a short length of member on each side of the splice so that the boundary conditions are applied away from the connection itself. This reduces artificial stress concentrations caused by restraining the model too close to the detail. A practical choice would be to include approximately one section depth of the arch rafter and one section depth of the tusk rafter beyond the splice on either side.
 
-\includegraphics{bc_connection.png}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{bc_connection.png}
+    \includegraphics[width=0.7\linewidth]{bc_connection.png}
     \caption{Recommended boundary conditions for the local splice model}
     \label{fig:placeholder}
-\end{bc_connection.png}
+\end{figure}
 
 The preferred boundary condition is to impose the displacement and rotation components extracted from the global beam model at the two cut faces of the local model. In practice, each cut face can be coupled to a reference node so that the sectional deformation remains compatible with the global model. The six kinematic quantities imposed at each end are the three translations ($u_x$, $u_y$, $u_z$) and the three rotations ($r_x$, $r_y$, $r_z$). This approach is preferable to simply fixing one end, because it reproduces the actual deformation state of the connection and avoids introducing artificial restraint moments.
 
