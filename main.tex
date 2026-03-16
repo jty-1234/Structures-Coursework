@@ -50,15 +50,17 @@ The second diagram shows the FE idealisation adopted for analysis. The curved ro
 
 \newpage
 \section{Deliverable 2: Material, Section, and Loading Data }
-The global FE model was defined using linear-elastic steel. In accordance with the coursework brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal}. A Poisson's ratio of 0.30 and density of \SI{7850}{\kilogram\per\metre\cubed} were adopted so that self-weight could be included automatically in GSA. S355 steel was used for the primary roof members, which is consistent with the Heathrow T5 project information. The high tie was modelled with an initial prestress of \SI{450}{\mega\pascal}.
+\subsection{Material and Section Properties and Loading Data}
 
-Only vertical symmetric loading was considered. The characteristic permanent roof load was taken as the sum of the aluminium standing seam roof (\SI{0.10}{\kilo\pascal}), structural deck (\SI{0.15}{\kilo\pascal}), insulation/acoustic layers (\SI{0.40}{\kilo\pascal}) and services allowance (\SI{0.15}{\kilo\pascal}), giving $G_k = \SI{0.80}{\kilo\pascal}$. The characteristic imposed roof live load was taken as $Q_k = \SI{0.60}{\kilo\pascal}$. Therefore, the governing vertical ULS combination used in the model was
+The global FE model was defined using linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal}. A Poisson's ratio of 0.30 and density of \SI{7850}{\kilogram\per\metre\cubed} were adopted so that self-weight could be included automatically in GSA. S355 steel was used for the primary roof members, which is consistent with the Heathrow T5 project information. The high tie was modelled with an initial prestress of \SI{450}{\mega\pascal}.
+
+Only vertical symmetric loading was considered. The characteristic permanent roof load was taken as the sum of the aluminium standing seam roof (\SI{0.10}{\kilo\pascal}), structural deck (\SI{0.15}{\kilo\pascal}), insulation/acoustic layers (\SI{0.40}{\kilo\pascal}) and the service allowance (\SI{0.15}{\kilo\pascal}), giving $G_k = \SI{0.80}{\kilo\pascal}$. The live load imposed on the roof was taken as $Q_k = \SI{0.60}{\kilo\pascal}$. Therefore, the governing vertical ultimate limit state (ULS) combination used in the model was
 \[
 1.35G_k + 1.5Q_k = 1.35(0.80) + 1.5(0.60) = \SI{1.98}{\kilo\pascal}.
 \]
-Using a tributary width of \SI{36}{\metre} for one transverse frame, this corresponds to an equivalent applied line load of \SI{71.28}{\kilo\newton\per\metre}, in addition to the self-weight of the primary members.
+Using a width of \SI{36}{\metre} for one transverse frame, it is found that a line load of \SI{71.28}{\kilo\newton\per\metre} is applied in addition to the self-weight of the primary members.
 
-The strap members were modelled as rod elements. Therefore, only their axial stiffness was represented in the global model, using an equivalent steel area of $A = 2 \times 500 \times 40 = \SI{40000}{\milli\metre\squared}$. The spacing between the two plates was neglected in this idealisation because rod elements do not carry bending.
+The strap members were modelled as rod elements. Therefore, only their axial stiffness was represented in the global model, using an equivalent steel area of $A = 2 \times 500 \times 40 = \SI{40000}{\milli\metre\squared}$. The spacing between the two plates was neglected in this idealisation because the rod elements do not carry bending.
 
 \begin{table}[H]
 \centering
@@ -71,7 +73,7 @@ The strap members were modelled as rod elements. Therefore, only their axial sti
 \midrule
 Arch rafter & Welded box, \SI{800}{\milli\metre} wide, \SI{50}{\milli\metre} wall thickness & Depth varies from about \SI{1.8}{\metre} to \SI{3.8}{\metre} along the roof profile \\
 Tusk rafter & Welded I-section, \SI{50}{\milli\metre} plate thickness & Overall depth varies from about \SI{0.9}{\metre} to \SI{3.8}{\metre} \\
-Legs and arms & CHS \SI{914}{\milli\metre} $\times$ \SI{40}{\milli\metre} & Taken directly from the supplementary sketch \\
+Legs and arms & Circular Hollow Section (CHS) \SI{914}{\milli\metre} $\times$ \SI{40}{\milli\metre} & Taken directly from the supplementary sketch \\
 Wings & CHS \SI{711}{\milli\metre} $\times$ \SI{50}{\milli\metre} & Taken directly from the supplementary sketch \\
 Internal/external ties & CHS \SI{457}{\milli\metre} $\times$ \SI{40}{\milli\metre} & Thickness not stated in the source, so \SI{40}{\milli\metre} was assumed \\
 High tie & Twin locked-coil strands, $2 \times \SI{115}{\milli\metre}$ & Prestressed to \SI{450}{\mega\pascal} \\
@@ -80,7 +82,9 @@ Straps & Equivalent rod area \SI{40000}{\milli\metre\squared} & Based on two \SI
 \end{tabular}
 \end{table}
 
-The main assumptions were therefore a linear-elastic S355 steel model, uniform wall thickness where required by the brief, a \SI{36}{\metre} tributary width for each transverse frame, automatic inclusion of self-weight through the material density, and axial-only idealisation of the strap members.
+\subsection{Assumptions}
+
+The assumptions made were the use of a linear-elastic S355 steel model, uniform wall thicknesses where indicated, a \SI{36}{\metre} tributary width for each transverse frame, automatic inclusion of self-weight through the material density, and axial-only idealisation of the strap members.
 
 
 \newpage
@@ -121,14 +125,13 @@ The results for the critical ULS vertical load combination ($1.35G_k + 1.5Q_k + 
 \vspace{0.2cm}
 \label{tab:mesh_sensitivity}
 \renewcommand{\arraystretch}{1.5} 
-\resizebox{\textwidth}{!}{%
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|c|c|c|c|c|}
 \hline
-\textbf{Mesh Iteration} & \textbf{Arch Elements} & \textbf {DoF} & \textbf{Max Deflection (mm)} & \textbf{Max Bending Moment (kNm)} & \textbf{\% Change ($\Delta$)} \\ \hline
-\textbf{Mesh 1 (Coarsest)} & 14 & 53 & [Output] & [Output] & - \\ \hline
-\textbf{Mesh 2 (Coarse)} & 16 & 59 & [Output] & [Output] & [\%] \\ \hline
-\textbf{Mesh 3 (Baseline)} & 22 & 77 & [Output] & [Output] & [\%] \\ \hline
-\textbf{Mesh 4 (Fine)} & 44 & 143 & [Output] & [Output] & [\%] \\ \hline
+\textbf{Mesh Iteration} & \textbf{Arch Elements} & \textbf {DoF} & \textbf{Max Deflection (mm)} & \TEXTBF{Max Force (kN)} & \textbf{Max Bending Moment (kNm)} & \textbf{\% Change ($\Delta$)} \\ \hline
+\textbf{Mesh 1 (Coarsest)} & 14 & 53 & 54.53 & 21.49E+3 & 19.25E+3 & - \\ \hline
+\textbf{Mesh 2 (Coarse)} & 16 & 59 & 45.44 & 20.04E+3 & 6.316E+3 & [\%] \\ \hline
+\textbf{Mesh 3 (Baseline)} & 22 & 77 & 44.94 & 19.49E+3 & 6.023E+3 & [\%] \\ \hline
 \end{tabular}%
 }
 \end{table}
@@ -167,13 +170,13 @@ To assess the impact of this assumption, two simplified models were considered. 
 
 \begin{tabular}{p{5cm}ccc}
 \hline
-Quantity & Prestress After Erection & Prestress During Construction & Difference \\
+Quantity & No Prestress & Prestress & Difference \\
 \hline
-Maximum vertical displacement (mm) &  &  &  \\
-Maximum arch rafter bending moment (kNm) &  &  &  \\
-Maximum axial force in arch rafter (kN) &  &  &  \\
-High tie force (kN) &  &  &  \\
-Horizontal reaction at supports (kN) &  &  &  \\
+Maximum vertical displacement (mm) & 76.41 & 44.94 &  \\
+Maximum arch rafter bending moment (kNm) & 26.52E+3 & 18.27E+3 &  \\
+Maximum axial force in arch rafter (kN) & 13.17E+3 & 6.023E+3 &  \\
+High tie force (kN) & 6.736E+3 & 11.76E+3 &  \\
+Horizontal reaction at supports (kN) & 6.430E+3 & 5.699E+3 &  \\
 \hline
 \end{tabular}
 
@@ -254,4 +257,6 @@ The preferred boundary condition is to impose the displacement and rotation comp
 The corresponding section forces should also be checked against the global model outputs. The main actions expected at the splice are axial force $N$, vertical shear $V$, bending moment $M$, and a smaller torsional component due to the curved roof geometry and eccentricity of the connection detail. If the software or modelling approach makes direct displacement transfer difficult, an acceptable alternative is to apply the equivalent set of sectional resultants at the two cut faces, provided that overall equilibrium is maintained.
 
 To prevent rigid body motion in the local model, one reference node may be lightly stabilised after the global displacements have been assigned. This stabilisation should only remove numerical singularities and must not alter the transferred load path. Contact, bolt preload, or weld representation can then be added depending on the intended level of detail. For the purposes of this coursework, the key requirement is that the splice boundaries are driven by the global model response rather than by arbitrary fixed supports.
+
+The depth of 
 \end{document}
