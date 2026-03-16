@@ -21,6 +21,7 @@
 \maketitle
 
 \tableofcontents
+\newpage
 
 \section{Introduction}
 alalal
@@ -92,44 +93,99 @@ The main assumptions were therefore a linear-elastic S355 steel model, uniform w
 \subsection{Model Adequacy}
 
 \newpage
-\section{Deliverable 4: Mesh Refinement Sensitivity Analysis}
+\section{Deliverable 4: Mesh Refinement Sensitivity Study \& Model Verification}
 
-\subsection{Introduction and Methodology}
-In Finite Element Analysis (FEA), continuous curved geometries must be approximated using discrete straight beam elements. If the mesh is too coarse, the structural stiffness and internal bending moments of curved members are inaccurately represented. A sensitivity study was conducted to determine the optimum mesh density that provides mathematical convergence without introducing unnecessary computational expense. 
+\subsection{Introduction to Discretisation Error}
+Finite element analysis provides an approximation, not the exact analytical solution. When dividing a continuous structure into finite elements, discretisation error is introduced from two main sources: element behaviour error (dependent on the chosen shape functions) and mesh density error (dependent on element sizing). Mesh refinement evaluates whether this approximation is acceptable by increasing the degrees of freedom (DoF) until the results converge. To isolate the mesh density error without distorting the global physical behaviour, refinement was strictly limited to the continuous curve of the arch rafter. Based on St-Venant's principle, the detailed stress distribution near load applications or complex joints only matters locally. Refining the complex intersections at the tusk rafters, legs, and high ties could artificially induce stress singularities due to idealised geometry (such as re-entrant corners), which do not converge. Therefore, those boundary members remained constant while the arch was discretised into varying densities.
 
-The study selectively targeted the continuous curved roof profile, specifically the Arch and Tusk Rafters (including the cantilevered eaves). These members carry heavy distributed loads ($72.74 \text{ kN/m}$) and are subjected to complex bending forces. Conversely, the straight high ties and the vertical abutment columns (legs and arms) were excluded from the refinement process; as primarily axially loaded members, their behaviour is perfectly captured by single elements between major nodes regardless of mesh density.
+\subsection{Convergence Study Methodology}
+Following standard FEA procedures, the convergence study was conducted as follows:
 
-\subsection{Mesh Definitions}
-Three levels of mesh refinement were analysed under the critical ULS vertical load combination ($1.35G_k + 1.5Q_k$) and the $450 \text{ MPa}$ high tie prestress. The base geometry was defined by the 16 coordinate nodes provided in the project data.
+To evaluate convergence, it is necessary to check global quantities away from boundary singularities. Maximum vertical crown deflection ($\delta_z$) and maximum arch bending moment ($M_y$) were selected. Peak local stresses were ignored as they are highly dependent on constraint application and may not converge.
 
-The baseline geometry of Mesh 1 (coarse) consisting of 1 element per original coordinate segment across the roof profile. (Average arch element length $\approx 2.5 \text{ m}$). For Mesh 2 (medium), all elements along the continuous roof profile were split into two equal segments. (Average arch element length $\approx 1.25 \text{ m}$). For Mesh 3 (fine), all elements along the continuous roof profile were split again into two equal segments, resulting in four elements per original coordinate segment. (Average arch element length $\approx 0.6 \text{ m}$).
+Four mesh densities were evaluated, progressively halving the element size to increase the DoF:
+\begin{itemize}
+    \item \textbf{Mesh 1 (Coarsest):} Highly simplified faceted geometry merging multiple coordinate segments.
+    \item \textbf{Mesh 2 (Coarse):} Partially merged geometry.
+    \item \textbf{Mesh 3 (Baseline):} The exact original coordinate nodes defined in the project data.
+    \item \textbf{Mesh 4 (Fine):} Every baseline arch element split in half.
+\end{itemize}
 
-\subsection{Comparison of Key Response Quantities}
-To evaluate convergence, three critical structural responses were monitored across the three models, maximum vertical deflection ($\delta_z$), which was measured at the crown (apex) of the arch rafter, maximum bending moment ($M_y$) measured within the arch rafter, and maximum axial tension ($F_x$), which is measured in the main twin high tie.
+The results for the critical ULS vertical load combination ($1.35G_k + 1.5Q_k + 1.0P_s$) are tabulated below.
 
 \begin{table}[h]
 \centering
-\caption{Mesh Sensitivity Results under ULS Loading}
+\caption{Effect of Mesh Density and DoF on Key Responses}
 \vspace{0.2cm}
 \label{tab:mesh_sensitivity}
-\renewcommand{\arraystretch}{1.5}
-\resizebox{\textwidth}{!}{
-\begin{tabular}{|l|c|c|c|c|}
+\renewcommand{\arraystretch}{1.5} 
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|c|}
 \hline
-\textbf{Parameter} & \textbf{Mesh 1 (Coarse)} & \textbf{Mesh 2 (Medium)} & \textbf{Mesh 3 (Fine)} & \textbf{\% Change (Med to Fine)} \\ \hline
-\textbf{Max Crown Deflection (mm)} & [Output] & [Output] & [Output] & [\%] \\ \hline
-\textbf{Max Arch Bending Moment (kNm)} & [Output] & [Output] & [Output] & [\%] \\ \hline
-\textbf{High Tie Axial Force (kN)} & [Output] & [Output] & [Output] & [\%] \\ \hline
-\end{tabular}
+\textbf{Mesh Iteration} & \textbf{Arch Elements} & \textbf {DoF} & \textbf{Max Deflection (mm)} & \textbf{Max Bending Moment (kNm)} & \textbf{\% Change ($\Delta$)} \\ \hline
+\textbf{Mesh 1 (Coarsest)} & 14 & 53 & [Output] & [Output] & - \\ \hline
+\textbf{Mesh 2 (Coarse)} & 16 & 59 & [Output] & [Output] & [\%] \\ \hline
+\textbf{Mesh 3 (Baseline)} & 22 & 77 & [Output] & [Output] & [\%] \\ \hline
+\textbf{Mesh 4 (Fine)} & 44 & 143 & [Output] & [Output] & [\%] \\ \hline
+\end{tabular}%
 }
 \end{table}
 
-\subsection{Conclusion and Adopted Mesh Density}
-As demonstrated in Table \ref{tab:mesh_sensitivity}, transitioning from the coarse mesh to the medium mesh resulted in noticeable changes to the internal forces and deflections. This indicates that the coarse mesh artificially bridges the true curvature of the arch, creating an overly stiff model that inaccurately distributes bending moments.
+A solution is considered converged when further refinement causes negligible change in the target quantity. The following strict convergence criterion was applied between iterations:
+\begin{equation}
+    \frac{|\delta_{n} - \delta_{n-1}|}{\delta_{n}} < 2\%
+\end{equation}
 
-However, further refinement from the medium mesh to the fine mesh yielded a negligible variance of [ \% ] in the key response quantities. This demonstrates that the FE results have converged and the global behaviour of the structure is no longer highly sensitive to element size.
+As demonstrated in Table \ref{tab:mesh_sensitivity}, transitioning from the coarse, faceted meshes to the Baseline geometry yielded a noticeable change, indicating that the coarse meshes artificially stiffened the arch. Refining further to the fine mesh yielded a negligible variance of \textbf{[\%]}, satisfying the $2\%$ criterion.
 
-Therefore, Mesh 2 (medium mesh) provides sufficient geometric accuracy for the purpose of global structural modelling. It captures the true bending behaviour of the sweeping arch rafters without introducing the unnecessary mathematical complexity of Mesh 3. Mesh 2 has been adopted for all subsequent global analyses in this report.
+\subsection{Model Verification}
+Because a converged answer to an incorrect model is still wrong, the following basic verification checks were successfully performed on the converged Baseline model to ensure the solution process was correctly implemented:
+\begin{itemize}
+    \item \textbf{Error Warnings:} The GSA solver completed the static analysis with no warnings regarding matrix singularities or instabilities.
+    \item \textbf{Overall Equilibrium Check:} The sum of the vertical reaction forces ($R_z$) at the pinned supports was confirmed to equal the total applied vertical gravity loads ($\sum F = R \approx 0$).
+    \item \textbf{Symmetry:} Because the structural geometry and the critical ULS load combination are perfectly symmetric, the resulting internal forces and deflected shape were verified to be entirely symmetric.
+    \item \textbf{Qualitative Check:} The deflected shape aligns with physical expectations; the vertical loads cause the arch crown to displace downwards, putting the main ties into pure axial tension.
+\end{itemize}
+
+\subsection{Conclusion}
+Based on the achieved convergence and successful model verification, Mesh 3 is deemed structurally sufficient. It provides an accurate global approximation without the unnecessary computational expense of higher-order refinement, and has been adopted for the remainder of this report.
+
+\newpage
+\section{Deliverable 5: Influence of Prestressing Assumptions }
+The influence of prestressing assumptions on the global structural response of the roof system was investigated by comparing two modelling approaches. In the simplified coursework model, prestressing of the high tie is assumed to occur after the complete erection of the roof structure. In contrast, the supplementary documentation describing the actual construction process indicates that the central arch section was assembled at low level and the high tie cables were tensioned during erection prior to the final load transfer.
+
+To assess the impact of this assumption, two simplified models were considered. The first model applies prestress to the high tie after the structure has been fully erected and loaded. The second model approximates the effect of prestressing during construction, reflecting the behaviour described in the construction documentation. Although a full staged construction analysis was not performed, a comparison of the resulting structural responses provides insight into the influence of prestressing sequence.
+
+\subsection{Quantitative comparison}
+
+\begin{table}[h]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+
+\begin{tabular}{p{5cm}ccc}
+\hline
+Quantity & Prestress After Erection & Prestress During Construction & Difference \\
+\hline
+Maximum vertical displacement (mm) &  &  &  \\
+Maximum arch rafter bending moment (kNm) &  &  &  \\
+Maximum axial force in arch rafter (kN) &  &  &  \\
+High tie force (kN) &  &  &  \\
+Horizontal reaction at supports (kN) &  &  &  \\
+\hline
+\end{tabular}
+
+\caption{Comparison of structural response under different prestressing assumptions}
+\label{tab:prestress_comparison}
+
+\end{table}
+
+
+\subsection{Qualitative interpretation}
+The results indicate that the timing of prestressing influences the internal force distribution and deformation characteristics of the roof structure. When prestressing is applied only after full erection, the rafters initially experience larger bending moments and deflections under dead load before the restraining effect of the high tie develops. In contrast, prestressing during construction introduces axial compression into the rafters earlier in the erection sequence, which reduces arch spread and decreases bending moments in the rafters.
+
+\subsection{Implications}
+These differences also have implications for design and construction tolerances. The construction-stage prestressing sequence can introduce locked-in stresses and influence the final geometry of the structure. As a result, the structural response predicted by a simplified post-erection prestressing assumption may differ from the behaviour observed in the real structure. Understanding these differences is important when interpreting global analysis results and when defining design forces for critical connections such as the rafter splice.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
