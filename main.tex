@@ -10,7 +10,11 @@
 \usepackage{caption}   
 \usepackage{float}    
 \usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{xcolor}
 \microtypesetup{expansion=false}
+\definecolor{myblue}{RGB}{0,162,232}
+\captionsetup{labelfont={color=myblue}}
 
 \title{\textbf{Structures}}
 \author{Group 8}
@@ -22,11 +26,6 @@
 
 \tableofcontents
 \newpage
-
-\section{Introduction}
-alalal
-
-
 \newpage
 \section{Deliverable 1: Geometry}
 The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}, points labelled \textit{R} define the roof profile, while points labelled \textit{S} define the support system and lower restraint points. The reconstructed model was checked against the original drawing on both sides of the roof and the overall geometric deviation was approximately 0.5\%, which is acceptable for global FE modelling.
@@ -35,12 +34,12 @@ The second diagram shows the FE idealisation adopted for analysis. The curved ro
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth,trim={70 30 60 25},clip]{Weixin Image_20260315183303.png}
+\includegraphics[width=0.9\textwidth,trim={70 30 60 25},clip]{Weixin Image_20260315183303.png}
 
 \small (a) Reconstructed nodal geometry
 
 \vspace{0.4em}
-\includegraphics[width=\textwidth,trim={70 30 60 25},clip]{Weixin Image_20260315183313.png}
+\includegraphics[width=0.9\textwidth,trim={70 30 60 25},clip]{Weixin Image_20260315183313.png}
 
 \small (b) Idealised FE member layout
 \caption{Geometry adopted for the global model.}
@@ -63,11 +62,11 @@ Using a width of \SI{36}{\metre} for one transverse frame, it is found that a li
 The strap members were modelled as rod elements. Therefore, only their axial stiffness was represented in the global model, using an equivalent steel area of $A = 2 \times 500 \times 40 = \SI{40000}{\milli\metre\squared}$. The spacing between the two plates was neglected in this idealisation because the rod elements do not carry bending.
 
 \begin{table}[H]
-\centering
+\raggedright
 \caption{Section data adopted for the global model}
 \label{tab:section_data}
 \renewcommand{\arraystretch}{1.35}
-\begin{tabular}{p{0.23\textwidth} p{0.32\textwidth} p{0.39\textwidth}}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.23\textwidth} >{\raggedright\arraybackslash}p{0.32\textwidth} >{\raggedright\arraybackslash}p{0.39\textwidth}}
 \toprule
 \textbf{Member} & \textbf{Section} & \textbf{Modelling note} \\
 \midrule
@@ -96,10 +95,20 @@ One important modelling assumption is that the real roof has been reduced from a
 
 \subsection{Model Validation}
 
+\subsection{Model Verification}
+Because a converged answer to an incorrect model is still wrong, the following basic verification checks were successfully performed on the model to ensure that the solution process was correctly implemented:
+\begin{itemize}
+    \item \textbf{Error Warnings:} The GSA solver completed the static analysis with no warnings regarding matrix singularities or instabilities.
+    \item \textbf{Overall Equilibrium Check:} The sum of the vertical reaction forces ($R_z$) at the pinned supports was confirmed to equal the total applied vertical gravity loads ($\sum F = R \approx 0$).
+    \item \textbf{Symmetry:} Because the structural geometry and the critical ULS load combination are perfectly symmetric, the resulting internal forces and deflected shape were verified to be entirely symmetric.
+    \item \textbf{Qualitative Check:} The deflected shape aligns with physical expectations; the vertical loads cause the arch crown to displace downwards, putting the main ties into pure axial tension.
+\end{itemize}
+
 \subsection{Model Adequacy}
+Taken together, the modelling assumptions, validation considerations and verification checks indicate that the global frame model is adequate for an initial study of the roof under symmetric vertical loading. However, it should still be understood as a simplified global model rather than a full representation of the three-dimensional structural behaviour.
 
 \newpage
-\section{Deliverable 4: Mesh Refinement Sensitivity Study \& Model Verification}
+\section{Deliverable 4: Mesh Refinement Sensitivity Study}
 
 \subsection{Introduction to Discretisation Error}
 Finite element analysis provides an approximation, not the exact analytical solution. When dividing a continuous structure into finite elements, discretisation error is introduced from two main sources: element behaviour error (dependent on the chosen shape functions) and mesh density error (dependent on element sizing). Mesh refinement evaluates whether this approximation is acceptable by increasing the degrees of freedom (DoF) until the results converge. To isolate the mesh density error without distorting the global physical behaviour, refinement was strictly limited to the continuous curve of the arch rafter. Based on St-Venant's principle, the detailed stress distribution near load applications or complex joints only matters locally. Refining the complex intersections at the tusk rafters, legs, and high ties could artificially induce stress singularities due to idealised geometry (such as re-entrant corners), which do not converge. Therefore, those boundary members remained constant while the arch was discretised into varying densities.
@@ -120,22 +129,20 @@ The results for the critical ULS vertical load combination ($1.35G_k + 1.5Q_k + 
 
 \begin{table}[H]
 \centering
-\small
-\setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.2}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.35}
 \caption{Effect of mesh density and model size on key responses}
 \label{tab:mesh_sensitivity}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lcccccc}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{0.13\textwidth} >{\centering\arraybackslash}p{0.08\textwidth} >{\centering\arraybackslash}p{0.13\textwidth} >{\centering\arraybackslash}p{0.15\textwidth} >{\centering\arraybackslash}p{0.16\textwidth} >{\centering\arraybackslash}p{0.12\textwidth}}
 \toprule
-\textbf{Mesh iteration} & \textbf{Arch elements} & \textbf{DoF} & \textbf{Max deflection (mm)} & \textbf{Max axial force (kN)} & \textbf{Max bending moment (kNm)} & \textbf{\% change} \\
+\textbf{Mesh} & \textbf{Arch elements} & \textbf{DoF} & \textbf{Deflection (mm)} & \textbf{Axial force (kN)} & \textbf{Bending moment (kNm)} & \textbf{\% change vs Mesh 3} \\
 \midrule
-Mesh 1 (Coarsest) & 14 & 53 & 54.53 & 21490 & 19250 & -- \\
-Mesh 2 (Coarse) & 16 & 59 & 45.44 & 20040 & 6316 & [ ] \\
-Mesh 3 (Baseline) & 22 & 77 & 44.94 & 19490 & 6023 & [ ] \\
+Mesh 1 & 14 & 53 & 54.53 & 21490 & 19250 & 21.3\% \\
+Mesh 2 & 16 & 59 & 45.44 & 20040 & 6316 & 1.1\% \\
+Mesh 3 & 22 & 77 & 44.94 & 19490 & 6023 & 0.0\% \\
 \bottomrule
-\end{tabular}%
-}
+\end{tabularx}
 \end{table}
 
 A solution is considered converged when further refinement causes negligible change in the target quantity. The following strict convergence criterion was applied between iterations:
@@ -143,38 +150,28 @@ A solution is considered converged when further refinement causes negligible cha
     \frac{|\delta_{n} - \delta_{n-1}|}{\delta_{n}} < 2\%
 \end{equation}
 
-As demonstrated in Table \ref{tab:mesh_sensitivity}, transitioning from the coarsest faceted model to the baseline geometry produced a noticeable change in both deflection and internal force, showing that the coarser meshes artificially stiffened the arch. The smaller change between Mesh 2 and Mesh 3 indicates that the solution is approaching convergence; the final percentage change should be inserted once calculated explicitly.
-
-\subsection{Model Verification}
-Because a converged answer to an incorrect model is still wrong, the following basic verification checks were successfully performed on the converged Baseline model to ensure the solution process was correctly implemented:
-\begin{itemize}
-    \item \textbf{Error Warnings:} The GSA solver completed the static analysis with no warnings regarding matrix singularities or instabilities.
-    \item \textbf{Overall Equilibrium Check:} The sum of the vertical reaction forces ($R_z$) at the pinned supports was confirmed to equal the total applied vertical gravity loads ($\sum F = R \approx 0$).
-    \item \textbf{Symmetry:} Because the structural geometry and the critical ULS load combination are perfectly symmetric, the resulting internal forces and deflected shape were verified to be entirely symmetric.
-    \item \textbf{Qualitative Check:} The deflected shape aligns with physical expectations; the vertical loads cause the arch crown to displace downwards, putting the main ties into pure axial tension.
-\end{itemize}
+As demonstrated in Table \ref{tab:mesh_sensitivity}, transitioning from the coarsest faceted model to the baseline geometry produced a noticeable change in both deflection and internal force, showing that the coarser meshes artificially stiffened the arch. Using Mesh 3 as the baseline, Mesh 1 differs by 21.3\% in crown deflection whereas Mesh 2 differs by only 1.1\%, indicating that the solution is approaching convergence.
 
 \subsection{Conclusion}
-Based on the achieved convergence and successful model verification, Mesh 3 is deemed structurally sufficient. It provides an accurate global approximation without the unnecessary computational expense of higher-order refinement, and has been adopted for the remainder of this report.
+Based on the achieved convergence, Mesh 3 is deemed structurally sufficient. It provides an accurate global approximation without the unnecessary computational expense of higher-order refinement, and has been adopted for the remainder of this report.
 
 \newpage
 \section{Deliverable 5: Influence of Prestressing Assumptions }
-The influence of prestressing assumptions on the global structural response of the roof system was investigated by comparing two modelling approaches. In the simplified coursework model, prestressing of the high tie is assumed to occur after the complete erection of the roof structure. In contrast, the supplementary documentation describing the actual construction process indicates that the central arch section was assembled at low level and the high tie cables were tensioned during erection prior to the final load transfer.
+\subsection{Aim and Comparison Basis}
+The brief requires a comparison between the coursework simplification, in which high-tie prestress is applied after complete erection, and the construction process described in the supplementary documentation, where the centre arch was assembled and prestressed at low level before lifting and staged load transfer. A full staged-construction analysis was not undertaken here; instead, two simplified bounding models were compared, one with prestress neglected and one with the prescribed \SI{450}{\mega\pascal} prestress included. This gives a practical indication of how sensitive the global response is to activation of the tie.
 
-To assess the impact of this assumption, two simplified models were considered. The first model applies prestress to the high tie after the structure has been fully erected and loaded. The second model approximates the effect of prestressing during construction, reflecting the behaviour described in the construction documentation. Although a full staged construction analysis was not performed, a comparison of the resulting structural responses provides insight into the influence of prestressing sequence.
-
-\subsection{Quantitative comparison}
+\subsection{Quantitative Comparison}
 
 \begin{table}[H]
 \centering
 \small
-\setlength{\tabcolsep}{5pt}
-\renewcommand{\arraystretch}{1.2}
-\caption{Comparison of structural response under different prestressing assumptions}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\caption{Simplified sensitivity of global response to high-tie prestress}
 \label{tab:prestress_comparison}
-\begin{tabular}{p{0.42\textwidth}ccc}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.41\textwidth} >{\centering\arraybackslash}p{0.16\textwidth} >{\centering\arraybackslash}p{0.16\textwidth} >{\centering\arraybackslash}X}
 \toprule
-\textbf{Response quantity} & \textbf{No prestress} & \textbf{Prestress} & \textbf{Change with prestress} \\
+\textbf{Response quantity} & \textbf{Prestress neglected} & \textbf{Prestress included} & \textbf{Change with prestress} \\
 \midrule
 Maximum vertical displacement (mm) & 76.41 & 44.94 & $-41.2\%$ \\
 Maximum arch rafter bending moment (kNm) & 26520 & 18270 & $-31.1\%$ \\
@@ -182,15 +179,17 @@ Maximum axial force in arch rafter (kN) & 13170 & 6023 & $-54.3\%$ \\
 High tie force (kN) & 6736 & 11760 & $+74.6\%$ \\
 Horizontal reaction at supports (kN) & 6430 & 5699 & $-11.4\%$ \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 
-\subsection{Qualitative interpretation}
-The results indicate that the timing of prestressing influences the internal force distribution and deformation characteristics of the roof structure. When prestressing is applied only after full erection, the rafters initially experience larger bending moments and deflections under dead load before the restraining effect of the high tie develops. In contrast, prestressing during construction introduces axial compression into the rafters earlier in the erection sequence, which reduces arch spread and decreases bending moments in the rafters.
+\subsection{Discussion of Results}
+Table \ref{tab:prestress_comparison} shows that including prestress reduces maximum vertical displacement by 41.2\%, arch rafter bending moment by 31.1\%, axial force in the arch rafter by 54.3\%, and horizontal reaction at the supports by 11.4\%, while increasing high-tie force by 74.6\%. The global force flow therefore becomes more arch-and-tie dominated and less bending-dominated once the tie is activated. Since the real roof was prestressed before final lifting and load transfer, its behaviour is expected to lie closer to the prestressed case, although the present models do not capture the locked-in effects of incremental stressing, creep adjustment and staged load transfer.
 
-\subsection{Implications}
-These differences also have implications for design and construction tolerances. The construction-stage prestressing sequence can introduce locked-in stresses and influence the final geometry of the structure. As a result, the structural response predicted by a simplified post-erection prestressing assumption may differ from the behaviour observed in the real structure. Understanding these differences is important when interpreting global analysis results and when defining design forces for critical connections such as the rafter splice.
+\subsection{Implications for Design and Tolerance}
+The results show that the predicted design actions in the rafters, high tie and supports are sensitive to the prestress assumption, so neglecting prestress would overestimate deflection and arch bending while underestimating tie force. From a design perspective, this affects not only the sizing of the arch rafters themselves, but also the actions transmitted into the high-tie anchorage, support nodes and critical connection regions such as the rafter splice. A model that ignores prestress could therefore be conservative for some bending checks while being non-conservative for tie force and connection demand.
+
+The supplementary paper also shows that tolerance was controlled through paired cable stressing, geometry monitoring, preset positioning, staged load transfer and final tension adjustment after creep. This indicates that final geometry and final force state are linked: deviations in fit-up, support position or closure of interfaces during erection can change how load is redistributed and therefore alter the locked-in forces present in the completed roof. For the remainder of the report, the prestressed model is therefore adopted as the minimum realistic representation of the roof, while recognising that explicit staged construction would be required to quantify locked-in stresses and erection tolerances more accurately. Overall, the comparison confirms that the real roof is much better represented by a prestressed global model than by an unprestressed frame model.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
@@ -199,12 +198,12 @@ For a more detailed FE study, the rafter splice between the tusk rafter and arch
 
 The local model should include a short length of member on each side of the splice so that the boundary conditions are applied away from the connection itself. This reduces artificial stress concentrations caused by restraining the model too close to the detail. A practical choice would be to include approximately one section depth of the arch rafter and one section depth of the tusk rafter beyond the splice on either side.
 
-\includegraphics{bc_connection.png}
-    \centering
-    \includegraphics[width=0.5\linewidth]{bc_connection.png}
-    \caption{Recommended boundary conditions for the local splice model}
-    \label{fig:placeholder}
-\end{bc_connection.png}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{bc_connection.png}
+\caption{Recommended boundary conditions for the local splice model}
+\label{fig:placeholder}
+\end{figure}
 
 The preferred boundary condition is to impose the displacement and rotation components extracted from the global beam model at the two cut faces of the local model. In practice, each cut face can be coupled to a reference node so that the sectional deformation remains compatible with the global model. The six kinematic quantities imposed at each end are the three translations ($u_x$, $u_y$, $u_z$) and the three rotations ($r_x$, $r_y$, $r_z$). This approach is preferable to simply fixing one end, because it reproduces the actual deformation state of the connection and avoids introducing artificial restraint moments.
 
