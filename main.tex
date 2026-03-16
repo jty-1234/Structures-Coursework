@@ -86,6 +86,8 @@ The main assumptions were therefore a linear-elastic S355 steel model, uniform w
 \section{Deliverable 3: Initial Model Validation}
 \subsection{Assumptions}
 
+One important modelling assumption is that the real roof has been reduced from a 3D structural system to a 2D frame idealisation. This means only the in-plane behaviour of one transverse frame is represented directly, while out-of-plane bending, torsion and any load-sharing between adjacent frames are neglected. As a result, the model cannot capture twisting of the curved rafters, weak-axis bending caused by geometric eccentricity, or other local 3D effects associated with the actual connection arrangement. This simplification is acceptable for an initial global study because the loading considered here is vertical and symmetric, so the dominant response is expected to remain in-plane, but it should still be recognised as a source of modelling error when interpreting the validation results.
+
 
 \subsection{Model Validation}
 
@@ -133,9 +135,13 @@ Therefore, Mesh 2 (medium mesh) provides sufficient geometric accuracy for the p
 
 \newpage
 \section{Deliverable 5: Influence of Prestressing Assumptions}
+\subsection{Introduction and Modelling Basis}
+
 This section compares two prestressing assumptions for the main high tie under the same vertical loading. \textbf{Model A} applies prestress after full erection, following the coursework simplification. \textbf{Model B} represents the real construction sequence in a simplified way so that the influence of earlier stressing and load transfer can be assessed.
 
 The aim of the comparison is to determine whether the simplified post-erection prestress assumption is sufficient for global analysis, or whether the construction-stage stressing process produces meaningful differences in internal force distribution, deflection and sensitivity to erection tolerances. Both models should therefore use the same geometry, mesh density and vertical loading so that the prestressing assumption is the only significant variable.
+
+\subsection{Comparison of Key Response Quantities}
 
 \begin{table}[H]
 \centering
@@ -156,19 +162,11 @@ Any other critical response & [ ] & [ ] & [ ] \\ \hline
 
 Table \ref{tab:prestress_comparison} should be used to compare the two models quantitatively. If Model B gives lower arch bending moments and different locked-in tie forces, this would suggest that the construction-stage stressing process redistributes part of the self-weight response before the final structure is formed. If the differences are small, the simplified post-erection prestress assumption is likely to be acceptable for global analysis.
 
-The numerical comparison should then be supported by a brief qualitative discussion of the deformed shape and force flow. Particular attention should be paid to the crown deflection, the support spread, the force carried by the high tie, and whether the arch becomes more or less bending-dominated under the two assumptions.
+\subsection{Discussion and Implications}
 
-\textbf{Key observations to add after analysis} \\
-Crown deflection: [Insert comment]. \\
-Arch bending response: [Insert comment]. \\
-High tie axial force: [Insert comment]. \\
-Support/leg response: [Insert comment]. \\
-Overall difference in global behaviour: [Insert comment]. \\
+The numerical comparison should then be supported by a qualitative discussion of the deformed shape and force flow. Particular attention should be paid to the crown deflection, the support spread, the force carried by the high tie, the support and leg response, and whether the arch becomes more or less bending-dominated under the two assumptions.
 
-\textbf{Implications} \\
-Design implication: [Insert conclusion]. \\
-Construction tolerance implication: [Insert conclusion]. \\
-Adopted assumption for the remainder of the report: [Insert choice and brief justification].
+The supplementary information makes it clear that prestressing was integral to the erection sequence rather than a load applied only after the roof had been fully assembled. The centre arch was assembled and prestressed at low level, lifted into position, connected to the abutments and then subjected to staged load transfer, so the final structural behaviour depended on locked-in forces and redistribution developed during construction. This means that, if Model B shows meaningful differences in force or deflection, a staged-construction approach should be adopted for design because the simplified post-erection assumption may underestimate temporary compression effects and the resulting final force state. The same construction process also has important implications for tolerance control: the cables were stressed incrementally in pairs until the rafters lifted clear of their temporary supports, the geometry was monitored continuously during stressing, and final cable forces were adjusted again after creep. Tolerance was therefore achieved through active adjustment during erection as well as fabrication accuracy, so the design should provide sufficient allowance for cable tuning, splice fit-up and support positioning, together with preset geometry that can accommodate the larger movements that may occur during load transfer. For this reason, Model B should be preferred for the remainder of the report whenever it produces non-negligible differences, since it better reflects the documented construction method and the resulting locked-in structural response.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
