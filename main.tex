@@ -109,29 +109,31 @@ Following standard FEA procedures, the convergence study was conducted as follow
 
 To evaluate convergence, it is necessary to check global quantities away from boundary singularities. Maximum vertical crown deflection ($\delta_z$) and maximum arch bending moment ($M_y$) were selected. Peak local stresses were ignored as they are highly dependent on constraint application and may not converge.
 
-Four mesh densities were evaluated, progressively halving the element size to increase the DoF:
+Three mesh densities were evaluated to test the sensitivity of the global response to geometric discretisation:
 \begin{itemize}
     \item \textbf{Mesh 1 (Coarsest):} Highly simplified faceted geometry merging multiple coordinate segments.
     \item \textbf{Mesh 2 (Coarse):} Partially merged geometry.
     \item \textbf{Mesh 3 (Baseline):} The exact original coordinate nodes defined in the project data.
-    \item \textbf{Mesh 4 (Fine):} Every baseline arch element split in half.
 \end{itemize}
 
 The results for the critical ULS vertical load combination ($1.35G_k + 1.5Q_k + 1.0P_s$) are tabulated below.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
-\caption{Effect of Mesh Density and DoF on Key Responses}
-\vspace{0.2cm}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.2}
+\caption{Effect of mesh density and model size on key responses}
 \label{tab:mesh_sensitivity}
-\renewcommand{\arraystretch}{1.5} 
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{|l|c|c|c|c|c|}
-\hline
-\textbf{Mesh Iteration} & \textbf{Arch Elements} & \textbf {DoF} & \textbf{Max Deflection (mm)} & \TEXTBF{Max Force (kN)} & \textbf{Max Bending Moment (kNm)} & \textbf{\% Change ($\Delta$)} \\ \hline
-\textbf{Mesh 1 (Coarsest)} & 14 & 53 & 54.53 & 21.49E+3 & 19.25E+3 & - \\ \hline
-\textbf{Mesh 2 (Coarse)} & 16 & 59 & 45.44 & 20.04E+3 & 6.316E+3 & [\%] \\ \hline
-\textbf{Mesh 3 (Baseline)} & 22 & 77 & 44.94 & 19.49E+3 & 6.023E+3 & [\%] \\ \hline
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Mesh iteration} & \textbf{Arch elements} & \textbf{DoF} & \textbf{Max deflection (mm)} & \textbf{Max axial force (kN)} & \textbf{Max bending moment (kNm)} & \textbf{\% change} \\
+\midrule
+Mesh 1 (Coarsest) & 14 & 53 & 54.53 & 21490 & 19250 & -- \\
+Mesh 2 (Coarse) & 16 & 59 & 45.44 & 20040 & 6316 & [ ] \\
+Mesh 3 (Baseline) & 22 & 77 & 44.94 & 19490 & 6023 & [ ] \\
+\bottomrule
 \end{tabular}%
 }
 \end{table}
@@ -141,7 +143,7 @@ A solution is considered converged when further refinement causes negligible cha
     \frac{|\delta_{n} - \delta_{n-1}|}{\delta_{n}} < 2\%
 \end{equation}
 
-As demonstrated in Table \ref{tab:mesh_sensitivity}, transitioning from the coarse, faceted meshes to the Baseline geometry yielded a noticeable change, indicating that the coarse meshes artificially stiffened the arch. Refining further to the fine mesh yielded a negligible variance of \textbf{[\%]}, satisfying the $2\%$ criterion.
+As demonstrated in Table \ref{tab:mesh_sensitivity}, transitioning from the coarsest faceted model to the baseline geometry produced a noticeable change in both deflection and internal force, showing that the coarser meshes artificially stiffened the arch. The smaller change between Mesh 2 and Mesh 3 indicates that the solution is approaching convergence; the final percentage change should be inserted once calculated explicitly.
 
 \subsection{Model Verification}
 Because a converged answer to an incorrect model is still wrong, the following basic verification checks were successfully performed on the converged Baseline model to ensure the solution process was correctly implemented:
@@ -163,26 +165,24 @@ To assess the impact of this assumption, two simplified models were considered. 
 
 \subsection{Quantitative comparison}
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \small
-\setlength{\tabcolsep}{4pt}
-
-\begin{tabular}{p{5cm}ccc}
-\hline
-Quantity & No Prestress & Prestress & Difference \\
-\hline
-Maximum vertical displacement (mm) & 76.41 & 44.94 &  \\
-Maximum arch rafter bending moment (kNm) & 26.52E+3 & 18.27E+3 &  \\
-Maximum axial force in arch rafter (kN) & 13.17E+3 & 6.023E+3 &  \\
-High tie force (kN) & 6.736E+3 & 11.76E+3 &  \\
-Horizontal reaction at supports (kN) & 6.430E+3 & 5.699E+3 &  \\
-\hline
-\end{tabular}
-
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.2}
 \caption{Comparison of structural response under different prestressing assumptions}
 \label{tab:prestress_comparison}
-
+\begin{tabular}{p{0.42\textwidth}ccc}
+\toprule
+\textbf{Response quantity} & \textbf{No prestress} & \textbf{Prestress} & \textbf{Change with prestress} \\
+\midrule
+Maximum vertical displacement (mm) & 76.41 & 44.94 & $-41.2\%$ \\
+Maximum arch rafter bending moment (kNm) & 26520 & 18270 & $-31.1\%$ \\
+Maximum axial force in arch rafter (kN) & 13170 & 6023 & $-54.3\%$ \\
+High tie force (kN) & 6736 & 11760 & $+74.6\%$ \\
+Horizontal reaction at supports (kN) & 6430 & 5699 & $-11.4\%$ \\
+\bottomrule
+\end{tabular}
 \end{table}
 
 
@@ -191,41 +191,6 @@ The results indicate that the timing of prestressing influences the internal for
 
 \subsection{Implications}
 These differences also have implications for design and construction tolerances. The construction-stage prestressing sequence can introduce locked-in stresses and influence the final geometry of the structure. As a result, the structural response predicted by a simplified post-erection prestressing assumption may differ from the behaviour observed in the real structure. Understanding these differences is important when interpreting global analysis results and when defining design forces for critical connections such as the rafter splice.
-
-\newpage
-\section{Deliverable 5: Influence of Prestressing Assumptions}
-\subsection{Introduction and Modelling Basis}
-
-This section compares two prestressing assumptions for the main high tie under the same vertical loading. \textbf{Model A} applies prestress after full erection, following the coursework simplification. \textbf{Model B} represents the real construction sequence in a simplified way so that the influence of earlier stressing and load transfer can be assessed.
-
-The aim of the comparison is to determine whether the simplified post-erection prestress assumption is sufficient for global analysis, or whether the construction-stage stressing process produces meaningful differences in internal force distribution, deflection and sensitivity to erection tolerances. Both models should therefore use the same geometry, mesh density and vertical loading so that the prestressing assumption is the only significant variable.
-
-\subsection{Comparison of Key Response Quantities}
-
-\begin{table}[H]
-\centering
-\caption{Comparison of prestressing assumptions}
-\label{tab:prestress_comparison}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{|p{0.34\textwidth}|c|c|c|}
-\hline
-\textbf{Response quantity} & \textbf{Model A} & \textbf{Model B} & \textbf{\% Diff.} \\ \hline
-Maximum crown deflection (mm) & [ ] & [ ] & [ ] \\ \hline
-Maximum arch bending moment (kNm) & [ ] & [ ] & [ ] \\ \hline
-Maximum high tie axial force (kN) & [ ] & [ ] & [ ] \\ \hline
-Maximum leg/support force (kN) & [ ] & [ ] & [ ] \\ \hline
-Support spread / horizontal movement (mm) & [ ] & [ ] & [ ] \\ \hline
-Any other critical response & [ ] & [ ] & [ ] \\ \hline
-\end{tabular}
-\end{table}
-
-Table \ref{tab:prestress_comparison} should be used to compare the two models quantitatively. If Model B gives lower arch bending moments and different locked-in tie forces, this would suggest that the construction-stage stressing process redistributes part of the self-weight response before the final structure is formed. If the differences are small, the simplified post-erection prestress assumption is likely to be acceptable for global analysis.
-
-\subsection{Discussion and Implications}
-
-The numerical comparison should then be supported by a qualitative discussion of the deformed shape and force flow. Particular attention should be paid to the crown deflection, the support spread, the force carried by the high tie, the support and leg response, and whether the arch becomes more or less bending-dominated under the two assumptions.
-
-The supplementary information makes it clear that prestressing was integral to the erection sequence rather than a load applied only after the roof had been fully assembled. The centre arch was assembled and prestressed at low level, lifted into position, connected to the abutments and then subjected to staged load transfer, so the final structural behaviour depended on locked-in forces and redistribution developed during construction. This means that, if Model B shows meaningful differences in force or deflection, a staged-construction approach should be adopted for design because the simplified post-erection assumption may underestimate temporary compression effects and the resulting final force state. The same construction process also has important implications for tolerance control: the cables were stressed incrementally in pairs until the rafters lifted clear of their temporary supports, the geometry was monitored continuously during stressing, and final cable forces were adjusted again after creep. Tolerance was therefore achieved through active adjustment during erection as well as fabrication accuracy, so the design should provide sufficient allowance for cable tuning, splice fit-up and support positioning, together with preset geometry that can accommodate the larger movements that may occur during load transfer. For this reason, Model B should be preferred for the remainder of the report whenever it produces non-negligible differences, since it better reflects the documented construction method and the resulting locked-in structural response.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
