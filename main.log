@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  17 MAR 2026 12:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  17 MAR 2026 13:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -567,15 +567,15 @@ File: element tyep.png Graphic file (type png)
 Package pdftex.def Info: element tyep.png  used on input line 42.
 (pdftex.def)             Requested size: 407.66833pt x 118.70233pt.
 [2 <./element tyep.png> <./Weixin Image_20260315183303.png (PNG copy)>]
-Overfull \hbox (8.82301pt too wide) in paragraph at lines 69--82
+Overfull \hbox (8.82301pt too wide) in paragraph at lines 70--83
 [][]  
  []
 
 [3] [4] [5] [6]
-<bc_connection.png, id=163, 1541.76pt x 1027.84pt>
+<bc_connection.png, id=164, 1541.76pt x 1027.84pt>
 File: bc_connection.png Graphic file (type png)
 <use bc_connection.png>
-Package pdftex.def Info: bc_connection.png  used on input line 198.
+Package pdftex.def Info: bc_connection.png  used on input line 199.
 (pdftex.def)             Requested size: 226.48395pt x 150.98558pt.
  (main.bbl) [7 <./bc_connection.png (PNG copy)>] (main.aux)
  ***********
@@ -587,9 +587,9 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  17732 strings out of 467871
- 344636 string characters out of 5418376
- 772624 words of memory out of 5000000
- 46406 multiletter control sequences out of 15000+600000
+ 344613 string characters out of 5418376
+ 773696 words of memory out of 5000000
+ 46405 multiletter control sequences out of 15000+600000
  642991 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,88p,1089b,1042s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -617,9 +617,9 @@ ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/31945/AppData/Loca
 l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/31945/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/3
 1945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on main.pdf (7 pages, 863881 bytes).
+Output written on main.pdf (7 pages, 864117 bytes).
 PDF statistics:
- 607 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
+ 611 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
  10926 words of extra memory for PDF output out of 12000 (max. 10000000)
 

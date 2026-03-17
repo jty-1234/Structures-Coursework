@@ -53,11 +53,12 @@ The second diagram shows the FE idealisation adopted for analysis. In Figure~\re
 
 The global FE model was defined using linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal}. A Poisson's ratio of 0.30 and density of \SI{7850}{\kilogram\per\metre\cubed} were adopted so that self-weight could be included automatically in GSA. S355 steel was used for the primary roof members, which is consistent with the Heathrow T5 project information. The high tie was modelled with an initial prestress of \SI{450}{\mega\pascal}.
 
-Only vertical symmetric loading was considered. The characteristic permanent roof load was taken as the sum of the aluminium standing seam roof (\SI{0.10}{\kilo\pascal}), structural deck (\SI{0.15}{\kilo\pascal}), insulation/acoustic layers (\SI{0.40}{\kilo\pascal}) and the service allowance (\SI{0.15}{\kilo\pascal}), giving $G_k = \SI{0.80}{\kilo\pascal}$. The live load imposed on the roof was taken as $Q_k = \SI{0.60}{\kilo\pascal}$. This roof live load was treated as a projected vertical load on the horizontal plan area, which is consistent with common roof-loading practice and with the projected-area basis commonly used for roof snow loading in Eurocode 1 \cite{bsen_snow}. Therefore, the governing vertical ultimate limit state (ULS) combination used in the model was
-\[
-1.35G_k + 1.5Q_k = 1.35(0.80) + 1.5(0.60) = \SI{1.98}{\kilo\pascal}.
-\]
-Using a projected tributary width of \SI{36}{\metre} for one transverse frame, it is found that a line load of \SI{71.28}{\kilo\newton\per\metre} is applied in addition to the self-weight of the primary members.
+Only vertical symmetric loading was considered. The characteristic permanent roof load was taken as the sum of the aluminium standing seam roof (\SI{0.10}{\kilo\pascal}), structural deck (\SI{0.15}{\kilo\pascal}), insulation/acoustic layers (\SI{0.40}{\kilo\pascal}) and the service allowance (\SI{0.15}{\kilo\pascal}), giving $G_k = \SI{0.80}{\kilo\pascal}$. The live load imposed on the roof was taken as $Q_k = \SI{0.60}{\kilo\pascal}$. The governing vertical ultimate limit state (ULS) combination used in the model was
+\begin{equation}
+1.35G_k + 1.5Q_k
+\label{eq:uls_vertical_combination}
+\end{equation}
+Here, $G_k$ was retained as a non-projected permanent roof load, while $Q_k$ was treated as a projected vertical load on the horizontal plan area, consistent with common roof-loading practice and with the projected-area basis commonly used for roof snow loading in Eurocode 1 \cite{bsen_snow}. Using a projected tributary width of \SI{36}{\metre} for one transverse frame, the live-load contribution is therefore \SI{21.6}{\kilo\newton\per\metre}, while the permanent roof load was kept as a separate dead-load action in addition to the self-weight of the primary members.
 
 The strap members were modelled as rod elements. Therefore, only their axial stiffness was represented in the global model, using an equivalent steel area of $A = 2 \times 500 \times 40 = \SI{40000}{\milli\metre\squared}$. The spacing between the two plates was neglected in this idealisation because the rod elements do not carry bending.
 
@@ -133,9 +134,9 @@ The results for the critical ULS vertical load combination ($1.35G_k + 1.5Q_k + 
 \toprule
 \textbf{Mesh} & \textbf{Arch elements} & \textbf{DoF} & \textbf{Deflection (mm)} & \textbf{Axial force (kN)} & \textbf{Bending moment (kNm)} & \textbf{\% change vs Mesh 3} \\
 \midrule
-Mesh 1 & 14 & 53 & 54.53 & 21490 & 19250 & 21.3\% \\
-Mesh 2 & 16 & 59 & 45.44 & 20040 & 6316 & 1.1\% \\
-Mesh 3 & 22 & 77 & 44.94 & 19490 & 6023 & 0.0\% \\
+Mesh 1 & 14 & 53 & 545.3 & 21490 & 19250 & 21.3\% \\
+Mesh 2 & 16 & 59 & 454.4 & 20040 & 6316 & 1.1\% \\
+Mesh 3 & 22 & 77 & 449.4 & 19490 & 6023 & 0.0\% \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -168,7 +169,7 @@ The brief requires a comparison between the coursework simplification, in which 
 \toprule
 \textbf{Response quantity} & \textbf{Prestress neglected} & \textbf{Prestress included} & \textbf{Change with prestress} \\
 \midrule
-Maximum vertical displacement (mm) & 76.41 & 44.94 & $-41.2\%$ \\
+Maximum vertical displacement (mm) & 764.1 & 449.4 & $-41.2\%$ \\
 Maximum arch rafter bending moment (kNm) & 26520 & 18270 & $-31.1\%$ \\
 Maximum axial force in arch rafter (kN) & 13170 & 6023 & $-54.3\%$ \\
 High tie force (kN) & 6736 & 11760 & $+74.6\%$ \\
