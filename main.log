@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  16 MAR 2026 20:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  17 MAR 2026 12:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -555,29 +555,27 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
  [1
 
 {C:/Users/31945/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-<Weixin Image_20260315183303.png, id=110, 992.20688pt x 358.33875pt>
+<Weixin Image_20260315183303.png, id=111, 992.20688pt x 358.33875pt>
 File: Weixin Image_20260315183303.png Graphic file (type png)
 <use Weixin Image_20260315183303.png>
 Package pdftex.def Info: Weixin Image_20260315183303.png  used on input line 37
 .
 (pdftex.def)             Requested size: 407.66833pt x 143.4112pt.
-<Weixin Image_20260315183313.png, id=112, 987.69pt x 460.72125pt>
-File: Weixin Image_20260315183313.png Graphic file (type png)
-<use Weixin Image_20260315183313.png>
-Package pdftex.def Info: Weixin Image_20260315183313.png  used on input line 42
-.
-(pdftex.def)             Requested size: 407.66833pt x 192.85669pt.
-[2 <./Weixin Image_20260315183303.png (PNG copy)> <./Weixin Image_2026031518331
-3.png (PNG copy)>]
+<element tyep.png, id=113, 630.85687pt x 183.68625pt>
+File: element tyep.png Graphic file (type png)
+<use element tyep.png>
+Package pdftex.def Info: element tyep.png  used on input line 42.
+(pdftex.def)             Requested size: 407.66833pt x 118.70233pt.
+[2 <./element tyep.png> <./Weixin Image_20260315183303.png (PNG copy)>]
 Overfull \hbox (8.82301pt too wide) in paragraph at lines 69--82
 [][]  
  []
 
 [3] [4] [5] [6]
-<bc_connection.png, id=160, 1541.76pt x 1027.84pt>
+<bc_connection.png, id=161, 1541.76pt x 1027.84pt>
 File: bc_connection.png Graphic file (type png)
 <use bc_connection.png>
-Package pdftex.def Info: bc_connection.png  used on input line 203.
+Package pdftex.def Info: bc_connection.png  used on input line 198.
 (pdftex.def)             Requested size: 226.48395pt x 150.98558pt.
  [7 <./bc_connection.png (PNG copy)>] (main.aux)
  ***********
@@ -589,7 +587,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  17721 strings out of 467871
- 344495 string characters out of 5418376
+ 344390 string characters out of 5418376
  772593 words of memory out of 5000000
  46400 multiletter control sequences out of 15000+600000
  642991 words of font info for 72 fonts, out of 8000000 for 9000
@@ -619,9 +617,9 @@ ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/31945/AppData/Loca
 l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/31945/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/3
 1945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on main.pdf (7 pages, 912951 bytes).
+Output written on main.pdf (7 pages, 859539 bytes).
 PDF statistics:
  591 PDF objects out of 1000 (max. 8388607)
  34 named destinations out of 1000 (max. 500000)
- 10932 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 10926 words of extra memory for PDF output out of 12000 (max. 10000000)
 

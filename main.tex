@@ -28,9 +28,9 @@
 \newpage
 \newpage
 \section{Deliverable 1: Geometry}
-The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}, points labelled \textit{R} define the roof profile, while points labelled \textit{S} define the support system and lower restraint points. The reconstructed model was checked against the original drawing on both sides of the roof and the overall geometric deviation was approximately 0.5\%, which is acceptable for global FE modelling.
+The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}, points labelled \textit{R} define the roof profile and represent the mid-points of the roof section, while points labelled \textit{S} define the support system and lower restraint points. The reconstructed model was checked against the original drawing on both sides of the roof and the overall geometric deviation was approximately 0.5\%, which is acceptable for global FE modelling.
 
-The second diagram shows the FE idealisation adopted for analysis. The curved roof was represented by short straight beam elements between adjacent roof nodes, while the high tie, straps, legs, arms and wings were represented as line members connected at the major nodes. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
+The second diagram shows the FE idealisation adopted for analysis. In Figure~\ref{fig:geometry_overview}(b), green denotes beam elements used for the roof profile and support frame, red denotes the tie element, and blue denotes the rod elements. Both end supports were modelled as fixed supports, while the pin-connected members were treated consistently on both sides because the connected elements were assumed not to transfer bending moment. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
 
 \begin{figure}[H]
 \centering
@@ -39,9 +39,9 @@ The second diagram shows the FE idealisation adopted for analysis. The curved ro
 \small (a) Reconstructed nodal geometry
 
 \vspace{0.4em}
-\includegraphics[width=0.9\textwidth,trim={70 30 60 25},clip]{Weixin Image_20260315183313.png}
+\includegraphics[width=0.9\textwidth]{element tyep.png}
 
-\small (b) Idealised FE member layout
+\small (b) Idealised FE member types
 \caption{Geometry adopted for the global model.}
 \label{fig:geometry_overview}
 \end{figure}
@@ -118,12 +118,7 @@ Following standard FEA procedures, the convergence study was conducted as follow
 
 To evaluate convergence, it is necessary to check global quantities away from boundary singularities. Maximum vertical crown deflection ($\delta_z$) and maximum arch bending moment ($M_y$) were selected. Peak local stresses were ignored as they are highly dependent on constraint application and may not converge.
 
-Three mesh densities were evaluated to test the sensitivity of the global response to geometric discretisation:
-\begin{itemize}
-    \item \textbf{Mesh 1 (Coarsest):} Highly simplified faceted geometry merging multiple coordinate segments.
-    \item \textbf{Mesh 2 (Coarse):} Partially merged geometry.
-    \item \textbf{Mesh 3 (Baseline):} The exact original coordinate nodes defined in the project data.
-\end{itemize}
+Three mesh densities were evaluated to test the sensitivity of the global response to geometric discretisation. Mesh 1 (coarsest) used a highly simplified faceted geometry that merged multiple coordinate segments, Mesh 2 (coarse) used a partially merged geometry, and Mesh 3 (baseline) retained the exact original coordinate nodes defined in the project data.
 
 The results for the critical ULS vertical load combination ($1.35G_k + 1.5Q_k + 1.0P_s$) are tabulated below.
 
