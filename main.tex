@@ -30,7 +30,7 @@
 \section{Deliverable 1: Geometry}
 The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}, points labelled \textit{R} define the roof profile and represent the mid-points of the roof section, while points labelled \textit{S} define the support system and lower restraint points. The reconstructed model was checked against the original drawing on both sides of the roof and the overall geometric deviation was approximately 0.5\%, which is acceptable for global FE modelling.
 
-The second diagram shows the FE idealisation adopted for analysis. In Figure~\ref{fig:geometry_overview}(b), green denotes beam elements used for the roof profile and support frame, red denotes the tie element, and blue denotes the bar elements. Both end supports were modelled as fixed supports, while the pin-connected members were treated consistently on both sides because the connected elements were assumed not to transfer bending moment. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
+The second diagram shows the FE idealisation adopted for analysis. In Figure~\ref{fig:geometry_overview}(b), green denotes beam elements used for the roof profile, red denotes the high tie modelled as a tie element, and blue denotes the support-tree members modelled as bar elements. In GSA, beam elements model axial, bending and torsional effects, bar elements provide axial stiffness only, and tie elements are axial-only elements with zero stiffness in compression. This makes beams suitable for the roof rafters, bars suitable for the tree members, and a tie suitable for the prestressed high tie. Both end supports were modelled as fixed supports, while the pin-connected members were treated consistently on both sides because the connected elements were assumed not to transfer bending moment. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
 
 \begin{figure}[H]
 \centering
@@ -51,7 +51,7 @@ The second diagram shows the FE idealisation adopted for analysis. In Figure~\re
 \section{Deliverable 2: Material, Section, and Loading Data }
 \subsection{Material and Section Properties and Loading Data}
 
-The global FE model was defined using linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal}. A Poisson's ratio of 0.30 and density of \SI{7850}{\kilogram\per\metre\cubed} were adopted so that self-weight could be included automatically in GSA. S355 steel was used for the primary roof members, which is consistent with the Heathrow T5 project information. The high tie was modelled with an initial prestress of \SI{450}{\mega\pascal}.
+The global FE model was defined using linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal}. A Poisson's ratio of 0.30 and density of \SI{7850}{\kilogram\per\metre\cubed} were adopted so that self-weight could be included automatically in GSA. S355 steel was used for the primary roof members, which is consistent with the Heathrow T5 project information. The high tie was modelled as a prestressed tie element with an initial prestress of \SI{450}{\mega\pascal}.
 
 Only vertical symmetric loading was considered. The characteristic permanent roof load was taken as the sum of the aluminium standing seam roof (\SI{0.10}{\kilo\pascal}), structural deck (\SI{0.15}{\kilo\pascal}), insulation/acoustic layers (\SI{0.40}{\kilo\pascal}) and the service allowance (\SI{0.15}{\kilo\pascal}), giving $G_k = \SI{0.80}{\kilo\pascal}$. The live load imposed on the roof was taken as $Q_k = \SI{0.60}{\kilo\pascal}$. The governing vertical ultimate limit state (ULS) combination used in the model was
 \begin{equation}
@@ -60,7 +60,7 @@ Only vertical symmetric loading was considered. The characteristic permanent roo
 \end{equation}
 Here, $G_k$ was retained as a non-projected permanent roof load, while $Q_k$ was treated as a projected vertical load on the horizontal plan area, consistent with common roof-loading practice and with the projected-area basis commonly used for roof snow loading in Eurocode 1 \cite{bsen_snow}. Using a projected tributary width of \SI{36}{\metre} for one transverse frame, the live-load contribution is therefore \SI{21.6}{\kilo\newton\per\metre}, while the permanent roof load was kept as a separate dead-load action in addition to the self-weight of the primary members.
 
-The strap members were modelled as rod elements. Therefore, only their axial stiffness was represented in the global model, using an equivalent steel area of $A = 2 \times 500 \times 40 = \SI{40000}{\milli\metre\squared}$. The spacing between the two plates was neglected in this idealisation because the rod elements do not carry bending.
+The strap members were modelled as bar elements. Therefore, only their axial stiffness was represented in the global model, using an equivalent steel area of $A = 2 \times 500 \times 40 = \SI{40000}{\milli\metre\squared}$. The spacing between the two plates was neglected in this idealisation because the bar elements do not carry bending.
 
 \begin{table}[H]
 \raggedright
@@ -84,7 +84,7 @@ Straps & Equivalent rod area \SI{40000}{\milli\metre\squared} & Based on two \SI
 
 \subsection{Assumptions}
 
-The assumptions made were the use of a linear-elastic S355 steel model, uniform wall thicknesses where indicated, a \SI{36}{\metre} tributary width for each transverse frame, automatic inclusion of self-weight through the material density, and axial-only idealisation of the strap members.
+The assumptions made were the use of a linear-elastic S355 steel model, uniform wall thicknesses where indicated, a \SI{36}{\metre} tributary width for each transverse frame, automatic inclusion of self-weight through the material density, axial-only idealisation of the support-tree members, and a prestressed tie-element idealisation for the high tie.
 
 
 \newpage
