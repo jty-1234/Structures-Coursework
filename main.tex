@@ -170,8 +170,8 @@ The brief requires a comparison between the coursework simplification, in which 
 \textbf{Response quantity} & \textbf{Prestress neglected} & \textbf{Prestress included} & \textbf{Change with prestress} \\
 \midrule
 Maximum vertical displacement (mm) & 764.1 & 449.4 & $-41.2\%$ \\
-Centre rafter bending moment (kNm) & 15640 & 6023 & $-31.1\%$ \\
-task and arch connection bending moment (kNm) & 26520 & 4193 & $-31.1\%$ \\
+Centre rafter bending moment (kNm) & 15640 & 6023 & $-61.5\%$ \\
+Tusk-to-arch connection bending moment (kNm) & 26520 & 4193 & $-84.2\%$ \\
 Maximum axial force in arch rafter (kN) & 13170 & 6023 & $-54.3\%$ \\
 High tie force (kN) & 6736 & 11760 & $+74.6\%$ \\
 Horizontal reaction at supports (kN) & 6430 & 5699 & $-11.4\%$ \\
@@ -181,10 +181,10 @@ Horizontal reaction at supports (kN) & 6430 & 5699 & $-11.4\%$ \\
 
 
 \subsection{Discussion of Results}
-Table \ref{tab:prestress_comparison} shows that including prestress reduces maximum vertical displacement by 41.2\%, arch rafter bending moment by 31.1\%, axial force in the arch rafter by 54.3\%, and horizontal reaction at the supports by 11.4\%, while increasing high-tie force by 74.6\%. The global force flow therefore becomes more arch-and-tie dominated and less bending-dominated once the tie is activated. Since the real roof was prestressed before final lifting and load transfer, its behaviour is expected to lie closer to the prestressed case, although the present models do not capture the locked-in effects of incremental stressing, creep adjustment and staged load transfer.
+Table \ref{tab:prestress_comparison} shows that including prestress reduces the maximum vertical displacement from 764.1 mm to 449.4 mm, a reduction of 41.2\%. It also reduces the centre-rafter bending moment by 61.5\% and the tusk-to-arch connection bending moment by 84.2\%, while the maximum axial force in the arch falls by 54.3\% and the horizontal reaction at the supports falls by 11.4\%. By contrast, the high-tie force increases by 74.6\%. The overall response therefore shifts away from bending-dominated action and toward a more efficient arch-and-tie force path once the tie is activated. Since the real roof was prestressed before final lifting and load transfer, its behaviour is expected to lie closer to the prestressed case, although the present models do not capture the locked-in effects of incremental stressing, creep adjustment and staged load transfer.
 
 \subsection{Implications for Design and Tolerance}
-The results show that the predicted design actions in the rafters, high tie and supports are sensitive to the prestress assumption, so neglecting prestress would overestimate deflection and arch bending while underestimating tie force. From a design perspective, this affects not only the sizing of the arch rafters themselves, but also the actions transmitted into the high-tie anchorage, support nodes and critical connection regions such as the rafter splice. A model that ignores prestress could therefore be conservative for some bending checks while being non-conservative for tie force and connection demand.
+The updated results show that the predicted design actions in the rafters, high tie and supports are highly sensitive to the prestress assumption. Neglecting prestress would substantially overestimate both global deflection and bending demand in the roof members, especially at the tusk-to-arch connection, while at the same time underestimating the tensile demand that must be resisted by the high tie, its anchorage and the adjoining support nodes. From a design perspective, prestress therefore changes not only the magnitude of the response but also which checks become critical: bending-dominated regions become less severe, whereas tie force and connection demand become more significant.
 
 The supplementary paper also shows that tolerance was controlled through paired cable stressing, geometry monitoring, preset positioning, staged load transfer and final tension adjustment after creep. This indicates that final geometry and final force state are linked: deviations in fit-up, support position or closure of interfaces during erection can change how load is redistributed and therefore alter the locked-in forces present in the completed roof. For the remainder of the report, the prestressed model is therefore adopted as the minimum realistic representation of the roof, while recognising that explicit staged construction would be required to quantify locked-in stresses and erection tolerances more accurately. Overall, the comparison confirms that the real roof is much better represented by a prestressed global model than by an unprestressed frame model.
 
