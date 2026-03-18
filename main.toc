@@ -1,7 +1,6 @@
 \contentsline {section}{\numberline {1}Deliverable 1: Geometry}{2}{section.1}%
 \contentsline {section}{\numberline {2}Deliverable 2: Material, Section, and Loading Data }{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Material and Section Properties and Loading Data}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Assumptions}{3}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Deliverable 3: Initial Model Validation}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Assumptions}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Model Validation}{4}{subsection.3.2}%
