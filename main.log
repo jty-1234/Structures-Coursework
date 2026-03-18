@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  18 MAR 2026 21:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  18 MAR 2026 21:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -617,7 +617,7 @@ Package pdftex.def Info: Deformed_prestress.png  used on input line 221.
 
 [6 <./Noprestress.png> <./With_prestress.png> <./Deformed_noprestress.png> <./D
 eformed_prestress.png>]
-<bc_connection.png, id=169, 1541.76pt x 1027.84pt>
+<bc_connection.png, id=170, 1541.76pt x 1027.84pt>
 File: bc_connection.png Graphic file (type png)
 <use bc_connection.png>
 Package pdftex.def Info: bc_connection.png  used on input line 245.
@@ -660,9 +660,9 @@ c/amsfonts/cm/cmr7.pfb><C:/Users/31945/AppData/Local/Programs/MiKTeX/fonts/type
 ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/31945/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/31945/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (8 pages, 1335446 bytes).
+Output written on main.pdf (8 pages, 1335929 bytes).
 PDF statistics:
- 611 PDF objects out of 1000 (max. 8388607)
+ 612 PDF objects out of 1000 (max. 8388607)
  38 named destinations out of 1000 (max. 500000)
  9406 words of extra memory for PDF output out of 10000 (max. 10000000)
 
