@@ -132,11 +132,11 @@ The results for the critical ULS vertical load combination ($1.35G_k + 1.5Q_k + 
 \label{tab:mesh_sensitivity}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{0.13\textwidth} >{\centering\arraybackslash}p{0.08\textwidth} >{\centering\arraybackslash}p{0.13\textwidth} >{\centering\arraybackslash}p{0.15\textwidth} >{\centering\arraybackslash}p{0.16\textwidth} >{\centering\arraybackslash}p{0.12\textwidth}}
 \toprule
-\textbf{Mesh} & \textbf{Arch elements} & \textbf{DoF} & \textbf{Deflection (mm)} & \textbf{Axial force (kN)} & \textbf{Bending moment (kNm)} & \textbf{\% change vs Mesh 3} \\
+\textbf{Mesh} & \textbf{Arch elements} & \textbf{DoF} & \textbf{Arch central Deflection (mm)} & \textbf{Tie Axial force (kN)} & \textbf{Arch central Bending moment (kNm)} & \textbf{\% change vs Mesh 3} \\
 \midrule
-Mesh 1 & 14 & 53 & 545.3 & 21490 & 19250 & 21.3\% \\
-Mesh 2 & 16 & 59 & 454.4 & 20040 & 6316 & 1.1\% \\
-Mesh 3 & 22 & 77 & 449.4 & 19490 & 6023 & 0.0\% \\
+Mesh 1 & 14 & 53 & 241.2 & 9725 & 12760 & 21.3\% \\
+Mesh 2 & 16 & 59 & 175.7 & 9309 & 960.2 & 1.1\% \\
+Mesh 3 & 22 & 77 & 175.3 & 9320 & 198.2 & 0.0\% \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -169,12 +169,11 @@ The brief requires a comparison between the coursework simplification, in which 
 \toprule
 \textbf{Response quantity} & \textbf{Prestress neglected} & \textbf{Prestress included} & \textbf{Change with prestress} \\
 \midrule
-Maximum vertical displacement (mm) & 764.1 & 449.4 & $-41.2\%$ \\
-Centre rafter bending moment (kNm) & 15640 & 6023 & $-61.5\%$ \\
-Tusk-to-arch connection bending moment (kNm) & 26520 & 4193 & $-84.2\%$ \\
-Maximum axial force in arch rafter (kN) & 13170 & 6023 & $-54.3\%$ \\
-High tie force (kN) & 6736 & 11760 & $+74.6\%$ \\
-Horizontal reaction at supports (kN) & 6430 & 5699 & $-11.4\%$ \\
+Maximum vertical displacement (mm) & 490 & 175.3 & $-41.2\%$ \\
+Centre rafter bending moment (kNm) & 9811 & 198.2 & $-61.5\%$ \\
+Tusk-to-arch connection bending moment (kNm) & 16490 & 5837 & $-84.2\%$ \\
+High tie force (kN) & 4296 & 9320 & $+74.6\%$ \\
+Horizontal reaction at supports (kN) & 4211 & 3480 & $-11.4\%$ \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -210,6 +209,7 @@ To prevent rigid body motion in the local model, one reference node may be light
 
 Section cuts are located approximately  one local section depth  away from the splice connection along the axis of the member. This avoids local stress disturbance. As the depth varies along the rafter, the local section depth is equal to the splice-region depth (3.6 m), cuts A–A and B–B are placed approximately 3.6 m from the splice on either side. At both cut faces, the translational and rotational displacements extracted from the global FE model are imposed.This ensures compatibility between the local splice model and the global structural response.
 
+\newpage
 \begingroup
 \small
 \bibliographystyle{plain}
