@@ -91,28 +91,27 @@ The assumptions made were the use of a linear-elastic S355 steel model, uniform 
 \section{Deliverable 3: Initial Model Validation}
 \subsection{Assumptions}
 
-One important modelling assumption is that the real roof has been reduced from a 3D structural system to a 2D frame idealisation. This means only the in-plane behaviour of one transverse frame is represented directly, while out-of-plane bending, torsion and any load-sharing between adjacent frames are neglected. As a result, the model cannot capture twisting of the curved rafters, weak-axis bending caused by geometric eccentricity, or other local 3D effects associated with the actual connection arrangement. This simplification is acceptable for an initial global study because the loading considered here is vertical and symmetric, so the dominant response is expected to remain in-plane, but it should still be recognised as a source of modelling error when interpreting the validation results.
+The validation assumes a 2D in-plane frame subjected to vertical symmetric loading. Out-of-plane bending, torsion, adjacent-frame load sharing and detailed connection stiffness are neglected, so the check is intended only to confirm that the global model gives a realistic level of response rather than an exact local solution.
 
 
 \subsection{Model Validation}
+Because the prestressed arch-and-tie behaviour is difficult to analyse by simple hand calculation, the initial validation was carried out on the non-prestressed model and focused on the bending moment at the tusk-to-arch connection. The loaded tusk was idealised as a \SI{25}{\metre} cantilever under the equivalent ULS line load $w = 1.35 \times 14.4 + 1.5 \times 10.8 = \SI{35.64}{\kilo\newton\per\metre}$, giving a support moment $M = wL^2/2 \approx \SI{11125}{\kilo\newton\metre}$, as shown in Figure~\ref{fig:validation_handcalc}. The corresponding FE result is about \SI{16490}{\kilo\newton\metre}, so the model predicts the correct order of magnitude for this key bending action. The difference is expected because the hand check neglects the stiffness of the curved arch, frame interaction between both sides of the roof, and the more complex redistribution captured by the FE model.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{validation.png}
+\caption{Hand validation of the tusk-to-arch connection bending moment.}
+\label{fig:validation_handcalc}
+\end{figure}
 
 \subsection{Model Verification}
-Because a converged answer to an incorrect model is still wrong, the following basic verification checks were successfully performed on the model to ensure that the solution process was correctly implemented:
-\begin{itemize}
-    \item \textbf{Error Warnings:} The GSA solver completed the static analysis with no warnings regarding matrix singularities or instabilities.
-    \item \textbf{Overall Equilibrium Check:} The sum of the vertical reaction forces ($R_z$) at the pinned supports was confirmed to equal the total applied vertical gravity loads ($\sum F = R \approx 0$).
-    \item \textbf{Symmetry:} Because the structural geometry and the critical ULS load combination are perfectly symmetric, the resulting internal forces and deflected shape were verified to be entirely symmetric.
-    \item \textbf{Qualitative Check:} The deflected shape aligns with physical expectations; the vertical loads cause the arch crown to displace downwards, putting the main ties into pure axial tension.
-\end{itemize}
+Basic verification checks were also completed: the GSA solver ran without instability warnings, the vertical reactions balanced the applied gravity loads, the response remained symmetric under symmetric loading, and the deformed shape was physically consistent, with the arch crown moving downward and the ties remaining in axial tension.
 
 \subsection{Model Adequacy}
 Taken together, the modelling assumptions, validation considerations and verification checks indicate that the global frame model is adequate for an initial study of the roof under symmetric vertical loading. However, it should still be understood as a simplified global model rather than a full representation of the three-dimensional structural behaviour.
 
 \newpage
 \section{Deliverable 4: Mesh Refinement Sensitivity Study}
-
-\subsection{Introduction to Discretisation Error}
-Finite element analysis provides an approximate solution, so the discretisation adopted for the curved arch rafter must be checked before the results are used for interpretation. In this model, the arch is represented by straight beam elements between nodes; if too few elements are used, the idealised geometry no longer matches the true curvature and the predicted stiffness and internal force distribution can change significantly. To isolate this effect, refinement was applied only to the arch rafter, while the tusk rafter, support tree and high tie were kept unchanged. This ensures that the observed variation is caused by the arch mesh itself rather than by changing support conditions or joint modelling elsewhere in the frame.
 
 \subsection{Convergence Study Methodology}
 Three mesh densities were evaluated under the governing ULS vertical load combination ($1.35G_k + 1.5Q_k + 1.0P_s$). Mesh 1 is the coarsest faceted representation of the arch, Mesh 2 retains more intermediate points, and Mesh 3 preserves the full coordinate set taken from the supplementary geometry and is used as the reference model. To judge convergence, one displacement quantity and two force quantities were tracked: arch central deflection, high-tie axial force and arch central bending moment. These parameters give a useful picture of both overall stiffness and the redistribution of internal action as the curved geometry is refined.
@@ -135,22 +134,44 @@ Mesh 3 & 22 & 77 & 175.3 & 9320 & 198.2 & 0.0\% \\
 \end{tabularx}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Mesh1.png}
+
+    \small Mesh 1
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Mesh2.png}
+
+    \small Mesh 2
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Mesh3.png}
+
+    \small Mesh 3
+\end{minipage}
+\caption{Bending-moment diagrams for the three mesh densities used in the sensitivity study.}
+\label{fig:mesh_bending}
+\end{figure}
+
 A solution is considered converged when further refinement causes negligible change in the target quantity. The following strict convergence criterion was applied between iterations:
 \begin{equation}
     \frac{|\delta_{n} - \delta_{n-1}|}{\delta_{n}} < 2\%
 \end{equation}
 
-Table \ref{tab:mesh_sensitivity} shows that the coarse arch discretisation significantly distorts the response. Using Mesh 3 as the baseline, Mesh 1 overestimates the arch central deflection by 37.6\%, the high-tie force by 4.3\% and the arch central bending moment by 6337.9\%. Mesh 2 brings the deflection error down to only 0.2\% and the tie-force difference to 0.1\%, but the central bending moment is still 384.5\% higher than in Mesh 3. This indicates that the global load path is already close to convergence by Mesh 2, whereas the bending response at the centre of the arch remains highly sensitive to how the curvature is represented. The very large percentage differences in bending moment are amplified by the small reference value in Mesh 3 (\SI{198.2}{\kilo\newton\metre}), but they still show that a coarse geometric idealisation is not acceptable if bending results are to be used with confidence.
+Table \ref{tab:mesh_sensitivity} and Figure~\ref{fig:mesh_bending} show that the coarse arch discretisation significantly distorts the response. Using Mesh 3 as the baseline, Mesh 1 overestimates the arch central deflection by 37.6\%, the high-tie force by 4.3\% and the arch central bending moment by 6337.9\%. Moving from Mesh 1 to Mesh 2, the sign of bending moment even changes over part of the arch, showing that the coarsest mesh does not reproduce the qualitative moment distribution reliably. Mesh 2 brings the deflection error down to only 0.2\% and the tie-force difference to 0.1\%, but the central bending moment is still 384.5\% higher than in Mesh 3. This indicates that the global load path is already close to convergence by Mesh 2, whereas the bending response at the centre of the arch remains highly sensitive to how the curvature is represented. The very large percentage differences in bending moment are amplified by the small reference value in Mesh 3 (\SI{198.2}{\kilo\newton\metre}), but they still show that a coarse geometric idealisation is not acceptable if bending results are to be used with confidence.
 
 \subsection{Conclusion}
 Based on these results, Mesh 3 is adopted for the remainder of the report. Although Mesh 2 is already adequate for deflection and tie force, only Mesh 3 captures the arch curvature accurately enough to stabilise the central bending moment, which is an important response quantity for interpreting the behaviour of the roof frame.
 
 \newpage
 \section{Deliverable 5: Influence of Prestressing Assumptions }
-\subsection{Aim and Comparison Basis}
-The coursework brief asks for a comparison between the simplified assumption that prestress is applied after full erection and the actual Heathrow T5 construction sequence described in the supplementary paper. The paper states that the centre arch was assembled and prestressed at low level, the rafters were lifted clear of the temporary supports during stressing, the cable force was adjusted after a short period to account for creep, and the roof was then lifted and subjected to staged load transfer. The completed structure therefore reached its final position with locked-in forces already present.
-
-Full staged-construction modelling was not carried out here. Instead, two simplified bounding models were compared using the same geometry, mesh density and vertical loading: one with prestress neglected and one with the prescribed \SI{450}{\mega\pascal} prestress included. This gives a clear indication of how sensitive the final global response is to activation of the high tie.
 
 \subsection{Quantitative Comparison}
 
@@ -174,9 +195,28 @@ Horizontal reaction at supports (kN) & 4211 & 3480 & $-17.4\%$ \\
 \end{tabularx}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Noprestress.png}
+
+    \small Prestress neglected
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{With_prestress.png}
+
+    \small Prestress included
+\end{minipage}
+\caption{Comparison of bending-moment response with and without high-tie prestress.}
+\label{fig:prestress_bending}
+\end{figure}
+
 
 \subsection{Discussion of Results}
-Using the updated values in Table \ref{tab:prestress_comparison}, the influence of prestress is much stronger than in the earlier model. Including prestress reduces the maximum vertical displacement from 490 mm to 175.3 mm, a reduction of 64.2\%. The centre-rafter bending moment falls from 9811 kNm to 198.2 kNm, which is a reduction of 98.0\%, while the tusk-to-arch connection bending moment reduces by 64.6\%. At the same time, the high-tie force rises from 4296 kN to 9320 kN, an increase of 116.9\%, and the horizontal support reaction reduces by 17.4\%. The structural behaviour therefore changes from a relatively bending-dominated frame response to a much more efficient arch-and-tie action once the high tie is activated.
+Using the updated values in Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_bending}, the influence of prestress is much stronger than in the earlier model. Including prestress reduces the maximum vertical displacement from 490 mm to 175.3 mm, a reduction of 64.2\%. The centre-rafter bending moment falls from 9811 kNm to 198.2 kNm, which is a reduction of 98.0\%, while the tusk-to-arch connection bending moment reduces by 64.6\%. At the same time, the high-tie force rises from 4296 kN to 9320 kN, an increase of 116.9\%, and the horizontal support reaction reduces by 17.4\%. The structural behaviour therefore changes from a relatively bending-dominated frame response to a much more efficient arch-and-tie action once the high tie is activated.
 
 \subsection{Implications for Design and Tolerance}
 These updated results show that the prestress assumption is critical to both design interpretation and construction tolerance assessment. If prestress is neglected, the model greatly overestimates vertical deflection and rafter bending, but significantly underestimates the tensile force that must be carried by the high tie, its anchorage system and the connected support nodes. In other words, the controlling design actions move away from flexural demand in the rafters and towards force transfer in the tie system once prestress is included.

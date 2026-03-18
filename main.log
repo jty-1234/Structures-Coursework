@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  18 MAR 2026 15:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  18 MAR 2026 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -555,13 +555,13 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
  [1
 
 {C:/Users/31945/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-<Weixin Image_20260315183303.png, id=111, 992.20688pt x 358.33875pt>
+<Weixin Image_20260315183303.png, id=101, 992.20688pt x 358.33875pt>
 File: Weixin Image_20260315183303.png Graphic file (type png)
 <use Weixin Image_20260315183303.png>
 Package pdftex.def Info: Weixin Image_20260315183303.png  used on input line 37
 .
 (pdftex.def)             Requested size: 407.66833pt x 143.4112pt.
-<element tyep.png, id=113, 571.38469pt x 150.5625pt>
+<element tyep.png, id=103, 571.38469pt x 150.5625pt>
 File: element tyep.png Graphic file (type png)
 <use element tyep.png>
 Package pdftex.def Info: element tyep.png  used on input line 42.
@@ -571,11 +571,45 @@ Overfull \hbox (8.82301pt too wide) in paragraph at lines 70--83
 [][]  
  []
 
-[3] [4] [5] [6]
-<bc_connection.png, id=164, 1541.76pt x 1027.84pt>
+[3]
+<validation.png, id=130, 638.00859pt x 308.65312pt>
+File: validation.png Graphic file (type png)
+<use validation.png>
+Package pdftex.def Info: validation.png  used on input line 102.
+(pdftex.def)             Requested size: 353.31439pt x 170.92302pt.
+ [4 <./validation.png>]
+<Mesh1.png, id=137, 630.85687pt x 318.43968pt>
+File: Mesh1.png Graphic file (type png)
+<use Mesh1.png>
+Package pdftex.def Info: Mesh1.png  used on input line 141.
+(pdftex.def)             Requested size: 144.95303pt x 73.1667pt.
+<Mesh2.png, id=138, 633.86812pt x 318.43968pt>
+File: Mesh2.png Graphic file (type png)
+<use Mesh2.png>
+Package pdftex.def Info: Mesh2.png  used on input line 148.
+(pdftex.def)             Requested size: 144.95303pt x 72.81685pt.
+<Mesh3.png, id=139, 633.86812pt x 318.43968pt>
+File: Mesh3.png Graphic file (type png)
+<use Mesh3.png>
+Package pdftex.def Info: Mesh3.png  used on input line 155.
+(pdftex.def)             Requested size: 144.95303pt x 72.81685pt.
+ [5 <./Mesh1.png> <./Mesh2.png> <./Mesh3.png>]
+<Noprestress.png, id=154, 633.86812pt x 318.43968pt>
+File: Noprestress.png Graphic file (type png)
+<use Noprestress.png>
+Package pdftex.def Info: Noprestress.png  used on input line 202.
+(pdftex.def)             Requested size: 221.95676pt x 111.50414pt.
+<With_prestress.png, id=155, 633.86812pt x 318.43968pt>
+File: With_prestress.png Graphic file (type png)
+<use With_prestress.png>
+Package pdftex.def Info: With_prestress.png  used on input line 209.
+(pdftex.def)             Requested size: 221.95676pt x 111.50414pt.
+
+[6 <./Noprestress.png> <./With_prestress.png>]
+<bc_connection.png, id=170, 1541.76pt x 1027.84pt>
 File: bc_connection.png Graphic file (type png)
 <use bc_connection.png>
-Package pdftex.def Info: bc_connection.png  used on input line 195.
+Package pdftex.def Info: bc_connection.png  used on input line 235.
 (pdftex.def)             Requested size: 226.48395pt x 150.98558pt.
  [7 <./bc_connection.png (PNG copy)>] (main.bbl) [8] (main.aux)
  ***********
@@ -583,43 +617,41 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 53B4B0DB9CA52CC5FA5279A4AAFE8632;4039.
+(rerunfilecheck)             Checksum: 910ABCF022F6634BEAC5C8A59895C2F4;3605.
  ) 
 Here is how much of TeX's memory you used:
- 17733 strings out of 467871
- 344465 string characters out of 5418376
- 774696 words of memory out of 5000000
- 46405 multiletter control sequences out of 15000+600000
- 642991 words of font info for 72 fonts, out of 8000000 for 9000
+ 17772 strings out of 467871
+ 345245 string characters out of 5418376
+ 775002 words of memory out of 5000000
+ 46444 multiletter control sequences out of 15000+600000
+ 642656 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,88p,1003b,1042s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,88p,1184b,1042s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx
 0900.pk> <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecrm0800.pk> <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
 /dpi600\ecbx0800.pk> <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\tcrm1000.pk> <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\31945\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\31945\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\31945\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\31945\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\31945\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\
-31945\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/U
-sers/31945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.
-pfb><C:/Users/31945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmmi10.pfb><C:/Users/31945/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmmi7.pfb><C:/Users/31945/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmmi9.pfb><C:/Users/31945/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/31945/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/31945/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/31945/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/31945/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/3
-1945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on main.pdf (8 pages, 868110 bytes).
+pen/ec/dpi600\ecbx1200.pk> <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\31945\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\31945\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\31945\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\31945\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\31945\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/3
+1945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C
+:/Users/31945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb><C:/Users/31945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmmi9.pfb><C:/Users/31945/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmr10.pfb><C:/Users/31945/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmr7.pfb><C:/Users/31945/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/31945/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/31945/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/31945/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on main.pdf (8 pages, 1308640 bytes).
 PDF statistics:
- 621 PDF objects out of 1000 (max. 8388607)
- 38 named destinations out of 1000 (max. 500000)
- 10926 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 612 PDF objects out of 1000 (max. 8388607)
+ 39 named destinations out of 1000 (max. 500000)
+ 10428 words of extra memory for PDF output out of 12000 (max. 10000000)
 
