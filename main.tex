@@ -28,7 +28,7 @@
 \newpage
 \newpage
 \section{Deliverable 1: Geometry}
-The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}(a), points labelled \textit{R} define the roof profile and represent the mid-points of the roof section, while points labelled \textit{S} define the support system and lower restraint points. The reconstructed model was checked against the original drawing on both sides of the roof and the overall geometric deviation was approximately 0.5\%, which is sufficiently small for a simplified global FE model.
+The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}(a), points labelled \textit{R} define the roof profile and represent the mid-points of the roof section, while points labelled \textit{S} define the support system and lower restraint points. 
 
 The second diagram shows the FE idealisation adopted for analysis. In Figure~\ref{fig:geometry_overview}(b), green denotes beam elements used for the roof profile, red denotes the high tie modelled as a tie element, and blue denotes the support-tree members modelled as bar elements. In GSA, beam elements model axial, bending and torsional effects, bar elements provide axial stiffness only, and tie elements are axial-only elements with zero stiffness in compression. This makes beams suitable for the roof rafters, bars suitable for the tree members, and a tie suitable for the prestressed high tie. Both end supports were modelled as fixed supports, while the pin-connected members were treated consistently on both sides because the connected elements were assumed not to transfer bending moment. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
 
@@ -104,7 +104,7 @@ As the prestressed arch-and-tie behaviour is difficult to analyse by simple hand
 \end{figure}
 
 \subsection{Model Verification}
-Basic verification checks were also completed: the GSA solver ran without instability warnings, the vertical reactions balanced the applied gravity loads, the response remained symmetric under symmetric loading, and the deformed shape was physically consistent, with the arch crown moving downward and the ties remaining in axial tension.
+Basic verification checks were also completed: the GSA solver ran without instability warnings, the vertical reactions balanced the applied gravity loads. The reconstructed model was checked against the original drawing on both sides of the roof and the overall geometric deviation was approximately 0.5\%, which is sufficiently small for a simplified global FE model.
 
 \subsection{Model Adequacy}
 Taken together, the modelling assumptions, validation considerations and verification checks indicate that the global frame model is adequate for an initial study of the roof under symmetric vertical loading. However, it should still be understood as a simplified global model rather than a full representation of the three-dimensional structural behaviour.
@@ -215,7 +215,7 @@ Horizontal reaction at supports (kN) & 4211 & 3480 & $-17.4\%$ \\
 
 
 \subsection{Discussion of Results}
-Using the updated values in Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_bending}, the influence of prestress is clear from the direct comparison between the non-prestressed and prestressed models. Including prestress reduces the maximum vertical displacement from 490 mm to 175.3 mm, a reduction of 64.2\%. The centre-rafter bending moment falls from 9811 kNm to 198.2 kNm, which is a reduction of 98.0\%, while the tusk-to-arch connection bending moment reduces by 64.6\%. At the same time, the high-tie force rises from 4296 kN to 9320 kN, an increase of 116.9\%, and the horizontal support reaction reduces by 17.4\%. The structural behaviour therefore changes from a relatively bending-dominated frame response to a much more efficient arch-and-tie action once the high tie is activated. \textbf{COULD WRITE MORE? THIS JUST STATES TABLE VALUES}
+Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_bending} show the influence of prestress. Including prestress reduces the maximum vertical displacement from 490 mm to 175.3 mm, a reduction of 64.2\%. The centre-rafter bending moment falls from 9811 kNm to 198.2 kNm, which is a reduction of 98.0\%, while the tusk-to-arch connection bending moment reduces by 64.6\%. At the same time, the high-tie force rises from 4296 kN to 9320 kN, an increase of 116.9\%, and the horizontal support reaction reduces by 17.4\%. 
 
 \subsection{Implications for Design and Tolerance}
 These updated results show that the prestress assumption is critical to both design interpretation and construction tolerance assessment. If prestress is neglected, the model greatly overestimates vertical deflection and rafter bending, but significantly underestimates the tensile force that must be carried by the high tie, its anchorage system and the connected support nodes. In other words, the controlling design actions move away from flexural demand in the rafters and towards force transfer in the tie system once prestress is included.
