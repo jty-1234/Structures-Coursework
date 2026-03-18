@@ -176,12 +176,12 @@ Based on these results, Mesh 3 is adopted for the remainder of the report. Altho
 
 \begin{table}[H]
 \centering
-\small
-\setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.25}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.15}
 \caption{Simplified sensitivity of global response to high-tie prestress}
 \label{tab:prestress_comparison}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.41\textwidth} >{\centering\arraybackslash}p{0.16\textwidth} >{\centering\arraybackslash}p{0.16\textwidth} >{\centering\arraybackslash}X}
+\begin{tabularx}{0.95\textwidth}{>{\raggedright\arraybackslash}p{0.39\textwidth} >{\centering\arraybackslash}p{0.15\textwidth} >{\centering\arraybackslash}p{0.15\textwidth} >{\centering\arraybackslash}X}
 \toprule
 \textbf{Response Quantity} & \textbf{Prestress Neglected} & \textbf{Prestress Included} & \textbf{Change With Prestress} \\
 \midrule
@@ -196,31 +196,45 @@ Horizontal reaction at supports (kN) & 4211 & 3480 & $-17.4\%$ \\
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{0.49\textwidth}
+\begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\linewidth]{Noprestress.png}
 
-    \small Prestress Neglected
+    \small Bending moment: prestress neglected
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.49\textwidth}
+\begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\linewidth]{With_prestress.png}
 
-    \small Prestress Included
+    \small Bending moment: prestress included
 \end{minipage}
-\caption{Comparison of bending-moment response with and without high-tie prestress.}
-\label{fig:prestress_bending}
+
+\vspace{0.6em}
+
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Deformed_noprestress.png}
+
+    \small Deformed shape: prestress neglected
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Deformed_prestress.png}
+
+    \small Deformed shape: prestress included
+\end{minipage}
+\caption{Comparison of bending-moment and deformed-shape response with and without high-tie prestress.}
+\label{fig:prestress_response}
 \end{figure}
 
 
 \subsection{Discussion of Results}
-Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_bending} show the influence of prestress. Including prestress reduces the maximum vertical displacement from 490 mm to 175.3 mm, a reduction of 64.2\%. The centre-rafter bending moment falls from 9811 kNm to 198.2 kNm, which is a reduction of 98.0\%, while the tusk-to-arch connection bending moment reduces by 64.6\%. At the same time, the high-tie force rises from 4296 kN to 9320 kN, an increase of 116.9\%, and the horizontal support reaction reduces by 17.4\%. 
+Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_response} show that prestress changes the global response markedly. Without prestress, the central arch sags under gravity and the two tusks rotate upward to maintain continuity at the arch-tusk junctions. With prestress, the central arch retains a clearer curved profile, so the deformation pattern reverses and the tusks are pushed downward. This also helps explain why mesh refinement can change the sign of bending moment: if the arch is reduced to only a few straight segments, its curvature and stiffness are lost, and the model behaves more like the softer, unprestressed system.
 
 \subsection{Implications for Design and Tolerance}
-These updated results show that the prestress assumption is critical to both design interpretation and construction tolerance assessment. If prestress is neglected, the model greatly overestimates vertical deflection and rafter bending, but significantly underestimates the tensile force that must be carried by the high tie, its anchorage system and the connected support nodes. In other words, the controlling design actions move away from flexural demand in the rafters and towards force transfer in the tie system once prestress is included.
-
-This conclusion is consistent with the supplementary construction sequence, where paired cable stressing, preset geometry, monitoring during stressing, staged load transfer and a final adjustment after creep were all used to control the final geometry and force state. The real roof is therefore expected to behave much closer to the prestressed model than to the unprestressed one. For the remainder of this report, the prestressed model is adopted as the minimum realistic representation of the completed roof, while recognising that a full construction-stage model would still be required if residual locked-in stress or erection tolerances were themselves critical outputs.
+These results show that prestress is critical to design interpretation and tolerance assessment. If prestress is neglected, the model overestimates deflection and rafter bending but underestimates the tensile demand in the high tie and its anchorage. This is consistent with the supplementary construction sequence, where staged stressing was used to control geometry and force state, so the prestressed model is adopted as the minimum realistic representation of the completed roof.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
