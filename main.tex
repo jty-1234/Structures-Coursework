@@ -27,6 +27,303 @@
 \tableofcontents
 \newpage
 \newpage
+
+\section{Span calculation}
+\subsection{Required plastic moment for span \(AB\)}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Structural Coursework.png}
+    \caption{Enter Caption}
+    \label{fig:placeholder}
+\end{figure}
+Span \(AB = 10\,\text{m}\), with \(P = 1000\,\text{kN}\) acting at midspan.
+
+Let the end rotations be \(\theta\).
+
+Then the deflection at the load point is
+
+\[
+\delta = 5\theta
+\]
+
+The plastic hinge rotation at the load point is
+
+\[
+\theta + \theta = 2\theta
+\]
+
+The internal work is therefore
+
+\[
+W_i = M_{p,AB}(\theta + 2\theta + \theta)
+    = 4M_{p,AB}\theta
+\]
+
+The external work is
+
+\[
+W_e = 1000(5\theta) = 5000\theta
+\]
+
+Equating external and internal work,
+
+\[
+5000\theta = 4M_{p,AB}\theta
+\]
+
+Hence,
+
+\[
+M_{p,AB} = 1250\,\text{kNm}
+\]
+
+
+\subsection{Plastic analysis for span \(CD\)}
+
+\subsubsection*{Compatibility at the hinge}
+
+
+From compatibility,
+
+\[
+x\theta = (12-x)\phi
+\]
+
+so that
+
+\[
+\phi = \frac{x}{12-x}\theta
+\]
+
+\subsubsection*{External work}
+
+The deflected shape is triangular on each side, so
+
+\[
+W_e = w \times \text{area under deflection shape}
+\]
+
+Thus,
+
+\[
+W_e = 100\left(\frac{1}{2}\cdot 12 \cdot x\theta\right)
+    = 600x\theta
+\]
+
+\subsubsection*{Internal work}
+
+At \(C\), the hinge rotation is
+
+\[
+\theta
+\]
+
+At the positive hinge, the rotation is
+
+\[
+\theta + \phi
+= \theta + \frac{x}{12-x}\theta
+= \theta\left(\frac{12}{12-x}\right)
+\]
+
+Hence,
+
+\[
+W_i
+= M_{p,CD}\left[\theta + \theta\left(\frac{12}{12-x}\right)\right]
+= M_{p,CD}\theta\left(\frac{24-x}{12-x}\right)
+\]
+
+Equating external and internal work gives
+
+\[
+600x\theta
+=
+M_{p,CD}\theta\left(\frac{24-x}{12-x}\right)
+\]
+
+Therefore,
+
+\[
+M_{p,CD}
+=
+600x\left(\frac{12-x}{24-x}\right)
+\]
+
+
+\subsubsection*{Critical mechanism}
+
+To obtain the critical mechanism, maximize \(M_{p,CD}\) with respect to \(x\):
+
+\[
+\frac{dM_{p,CD}}{dx} = 0
+\]
+
+which gives
+
+\[
+x = 12(2-\sqrt{2}) = 7.03\,\text{m}
+\]
+
+Hence,
+
+\[
+M_{p,CD}
+=
+600(7.03)\left(\frac{12-7.03}{24-7.03}\right)
+\]
+
+Therefore,
+
+\[
+M_{p,CD} \approx 1235\,\text{kNm}
+\]
+
+\subsection{Plastic analysis of span \(BC\)}
+
+
+
+
+Assume that the end plastic moments are known as
+
+\[
+M_{AB}=1250\,\text{kNm}, 
+\qquad
+M_{CD}=1235\,\text{kNm}
+\]
+
+and that an additional plastic hinge forms within span \(BC\) under the applied load \(P=640\,\text{kN}\).
+
+The span length is
+
+\[
+BC = 4+6 = 10\,\text{m}
+\]
+
+with the point load located \(4\,\text{m}\) from support \(B\) and \(6\,\text{m}\) from support \(C\).
+
+\subsubsection*{Collapse mechanism}
+
+Let the rotation at end \(B\) be \(\theta_B\), and the rotation at end \(C\) be \(\theta_C\).
+
+Since the vertical displacement of the load point must be the same whether measured from the left or the right segment,
+
+\[
+4\theta_B = 6\theta_C
+\]
+
+Hence,
+
+\[
+\theta_C = \frac{4}{6}\theta_B = \frac{2}{3}\theta_B
+\]
+
+The vertical displacement of the load point is therefore
+
+\[
+\delta = 4\theta_B
+\]
+
+\subsubsection*{External work}
+
+The external work done by the applied load is
+
+\[
+W_e = P\delta = 640(4\theta_B)=2560\theta_B
+\]
+
+\subsubsection*{Internal work}
+
+Internal work is done at the three plastic hinges:
+
+\begin{itemize}
+    \item at \(B\): rotation \(=\theta_B\), moment \(=M_{AB}\)
+    \item at the internal hinge in span \(BC\): rotation \(=\theta_B+\theta_C\), moment \(=M_{BC}\)
+    \item at \(C\): rotation \(=\theta_C\), moment \(=M_{CD}\)
+\end{itemize}
+
+Thus,
+
+\[
+W_i = M_{AB}\theta_B + M_{BC}(\theta_B+\theta_C) + M_{CD}\theta_C
+\]
+
+Substituting the known values and \(\theta_C=\frac{2}{3}\theta_B\),
+
+\[
+W_i
+=
+1250\theta_B
++
+M_{BC}\left(\theta_B+\frac{2}{3}\theta_B\right)
++
+1235\left(\frac{2}{3}\theta_B\right)
+\]
+
+\[
+W_i
+=
+1250\theta_B
++
+\frac{5}{3}M_{BC}\theta_B
++
+823.33\theta_B
+\]
+
+\[
+W_i
+=
+\left(2073.33 + \frac{5}{3}M_{BC}\right)\theta_B
+\]
+
+\subsubsection*{Equating external and internal work}
+
+At collapse,
+
+\[
+W_e=W_i
+\]
+
+so
+
+\[
+2560\theta_B
+=
+\left(2073.33 + \frac{5}{3}M_{BC}\right)\theta_B
+\]
+
+Cancelling \(\theta_B\),
+
+\[
+2560 = 2073.33 + \frac{5}{3}M_{BC}
+\]
+
+\[
+\frac{5}{3}M_{BC} = 486.67
+\]
+
+\[
+M_{BC} = 486.67 \times \frac{3}{5}
+\]
+
+\[
+M_{BC} \approx 292\,\text{kNm}
+\]
+
+\subsubsection*{Result}
+
+Therefore, the required plastic moment capacity of the internal hinge in span \(BC\) is
+
+\[
+{M_{BC} \approx 292\,\text{kNm}}
+\]
+
+
+Based on the above result, the plastic moment required at the assumed internal hinge in span \(BC\) is lower than the corresponding plastic moment capacities associated with the end sections. If a single fully plastic moment capacity \(M_p\) is assumed for both sagging and hogging bending, this implies that the section in span \(BC\) would reach the fully plastic state earlier than the end sections \(B\) and \(C\). Consequently, the assumed three-hinge collapse mechanism is not kinematically admissible as the governing failure mechanism for the beam, because the plastic hinge in span \(BC\) would form before the other required hinges had fully developed. In other words, under the assumption that the positive and negative plastic moment capacities are equal, span \(BC\) would not sustain the assumed failure mechanism as drawn; instead, yielding would initiate there prematurely and the actual collapse mechanism would need to be reassessed on the basis of the weaker section controlling the plastic redistribution process.
+
+
 \section{Deliverable 1: Geometry}
 The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}(a), points labelled \textit{R} define the roof profile and represent the mid-points of the roof section, while points labelled \textit{S} define the support system and lower restraint points. 
 
