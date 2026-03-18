@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{article}
+ \documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[margin=1in]{geometry}
@@ -30,7 +30,7 @@
 \section{Deliverable 1: Geometry}
 The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}, points labelled \textit{R} define the roof profile and represent the mid-points of the roof section, while points labelled \textit{S} define the support system and lower restraint points. The reconstructed model was checked against the original drawing on both sides of the roof and the overall geometric deviation was approximately 0.5\%, which is acceptable for global FE modelling.
 
-The second diagram shows the FE idealisation adopted for analysis. In Figure~\ref{fig:geometry_overview}(b), green denotes beam elements used for the roof profile, red denotes the high tie modelled as a tie element, and blue denotes the support-tree members modelled as bar elements. In GSA, beam elements model axial, bending and torsional effects, bar elements provide axial stiffness only, and tie elements are axial-only elements with zero stiffness in compression. This makes beams suitable for the roof rafters, bars suitable for the tree members, and a tie suitable for the prestressed high tie. Both end supports were modelled as fixed supports, while the pin-connected members were treated consistently on both sides because the connected elements were assumed not to transfer bending moment. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
+The second diagram shows the FE idealisation adopted for analysis. In Figure~\ref{fig:geometry_overview}(b), green denotes beam elements used for the roof profile, red denotes the high tie modelled as a tie element, and blue denotes the support-tree members modelled as bar elements. In GSA, beam elements model axial, bending and torsional effects, bar elements provide axial stiffness only, and tie elements are axial-only elements with zero stiffness in compression. This makes beams suitable for the roof rafters, bars suitable for the tree members, and a tie suitable for the prestressed high tie. The real high tie consists of twin locked-coil strands, but in the 2D global model these were idealised as one single tie element with the same total cross-sectional area. Both end supports were modelled as fixed supports, while the pin-connected members were treated consistently on both sides because the connected elements were assumed not to transfer bending moment. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
 
 \begin{figure}[H]
 \centering
@@ -51,14 +51,14 @@ The second diagram shows the FE idealisation adopted for analysis. In Figure~\re
 \section{Deliverable 2: Material, Section, and Loading Data }
 \subsection{Material and Section Properties and Loading Data}
 
-The global FE model was defined using linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal}. A Poisson's ratio of 0.30 and density of \SI{7850}{\kilogram\per\metre\cubed} were adopted so that self-weight could be included automatically in GSA. S355 steel was used for the primary roof members, which is consistent with the Heathrow T5 project information. The high tie was modelled as a prestressed tie element with an initial prestress of \SI{450}{\mega\pascal}.
+The global FE model was defined using linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal}. A Poisson's ratio of 0.30 and density of \SI{7850}{\kilogram\per\metre\cubed} were adopted so that self-weight could be included automatically in GSA. S355 steel was used for the primary roof members, which is consistent with the Heathrow T5 project information. The twin high-tie strands were modelled as a single prestressed tie element with the same total cross-sectional area and an initial prestress of \SI{450}{\mega\pascal}.
 
 Only vertical symmetric loading was considered. The characteristic permanent roof load was taken as the sum of the aluminium standing seam roof (\SI{0.10}{\kilo\pascal}), structural deck (\SI{0.15}{\kilo\pascal}), insulation/acoustic layers (\SI{0.40}{\kilo\pascal}) and the service allowance (\SI{0.15}{\kilo\pascal}), giving $G_k = \SI{0.80}{\kilo\pascal}$. The live load imposed on the roof was taken as $Q_k = \SI{0.60}{\kilo\pascal}$. The governing vertical ultimate limit state (ULS) combination used in the model was
 \begin{equation}
 1.35G_k + 1.5Q_k
 \label{eq:uls_vertical_combination}
 \end{equation}
-Here, $G_k$ was retained as a non-projected permanent roof load, while $Q_k$ was treated as a projected vertical load on the horizontal plan area, consistent with common roof-loading practice and with the projected-area basis commonly used for roof snow loading in Eurocode 1 \cite{bsen_snow}. Using a projected tributary width of \SI{36}{\metre} for one transverse frame, the live-load contribution is therefore \SI{21.6}{\kilo\newton\per\metre}, while the permanent roof load was kept as a separate dead-load action in addition to the self-weight of the primary members.
+Here, $G_k$ and $Q_k$ were converted to line loads using the projected tributary width carried by one transverse frame. The supplementary roof information states that the main rafters and associated tie-rods are spaced at \SI{18}{\metre} centres, so a tributary width of \SI{18}{\metre} was adopted for the 2D frame idealisation. On this basis, the superimposed permanent roof load is \SI{14.4}{\kilo\newton\per\metre} $(0.80 \times 18)$ and the imposed live load is \SI{10.8}{\kilo\newton\per\metre} $(0.60 \times 18)$, with member self-weight still included separately through the material density. This projected-area treatment is consistent with common roof-loading practice and with the basis commonly used for roof snow loading in Eurocode 1 \cite{bsen_snow}.
 
 The strap members were modelled as bar elements. Therefore, only their axial stiffness was represented in the global model, using an equivalent steel area of $A = 2 \times 500 \times 40 = \SI{40000}{\milli\metre\squared}$. The spacing between the two plates was neglected in this idealisation because the bar elements do not carry bending.
 
@@ -76,7 +76,7 @@ Tusk rafter & Welded I-section, \SI{50}{\milli\metre} plate thickness & Overall 
 Legs and arms & Circular Hollow Section (CHS) \SI{914}{\milli\metre} $\times$ \SI{40}{\milli\metre} & Taken directly from the supplementary sketch \\
 Wings & CHS \SI{711}{\milli\metre} $\times$ \SI{50}{\milli\metre} & Taken directly from the supplementary sketch \\
 Internal/external ties & CHS \SI{457}{\milli\metre} $\times$ \SI{40}{\milli\metre} & Thickness not stated in the source, so \SI{40}{\milli\metre} was assumed \\
-High tie & Twin locked-coil strands, $2 \times \SI{115}{\milli\metre}$ & Prestressed to \SI{450}{\mega\pascal} \\
+High tie & Twin locked-coil strands, $2 \times \SI{115}{\milli\metre}$ & Modelled as one equivalent tie element with the same total cross-sectional area; prestressed to \SI{450}{\mega\pascal} \\
 Straps & Equivalent rod area \SI{40000}{\milli\metre\squared} & Based on two \SI{500}{\milli\metre} $\times$ \SI{40}{\milli\metre} plates; bending stiffness neglected \\
 \bottomrule
 \end{tabular}
@@ -84,7 +84,7 @@ Straps & Equivalent rod area \SI{40000}{\milli\metre\squared} & Based on two \SI
 
 \subsection{Assumptions}
 
-The assumptions made were the use of a linear-elastic S355 steel model, uniform wall thicknesses where indicated, a \SI{36}{\metre} tributary width for each transverse frame, automatic inclusion of self-weight through the material density, axial-only idealisation of the support-tree members, and a prestressed tie-element idealisation for the high tie.
+The assumptions made were the use of a linear-elastic S355 steel model, uniform wall thicknesses where indicated, a projected tributary width of \SI{18}{\metre} for each transverse frame, automatic inclusion of self-weight through the material density, axial-only idealisation of the support-tree members, and a prestressed tie-element idealisation for the high tie.
 
 
 \newpage
@@ -112,30 +112,24 @@ Taken together, the modelling assumptions, validation considerations and verific
 \section{Deliverable 4: Mesh Refinement Sensitivity Study}
 
 \subsection{Introduction to Discretisation Error}
-Finite element analysis provides an approximation, not the exact analytical solution. When dividing a continuous structure into finite elements, discretisation error is introduced from two main sources: element behaviour error (dependent on the chosen shape functions) and mesh density error (dependent on element sizing). Mesh refinement evaluates whether this approximation is acceptable by increasing the degrees of freedom (DoF) until the results converge. To isolate the mesh density error without distorting the global physical behaviour, refinement was strictly limited to the continuous curve of the arch rafter. Based on St-Venant's principle, the detailed stress distribution near load applications or complex joints only matters locally. Refining the complex intersections at the tusk rafters, legs, and high ties could artificially induce stress singularities due to idealised geometry (such as re-entrant corners), which do not converge. Therefore, those boundary members remained constant while the arch was discretised into varying densities.
+Finite element analysis provides an approximate solution, so the discretisation adopted for the curved arch rafter must be checked before the results are used for interpretation. In this model, the arch is represented by straight beam elements between nodes; if too few elements are used, the idealised geometry no longer matches the true curvature and the predicted stiffness and internal force distribution can change significantly. To isolate this effect, refinement was applied only to the arch rafter, while the tusk rafter, support tree and high tie were kept unchanged. This ensures that the observed variation is caused by the arch mesh itself rather than by changing support conditions or joint modelling elsewhere in the frame.
 
 \subsection{Convergence Study Methodology}
-Following standard FEA procedures, the convergence study was conducted as follows:
-
-To evaluate convergence, it is necessary to check global quantities away from boundary singularities. Maximum vertical crown deflection ($\delta_z$) and maximum arch bending moment ($M_y$) were selected. Peak local stresses were ignored as they are highly dependent on constraint application and may not converge.
-
-Three mesh densities were evaluated to test the sensitivity of the global response to geometric discretisation. Mesh 1 (coarsest) used a highly simplified faceted geometry that merged multiple coordinate segments, Mesh 2 (coarse) used a partially merged geometry, and Mesh 3 (baseline) retained the exact original coordinate nodes defined in the project data.
-
-The results for the critical ULS vertical load combination ($1.35G_k + 1.5Q_k + 1.0P_s$) are tabulated below.
+Three mesh densities were evaluated under the governing ULS vertical load combination ($1.35G_k + 1.5Q_k + 1.0P_s$). Mesh 1 is the coarsest faceted representation of the arch, Mesh 2 retains more intermediate points, and Mesh 3 preserves the full coordinate set taken from the supplementary geometry and is used as the reference model. To judge convergence, one displacement quantity and two force quantities were tracked: arch central deflection, high-tie axial force and arch central bending moment. These parameters give a useful picture of both overall stiffness and the redistribution of internal action as the curved geometry is refined.
 
 \begin{table}[H]
 \centering
 \footnotesize
 \setlength{\tabcolsep}{5pt}
 \renewcommand{\arraystretch}{1.35}
-\caption{Effect of mesh density and model size on key responses}
+\caption{Influence of arch mesh density on key global responses}
 \label{tab:mesh_sensitivity}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{0.13\textwidth} >{\centering\arraybackslash}p{0.08\textwidth} >{\centering\arraybackslash}p{0.13\textwidth} >{\centering\arraybackslash}p{0.15\textwidth} >{\centering\arraybackslash}p{0.16\textwidth} >{\centering\arraybackslash}p{0.12\textwidth}}
 \toprule
-\textbf{Mesh} & \textbf{Arch elements} & \textbf{DoF} & \textbf{Arch central Deflection (mm)} & \textbf{Tie Axial force (kN)} & \textbf{Arch central Bending moment (kNm)} & \textbf{\% change vs Mesh 3} \\
+\textbf{Mesh} & \textbf{Arch elements} & \textbf{DoF} & \textbf{Arch central Deflection (mm)} & \textbf{Tie Axial force (kN)} & \textbf{Arch central Bending moment (kNm)} & \textbf{\% deflection change vs Mesh 3} \\
 \midrule
-Mesh 1 & 14 & 53 & 241.2 & 9725 & 12760 & 21.3\% \\
-Mesh 2 & 16 & 59 & 175.7 & 9309 & 960.2 & 1.1\% \\
+Mesh 1 & 14 & 53 & 241.2 & 9725 & 12760 & 37.6\% \\
+Mesh 2 & 16 & 59 & 175.7 & 9309 & 960.2 & 0.2\% \\
 Mesh 3 & 22 & 77 & 175.3 & 9320 & 198.2 & 0.0\% \\
 \bottomrule
 \end{tabularx}
@@ -146,15 +140,17 @@ A solution is considered converged when further refinement causes negligible cha
     \frac{|\delta_{n} - \delta_{n-1}|}{\delta_{n}} < 2\%
 \end{equation}
 
-As demonstrated in Table \ref{tab:mesh_sensitivity}, transitioning from the coarsest faceted model to the baseline geometry produced a noticeable change in both deflection and internal force, showing that the coarser meshes artificially stiffened the arch. Using Mesh 3 as the baseline, Mesh 1 differs by 21.3\% in crown deflection whereas Mesh 2 differs by only 1.1\%, indicating that the solution is approaching convergence.
+Table \ref{tab:mesh_sensitivity} shows that the coarse arch discretisation significantly distorts the response. Using Mesh 3 as the baseline, Mesh 1 overestimates the arch central deflection by 37.6\%, the high-tie force by 4.3\% and the arch central bending moment by 6337.9\%. Mesh 2 brings the deflection error down to only 0.2\% and the tie-force difference to 0.1\%, but the central bending moment is still 384.5\% higher than in Mesh 3. This indicates that the global load path is already close to convergence by Mesh 2, whereas the bending response at the centre of the arch remains highly sensitive to how the curvature is represented. The very large percentage differences in bending moment are amplified by the small reference value in Mesh 3 (\SI{198.2}{\kilo\newton\metre}), but they still show that a coarse geometric idealisation is not acceptable if bending results are to be used with confidence.
 
 \subsection{Conclusion}
-Based on the achieved convergence, Mesh 3 is deemed structurally sufficient. It provides an accurate global approximation without the unnecessary computational expense of higher-order refinement, and has been adopted for the remainder of this report.
+Based on these results, Mesh 3 is adopted for the remainder of the report. Although Mesh 2 is already adequate for deflection and tie force, only Mesh 3 captures the arch curvature accurately enough to stabilise the central bending moment, which is an important response quantity for interpreting the behaviour of the roof frame.
 
 \newpage
 \section{Deliverable 5: Influence of Prestressing Assumptions }
 \subsection{Aim and Comparison Basis}
-The brief requires a comparison between the coursework simplification, in which high-tie prestress is applied after complete erection, and the construction process described in the supplementary documentation, where the centre arch was assembled and prestressed at low level before lifting and staged load transfer. A full staged-construction analysis was not undertaken here; instead, two simplified bounding models were compared, one with prestress neglected and one with the prescribed \SI{450}{\mega\pascal} prestress included. This gives a practical indication of how sensitive the global response is to activation of the tie.
+The coursework brief asks for a comparison between the simplified assumption that prestress is applied after full erection and the actual Heathrow T5 construction sequence described in the supplementary paper. The paper states that the centre arch was assembled and prestressed at low level, the rafters were lifted clear of the temporary supports during stressing, the cable force was adjusted after a short period to account for creep, and the roof was then lifted and subjected to staged load transfer. The completed structure therefore reached its final position with locked-in forces already present.
+
+Full staged-construction modelling was not carried out here. Instead, two simplified bounding models were compared using the same geometry, mesh density and vertical loading: one with prestress neglected and one with the prescribed \SI{450}{\mega\pascal} prestress included. This gives a clear indication of how sensitive the final global response is to activation of the high tie.
 
 \subsection{Quantitative Comparison}
 
@@ -169,23 +165,23 @@ The brief requires a comparison between the coursework simplification, in which 
 \toprule
 \textbf{Response quantity} & \textbf{Prestress neglected} & \textbf{Prestress included} & \textbf{Change with prestress} \\
 \midrule
-Maximum vertical displacement (mm) & 490 & 175.3 & $-41.2\%$ \\
-Centre rafter bending moment (kNm) & 9811 & 198.2 & $-61.5\%$ \\
-Tusk-to-arch connection bending moment (kNm) & 16490 & 5837 & $-84.2\%$ \\
-High tie force (kN) & 4296 & 9320 & $+74.6\%$ \\
-Horizontal reaction at supports (kN) & 4211 & 3480 & $-11.4\%$ \\
+Maximum vertical displacement (mm) & 490 & 175.3 & $-64.2\%$ \\
+Centre rafter bending moment (kNm) & 9811 & 198.2 & $-98.0\%$ \\
+Tusk-to-arch connection bending moment (kNm) & 16490 & 5837 & $-64.6\%$ \\
+High tie force (kN) & 4296 & 9320 & $+116.9\%$ \\
+Horizontal reaction at supports (kN) & 4211 & 3480 & $-17.4\%$ \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 
 \subsection{Discussion of Results}
-Table \ref{tab:prestress_comparison} shows that including prestress reduces the maximum vertical displacement from 764.1 mm to 449.4 mm, a reduction of 41.2\%. It also reduces the centre-rafter bending moment by 61.5\% and the tusk-to-arch connection bending moment by 84.2\%, while the maximum axial force in the arch falls by 54.3\% and the horizontal reaction at the supports falls by 11.4\%. By contrast, the high-tie force increases by 74.6\%. The overall response therefore shifts away from bending-dominated action and toward a more efficient arch-and-tie force path once the tie is activated. Since the real roof was prestressed before final lifting and load transfer, its behaviour is expected to lie closer to the prestressed case, although the present models do not capture the locked-in effects of incremental stressing, creep adjustment and staged load transfer.
+Using the updated values in Table \ref{tab:prestress_comparison}, the influence of prestress is much stronger than in the earlier model. Including prestress reduces the maximum vertical displacement from 490 mm to 175.3 mm, a reduction of 64.2\%. The centre-rafter bending moment falls from 9811 kNm to 198.2 kNm, which is a reduction of 98.0\%, while the tusk-to-arch connection bending moment reduces by 64.6\%. At the same time, the high-tie force rises from 4296 kN to 9320 kN, an increase of 116.9\%, and the horizontal support reaction reduces by 17.4\%. The structural behaviour therefore changes from a relatively bending-dominated frame response to a much more efficient arch-and-tie action once the high tie is activated.
 
 \subsection{Implications for Design and Tolerance}
-The updated results show that the predicted design actions in the rafters, high tie and supports are highly sensitive to the prestress assumption. Neglecting prestress would substantially overestimate both global deflection and bending demand in the roof members, especially at the tusk-to-arch connection, while at the same time underestimating the tensile demand that must be resisted by the high tie, its anchorage and the adjoining support nodes. From a design perspective, prestress therefore changes not only the magnitude of the response but also which checks become critical: bending-dominated regions become less severe, whereas tie force and connection demand become more significant.
+These updated results show that the prestress assumption is critical to both design interpretation and construction tolerance assessment. If prestress is neglected, the model greatly overestimates vertical deflection and rafter bending, but significantly underestimates the tensile force that must be carried by the high tie, its anchorage system and the connected support nodes. In other words, the controlling design actions move away from flexural demand in the rafters and towards force transfer in the tie system once prestress is included.
 
-The supplementary paper also shows that tolerance was controlled through paired cable stressing, geometry monitoring, preset positioning, staged load transfer and final tension adjustment after creep. This indicates that final geometry and final force state are linked: deviations in fit-up, support position or closure of interfaces during erection can change how load is redistributed and therefore alter the locked-in forces present in the completed roof. For the remainder of the report, the prestressed model is therefore adopted as the minimum realistic representation of the roof, while recognising that explicit staged construction would be required to quantify locked-in stresses and erection tolerances more accurately. Overall, the comparison confirms that the real roof is much better represented by a prestressed global model than by an unprestressed frame model.
+This conclusion is consistent with the supplementary construction sequence, where paired cable stressing, preset geometry, monitoring during stressing, staged load transfer and a final adjustment after creep were all used to control the final geometry and force state. The real roof is therefore expected to behave much closer to the prestressed model than to the unprestressed one. For the remainder of this report, the prestressed model is adopted as the minimum realistic representation of the completed roof, while recognising that a full construction-stage model would still be required if residual locked-in stress or erection tolerances were themselves critical outputs.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
