@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  20 MAR 2026 17:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  20 MAR 2026 18:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -432,11 +432,7 @@ h' as default language. on input line 23.
 tex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
-) (main.aux
-
-LaTeX Warning: Label `fig:placeholder' multiply defined.
-
-)
+) (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -563,7 +559,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 32.
 
-<Structural Coursework.png, id=115, 470.9595pt x 503.40572pt>
+<Structural Coursework.png, id=110, 470.9595pt x 503.40572pt>
 File: Structural Coursework.png Graphic file (type png)
 <use Structural Coursework.png>
 Package pdftex.def Info: Structural Coursework.png  used on input line 37.
@@ -578,13 +574,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 162.
 
 [3] [4] [5]
-<Weixin Image_20260315183303.png, id=155, 992.20688pt x 358.33875pt>
+<Weixin Image_20260315183303.png, id=150, 992.20688pt x 358.33875pt>
 File: Weixin Image_20260315183303.png Graphic file (type png)
 <use Weixin Image_20260315183303.png>
 Package pdftex.def Info: Weixin Image_20260315183303.png  used on input line 28
 7.
 (pdftex.def)             Requested size: 407.66833pt x 143.4112pt.
-<element tyep.png, id=157, 571.38469pt x 150.5625pt>
+<element tyep.png, id=152, 571.38469pt x 150.5625pt>
 File: element tyep.png Graphic file (type png)
 <use element tyep.png>
 Package pdftex.def Info: element tyep.png  used on input line 292.
@@ -595,55 +591,55 @@ Overfull \hbox (8.82301pt too wide) in paragraph at lines 322--334
  []
 
 [7]
-<validation.png, id=180, 638.00859pt x 340.64766pt>
+<validation.png, id=175, 638.00859pt x 340.64766pt>
 File: validation.png Graphic file (type png)
 <use validation.png>
-Package pdftex.def Info: validation.png  used on input line 348.
-(pdftex.def)             Requested size: 353.31439pt x 188.64066pt.
+Package pdftex.def Info: validation.png  used on input line 350.
+(pdftex.def)             Requested size: 317.07614pt x 169.29422pt.
  [8 <./validation.png>]
-<Mesh1.png, id=187, 630.85687pt x 318.43968pt>
+<Mesh1.png, id=182, 630.85687pt x 318.43968pt>
 File: Mesh1.png Graphic file (type png)
 <use Mesh1.png>
-Package pdftex.def Info: Mesh1.png  used on input line 387.
+Package pdftex.def Info: Mesh1.png  used on input line 386.
 (pdftex.def)             Requested size: 144.95303pt x 73.1667pt.
-<Mesh2.png, id=188, 633.86812pt x 318.43968pt>
+<Mesh2.png, id=183, 633.86812pt x 318.43968pt>
 File: Mesh2.png Graphic file (type png)
 <use Mesh2.png>
-Package pdftex.def Info: Mesh2.png  used on input line 394.
+Package pdftex.def Info: Mesh2.png  used on input line 393.
 (pdftex.def)             Requested size: 144.95303pt x 72.81685pt.
-<Mesh3.png, id=189, 633.86812pt x 318.43968pt>
+<Mesh3.png, id=184, 633.86812pt x 318.43968pt>
 File: Mesh3.png Graphic file (type png)
 <use Mesh3.png>
-Package pdftex.def Info: Mesh3.png  used on input line 401.
+Package pdftex.def Info: Mesh3.png  used on input line 400.
 (pdftex.def)             Requested size: 144.95303pt x 72.81685pt.
  [9 <./Mesh1.png> <./Mesh2.png> <./Mesh3.png>]
-<Noprestress.png, id=203, 633.86812pt x 318.43968pt>
+<Noprestress.png, id=198, 633.86812pt x 318.43968pt>
 File: Noprestress.png Graphic file (type png)
 <use Noprestress.png>
-Package pdftex.def Info: Noprestress.png  used on input line 443.
+Package pdftex.def Info: Noprestress.png  used on input line 442.
 (pdftex.def)             Requested size: 217.42265pt x 109.22528pt.
-<With_prestress.png, id=204, 633.86812pt x 318.43968pt>
+<With_prestress.png, id=199, 633.86812pt x 318.43968pt>
 File: With_prestress.png Graphic file (type png)
 <use With_prestress.png>
-Package pdftex.def Info: With_prestress.png  used on input line 450.
+Package pdftex.def Info: With_prestress.png  used on input line 449.
 (pdftex.def)             Requested size: 217.42265pt x 109.22528pt.
-<Deformed_noprestress.png, id=205, 633.86812pt x 318.43968pt>
+<Deformed_noprestress.png, id=200, 633.86812pt x 318.43968pt>
 File: Deformed_noprestress.png Graphic file (type png)
 <use Deformed_noprestress.png>
-Package pdftex.def Info: Deformed_noprestress.png  used on input line 459.
+Package pdftex.def Info: Deformed_noprestress.png  used on input line 458.
 (pdftex.def)             Requested size: 217.42265pt x 109.22528pt.
-<Deformed_prestress.png, id=206, 633.86812pt x 318.43968pt>
+<Deformed_prestress.png, id=201, 633.86812pt x 318.43968pt>
 File: Deformed_prestress.png Graphic file (type png)
 <use Deformed_prestress.png>
-Package pdftex.def Info: Deformed_prestress.png  used on input line 466.
+Package pdftex.def Info: Deformed_prestress.png  used on input line 465.
 (pdftex.def)             Requested size: 217.42265pt x 109.22528pt.
 
 [10 <./Noprestress.png> <./With_prestress.png> <./Deformed_noprestress.png> <./
 Deformed_prestress.png>]
-<bc_connection.png, id=223, 1541.76pt x 1027.84pt>
+<bc_connection.png, id=218, 1541.76pt x 1027.84pt>
 File: bc_connection.png Graphic file (type png)
 <use bc_connection.png>
-Package pdftex.def Info: bc_connection.png  used on input line 490.
+Package pdftex.def Info: bc_connection.png  used on input line 489.
 (pdftex.def)             Requested size: 317.07614pt x 211.38295pt.
  [11 <./bc_connection.png (PNG copy)>] (main.bbl
 Package microtype Info: Loading generic protrusion settings for font family
@@ -656,17 +652,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2C3E698D057FD80478C78E7537827165;4282.
+(rerunfilecheck)             Checksum: F24011F69E73C8B2CED33C0806719950;4131.
  ) 
 Here is how much of TeX's memory you used:
- 17834 strings out of 467871
- 346511 string characters out of 5418376
- 773129 words of memory out of 5000000
+ 17833 strings out of 467871
+ 346502 string characters out of 5418376
+ 773156 words of memory out of 5000000
  46486 multiletter control sequences out of 15000+600000
  644062 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -697,9 +689,9 @@ Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/
 31945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C
 :/Users/31945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
 8.pfb>
-Output written on main.pdf (12 pages, 1987379 bytes).
+Output written on main.pdf (12 pages, 1987125 bytes).
 PDF statistics:
- 728 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
- 12003 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 722 PDF objects out of 1000 (max. 8388607)
+ 55 named destinations out of 1000 (max. 500000)
+ 11995 words of extra memory for PDF output out of 12000 (max. 10000000)
 

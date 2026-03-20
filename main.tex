@@ -36,7 +36,7 @@
     \centering
     \includegraphics[width=0.6\linewidth]{Structural Coursework.png}
     \caption{The three sections of the whole span}
-    \label{fig:placeholder}
+    \label{fig:span_sections}
 \end{figure}
 Span \(AB = 10\,\text{m}\), with \(P = 1000\,\text{kN}\) acting at midspan.
 Let the end rotations be \(\theta\).
@@ -343,18 +343,17 @@ The validation assumes a 2D in-plane frame subjected to vertical symmetric loadi
 \subsection{Model Validation}
 As the prestressed arch-and-tie behaviour is difficult to analyse by simple hand calculations, the initial validation was carried out on the non-prestressed model and focused on the bending moment at the tusk-to-arch connection. The loaded tusk was idealised as a \SI{25}{\metre} cantilever under the equivalent ULS line load $w = 1.35 \times 14.4 + 1.5 \times 10.8 = \SI{35.64}{\kilo\newton\per\metre}$, giving a support moment $M = wL^2/2 \approx \SI{11125}{\kilo\newton\metre}$, as shown in Figure~\ref{fig:validation_handcalc}. The corresponding FE result is about \SI{16490}{\kilo\newton\metre}, so the model predicts the correct order of magnitude for this key bending action. The difference is expected because the hand check neglects the stiffness of the curved arch, frame interaction between both sides of the roof, and the more complex redistribution captured by the FE model.
 
+An additional source of modelling error was observed at the high-tie connection. The FE model predicts a relatively large vertical deformation there, even though the vertical nodal force associated with the high tie is small compared with the forces transferred by the surrounding members. Using the largest adjacent vertical force from the connection check, the high-tie vertical force is only about $114.6/5901 \approx 1.9\%$ of the neighbouring member force. This suggests that the large vertical movement is more likely to arise from compatibility within the simplified 2D global model and the axial-only idealisation of the tie than from a large vertical load carried by the high tie itself.
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.78\textwidth]{validation.png}
+\includegraphics[width=0.70\textwidth]{validation.png}
 \caption{Hand validation of the tusk-to-arch connection bending moment.}
 \label{fig:validation_handcalc}
 \end{figure}
 
-\subsection{Model Verification}
-Basic verification checks were also completed: the GSA solver ran without instability warnings and the vertical reactions balanced the applied gravity loads. The reconstructed model was checked against the original drawing on both sides of the roof and the overall geometric deviation was approximately 0.5\%, which is sufficiently small for a simplified global FE model.
-
 \subsection{Model Adequacy}
-Taken together, the modelling assumptions, validation considerations and verification checks indicate that the global frame model is adequate for an initial study of the roof under symmetric vertical loading. However, it should still be understood as a simplified global model rather than a full representation of the three-dimensional structural behaviour.
+Basic verification checks were also completed: the GSA solver ran without instability warnings, the vertical reactions balanced the applied gravity loads, and the reconstructed model matched the original drawing on both sides with an overall geometric deviation of approximately 0.5\%. Taken together, the modelling assumptions, validation considerations and verification checks indicate that the global frame model is adequate for an initial study of the roof under symmetric vertical loading. However, it should still be understood as a simplified global model rather than a full representation of the three-dimensional structural behaviour.
 
 \newpage
 \section{Deliverable 4: Mesh Refinement Sensitivity Study}
@@ -489,7 +488,7 @@ The local model should include a short length of member on each side of the spli
 \centering
 \includegraphics[width=0.7\linewidth]{bc_connection.png}
 \caption{Recommended boundary conditions for the local splice model}
-\label{fig:placeholder}
+\label{fig:bc_connection}
 \end{figure}
 
 The preferred boundary condition is to impose the displacement and rotation components extracted from the global beam model at the two cut faces of the local model. In practice, each cut face can be coupled to a reference node so that the sectional deformation remains compatible with the global model. The six kinematic quantities imposed at each end are the three translations ($u_x$, $u_y$, $u_z$) and the three rotations ($r_x$, $r_y$, $r_z$). This approach is preferable to simply fixing one end, because it reproduces the actual deformation state of the connection and avoids introducing artificial restraint moments.
