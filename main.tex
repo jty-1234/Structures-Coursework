@@ -16,7 +16,7 @@
 \definecolor{myblue}{RGB}{0,162,232}
 \captionsetup{labelfont={color=myblue}}
 
-\title{\textbf{Structures}}
+\title{\textbf{Structures Coursework}}
 \author{Group 8}
 \date{\today}
 
@@ -35,44 +35,37 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{Structural Coursework.png}
-    \caption{Enter Caption}
+    \caption{The three sections of the whole span}
     \label{fig:placeholder}
 \end{figure}
 Span \(AB = 10\,\text{m}\), with \(P = 1000\,\text{kN}\) acting at midspan.
-
 Let the end rotations be \(\theta\).
-
 Then the deflection at the load point is
 
 \[
 \delta = 5\theta
 \]
-
 The plastic hinge rotation at the load point is
 
 \[
 \theta + \theta = 2\theta
 \]
-
 The internal work is therefore
 
 \[
 W_i = M_{p,AB}(\theta + 2\theta + \theta)
     = 4M_{p,AB}\theta
 \]
-
 The external work is
 
 \[
 W_e = 1000(5\theta) = 5000\theta
 \]
-
 Equating external and internal work,
 
 \[
 5000\theta = 4M_{p,AB}\theta
 \]
-
 Hence,
 
 \[
@@ -86,40 +79,32 @@ M_{p,AB} = 1250\,\text{kNm}
 
 
 From compatibility,
-
 \[
 x\theta = (12-x)\phi
 \]
-
 so that
-
 \[
 \phi = \frac{x}{12-x}\theta
 \]
 
 \subsubsection*{External work}
-
 The deflected shape is triangular on each side, so
 
 \[
 W_e = w \times \text{area under deflection shape}
 \]
-
 Thus,
 
 \[
 W_e = 100\left(\frac{1}{2}\cdot 12 \cdot x\theta\right)
     = 600x\theta
 \]
-
 \subsubsection*{Internal work}
-
 At \(C\), the hinge rotation is
 
 \[
 \theta
 \]
-
 At the positive hinge, the rotation is
 
 \[
@@ -127,7 +112,6 @@ At the positive hinge, the rotation is
 = \theta + \frac{x}{12-x}\theta
 = \theta\left(\frac{12}{12-x}\right)
 \]
-
 Hence,
 
 \[
@@ -135,7 +119,6 @@ W_i
 = M_{p,CD}\left[\theta + \theta\left(\frac{12}{12-x}\right)\right]
 = M_{p,CD}\theta\left(\frac{24-x}{12-x}\right)
 \]
-
 Equating external and internal work gives
 
 \[
@@ -143,7 +126,6 @@ Equating external and internal work gives
 =
 M_{p,CD}\theta\left(\frac{24-x}{12-x}\right)
 \]
-
 Therefore,
 
 \[
@@ -154,19 +136,16 @@ M_{p,CD}
 
 
 \subsubsection*{Critical mechanism}
-
 To obtain the critical mechanism, maximize \(M_{p,CD}\) with respect to \(x\):
 
 \[
 \frac{dM_{p,CD}}{dx} = 0
 \]
-
 which gives
 
 \[
 x = 12(2-\sqrt{2}) = 7.03\,\text{m}
 \]
-
 Hence,
 
 \[
@@ -174,7 +153,6 @@ M_{p,CD}
 =
 600(7.03)\left(\frac{12-7.03}{24-7.03}\right)
 \]
-
 Therefore,
 
 \[
@@ -182,44 +160,30 @@ M_{p,CD} \approx 1235\,\text{kNm}
 \]
 
 \subsection{Plastic analysis of span \(BC\)}
-
-
-
-
 Assume that the end plastic moments are known as
-
 \[
 M_{AB}=1250\,\text{kNm}, 
 \qquad
 M_{CD}=1235\,\text{kNm}
 \]
-
 and that an additional plastic hinge forms within span \(BC\) under the applied load \(P=640\,\text{kN}\).
-
 The span length is
-
 \[
 BC = 4+6 = 10\,\text{m}
 \]
-
 with the point load located \(4\,\text{m}\) from support \(B\) and \(6\,\text{m}\) from support \(C\).
 
 \subsubsection*{Collapse mechanism}
-
 Let the rotation at end \(B\) be \(\theta_B\), and the rotation at end \(C\) be \(\theta_C\).
-
 Since the vertical displacement of the load point must be the same whether measured from the left or the right segment,
 
 \[
 4\theta_B = 6\theta_C
 \]
-
 Hence,
-
 \[
 \theta_C = \frac{4}{6}\theta_B = \frac{2}{3}\theta_B
 \]
-
 The vertical displacement of the load point is therefore
 
 \[
@@ -227,7 +191,6 @@ The vertical displacement of the load point is therefore
 \]
 
 \subsubsection*{External work}
-
 The external work done by the applied load is
 
 \[
@@ -235,23 +198,17 @@ W_e = P\delta = 640(4\theta_B)=2560\theta_B
 \]
 
 \subsubsection*{Internal work}
-
 Internal work is done at the three plastic hinges:
-
 \begin{itemize}
     \item at \(B\): rotation \(=\theta_B\), moment \(=M_{AB}\)
     \item at the internal hinge in span \(BC\): rotation \(=\theta_B+\theta_C\), moment \(=M_{BC}\)
     \item at \(C\): rotation \(=\theta_C\), moment \(=M_{CD}\)
 \end{itemize}
-
 Thus,
-
 \[
 W_i = M_{AB}\theta_B + M_{BC}(\theta_B+\theta_C) + M_{CD}\theta_C
 \]
-
 Substituting the known values and \(\theta_C=\frac{2}{3}\theta_B\),
-
 \[
 W_i
 =
@@ -261,7 +218,6 @@ M_{BC}\left(\theta_B+\frac{2}{3}\theta_B\right)
 +
 1235\left(\frac{2}{3}\theta_B\right)
 \]
-
 \[
 W_i
 =
@@ -279,13 +235,11 @@ W_i
 \]
 
 \subsubsection*{Equating external and internal work}
-
 At collapse,
 
 \[
 W_e=W_i
 \]
-
 so
 
 \[
@@ -293,7 +247,6 @@ so
 =
 \left(2073.33 + \frac{5}{3}M_{BC}\right)\theta_B
 \]
-
 Cancelling \(\theta_B\),
 
 \[
@@ -319,10 +272,8 @@ Therefore, the required plastic moment capacity of the internal hinge in span \(
 \[
 {M_{BC} \approx 292\,\text{kNm}}
 \]
-
-
 Based on the above result, the plastic moment required at the assumed internal hinge in span \(BC\) is lower than the corresponding plastic moment capacities associated with the end sections. If a single fully plastic moment capacity \(M_p\) is assumed for both sagging and hogging bending, this implies that the section in span \(BC\) would reach the fully plastic state earlier than the end sections \(B\) and \(C\). Consequently, the assumed three-hinge collapse mechanism is not kinematically admissible as the governing failure mechanism for the beam, because the plastic hinge in span \(BC\) would form before the other required hinges had fully developed. In other words, under the assumption that the positive and negative plastic moment capacities are equal, span \(BC\) would not sustain the assumed failure mechanism as drawn; instead, yielding would initiate there prematurely and the actual collapse mechanism would need to be reassessed on the basis of the weaker section controlling the plastic redistribution process.
-
+\newpage
 
 \section{Deliverable 1: Geometry}
 The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}(a), points labelled \textit{R} define the roof profile and represent the mid-points of the roof section, while points labelled \textit{S} define the support system and lower restraint points. 
@@ -398,7 +349,7 @@ As the prestressed arch-and-tie behaviour is difficult to analyse by simple hand
 \end{figure}
 
 \subsection{Model Verification}
-Basic verification checks were also completed: the GSA solver ran without instability warnings, the vertical reactions balanced the applied gravity loads. The reconstructed model was checked against the original drawing on both sides of the roof and the overall geometric deviation was approximately 0.5\%, which is sufficiently small for a simplified global FE model.
+Basic verification checks were also completed: the GSA solver ran without instability warnings and the vertical reactions balanced the applied gravity loads. The reconstructed model was checked against the original drawing on both sides of the roof and the overall geometric deviation was approximately 0.5\%, which is sufficiently small for a simplified global FE model.
 
 \subsection{Model Adequacy}
 Taken together, the modelling assumptions, validation considerations and verification checks indicate that the global frame model is adequate for an initial study of the roof under symmetric vertical loading. However, it should still be understood as a simplified global model rather than a full representation of the three-dimensional structural behaviour.
@@ -418,7 +369,7 @@ Three mesh densities were evaluated under the governing ULS vertical load combin
 \label{tab:mesh_sensitivity}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{0.13\textwidth} >{\centering\arraybackslash}p{0.08\textwidth} >{\centering\arraybackslash}p{0.13\textwidth} >{\centering\arraybackslash}p{0.15\textwidth} >{\centering\arraybackslash}p{0.16\textwidth} >{\centering\arraybackslash}p{0.12\textwidth}}
 \toprule
-\textbf{Mesh} & \textbf{Arch elements} & \textbf{DoF} & \textbf{Arch Central Deflection (mm)} & \textbf{High-Tie Axial Force (kN)} & \textbf{Arch Central Bending Moment (kNm)} & \textbf{\% Deflection Change vs Mesh 3} \\
+\textbf{Mesh} & \textbf{Arch Elements} & \textbf{DoF} & \textbf{Arch Central Deflection (mm)} & \textbf{High-Tie Axial Force (kN)} & \textbf{Arch Central Bending Moment (kNm)} & \textbf{\% Deflection Change vs Mesh 3} \\
 \midrule
 Mesh 1 & 14 & 53 & 241.2 & 9725 & 12760 & 37.6\% \\
 Mesh 2 & 16 & 59 & 175.7 & 9309 & 960.2 & 0.2\% \\
@@ -452,11 +403,6 @@ Mesh 3 & 22 & 77 & 175.3 & 9320 & 198.2 & 0.0\% \\
 \caption{Bending-moment diagrams for the three mesh densities used in the sensitivity study.}
 \label{fig:mesh_bending}
 \end{figure}
-
-A solution is considered converged when further refinement causes negligible change in the target quantity. The following strict convergence criterion was applied between iterations:
-\begin{equation}
-    \frac{|\delta_{n} - \delta_{n-1}|}{\delta_{n}} < 2\%
-\end{equation}
 
 Table \ref{tab:mesh_sensitivity} and Figure~\ref{fig:mesh_bending} show that the coarsest arch discretisation significantly distorts the response. Relative to Mesh 3, Mesh 1 gives much larger deflection and a very different bending-moment pattern. Moving from Mesh 1 to Mesh 2, the sign of bending moment changes across parts of the arch, showing that the coarsest mesh does not reproduce the qualitative moment distribution reliably. This can be explained by the geometric idealisation: when the arch is represented by only a few straight segments, part of its curvature and stiffness is lost, so the model behaves more like the softer, unprestressed system. Mesh 2 is already close to Mesh 3 for deflection and tie force, but the central bending moment remains much more sensitive to curvature, so Mesh 3 is still required if bending results are to be used with confidence.
 
@@ -494,14 +440,14 @@ Horizontal reaction at supports (kN) & 4211 & 3480 & $-17.4\%$ \\
     \centering
     \includegraphics[width=\linewidth]{Noprestress.png}
 
-    \small Bending moment: prestress neglected
+    \small Bending Moment: Prestress Neglected
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\linewidth]{With_prestress.png}
 
-    \small Bending moment: prestress included
+    \small Bending Moment: Prestress Included
 \end{minipage}
 
 \vspace{0.6em}
@@ -510,14 +456,14 @@ Horizontal reaction at supports (kN) & 4211 & 3480 & $-17.4\%$ \\
     \centering
     \includegraphics[width=\linewidth]{Deformed_noprestress.png}
 
-    \small Deformed shape: prestress neglected
+    \small Deformed Shape: Prestress Neglected
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\linewidth]{Deformed_prestress.png}
 
-    \small Deformed shape: prestress included
+    \small Deformed Shape: Prestress Included
 \end{minipage}
 \caption{Comparison of bending-moment and deformed-shape response with and without high-tie prestress.}
 \label{fig:prestress_response}
@@ -525,10 +471,10 @@ Horizontal reaction at supports (kN) & 4211 & 3480 & $-17.4\%$ \\
 
 
 \subsection{Discussion of Results}
-Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_response} show that prestress changes the global response markedly. Without prestress, the central arch sags under gravity and the two tusks rotate upward to maintain continuity at the arch-tusk junctions. With prestress, the central arch retains a clearer curved profile, so the deformation pattern reverses and the tusks are pushed downward. This difference in deflected shape also explains the bending-moment response: when the arch sags more, the roof behaves in a more flexural manner and the moment distribution can change sign over parts of the frame, whereas the prestressed case remains closer to arch action. The much smaller deflection in the prestressed model therefore explains the much lower bending moments reported in Table~\ref{tab:prestress_comparison}.
+Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_response} show that prestress changes the global response markedly. Without prestress, the central arch sags under gravity and the two tusks rotate upward to maintain continuity at the arch-tusk junctions. With prestress, the central arch retains a clearer curved profile, so the deformation pattern reverses and the tusks are pushed downward. When the arch sags more, the roof behaves in a more flexural manner and the moment distribution can change sign over parts of the frame, whereas the prestressed case remains closer to arch action.
 
 \subsection{Implications for Design and Tolerance}
-These results show that prestress is critical to design interpretation and tolerance assessment. If prestress is neglected, the model overestimates deflection and rafter bending but underestimates the tensile demand in the high tie and its anchorage. This is consistent with the supplementary construction sequence, where staged stressing was used to control geometry and force state, so the prestressed model is adopted as the minimum realistic representation of the completed roof.
+These results show that prestress is critical to design interpretation and tolerance assessment. If prestress is neglected, the model overestimates deflection and rafter bending but underestimates the tensile demand in the high tie and its anchorage. This is consistent with the supplementary construction sequence, where staged stressing was used to control geometry and force state, so the prestressed model is adopted as the minimum realistic representation of the completed roof. As shown in Table \ref{tab:mesh_sensitivity}, the change with prestress is significant would imply that without applied prestres, the arch would not be within construction tolerance. Therefore the arch should be installed after prestress is applied. 
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
@@ -539,7 +485,7 @@ The local model should include a short length of member on each side of the spli
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\linewidth]{bc_connection.png}
+\includegraphics[width=0.7\linewidth]{bc_connection.png}
 \caption{Recommended boundary conditions for the local splice model}
 \label{fig:placeholder}
 \end{figure}
