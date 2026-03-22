@@ -181,16 +181,43 @@ INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cme
 OUTPUT main.toc
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1200.tfm
-INPUT .\Structural Coursework.png
-INPUT .\Structural Coursework.png
-INPUT .\Structural Coursework.png
-INPUT .\Structural Coursework.png
-INPUT .\Structural Coursework.png
-INPUT .\Structural Coursework.png
-INPUT .\Structural Coursework.png
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm0700.tfm
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm0500.tfm
-INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
+INPUT .\SpanCD.png
+INPUT .\SpanCD.png
+INPUT .\SpanCD.png
+INPUT .\SpanCD.png
+INPUT .\SpanCD.png
+INPUT .\SpanCD.png
+INPUT .\SpanCD.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
+INPUT .\part 1 line sketch.jpg
+INPUT .\part 1 line sketch.jpg
+INPUT .\part 1 line sketch.jpg
+INPUT .\part 1 line sketch.jpg
+INPUT .\part 1 line sketch.jpg
+INPUT .\part 1 line sketch.jpg
+INPUT .\part 1 line sketch.jpg
+INPUT .\610x229x125.png
+INPUT .\610x229x125.png
+INPUT .\610x229x125.png
+INPUT .\610x229x125.png
+INPUT .\610x229x125.png
+INPUT .\610x229x125.png
+INPUT .\610x229x125.png
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1000.tfm
 INPUT .\Weixin Image_20260315183303.png
 INPUT .\Weixin Image_20260315183303.png
@@ -275,6 +302,7 @@ INPUT .\bc_connection.png
 INPUT .\main.bbl
 INPUT .\main.bbl
 INPUT main.bbl
+INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti0900.tfm
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ectt0900.tfm
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
@@ -285,6 +313,8 @@ INPUT .\main.out
 INPUT .\main.out
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt0900.pk
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt0900.pk
+INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti0900.pk
+INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti0900.pk
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx0800.pk
@@ -293,8 +323,6 @@ INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecr
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk
-INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
-INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk

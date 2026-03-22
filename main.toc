@@ -1,19 +1,20 @@
 \contentsline {section}{\numberline {1}Span calculation}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Required plastic moment for span \(AB\)}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Plastic analysis for span \(CD\)}{3}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Plastic analysis of span \(BC\)}{4}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Deliverable 1: Geometry}{6}{section.2}%
-\contentsline {section}{\numberline {3}Deliverable 2: Material, Section, and Loading Data }{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Material and Section Properties and Loading Data}{7}{subsection.3.1}%
-\contentsline {section}{\numberline {4}Deliverable 3: Initial Model Validation}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Assumptions}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Model Validation}{8}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Model Adequacy}{8}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Deliverable 4: Mesh Refinement Sensitivity Study}{9}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Convergence Study Methodology}{9}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Conclusion}{9}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Deliverable 5: Influence of Prestressing Assumptions }{10}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Quantitative Comparison}{10}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Discussion of Results}{10}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Implications for Design and Tolerance}{10}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Deliverable 6: Boundary Conditions for More Detailed Analysis}{11}{section.7}%
+\contentsline {subsection}{\numberline {1.2}Plastic analysis for span \(CD\)}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Plastic analysis of span \(BC\)}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Beam Sizing}{4}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Deliverable 1: Geometry}{5}{section.2}%
+\contentsline {section}{\numberline {3}Deliverable 2: Material, Section, and Loading Data }{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Material and Section Properties and Loading Data}{6}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Deliverable 3: Initial Model Validation}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Assumptions}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Model Validation}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Model Adequacy}{7}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Deliverable 4: Mesh Refinement Sensitivity Study}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Convergence Study Methodology}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Conclusion}{8}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Deliverable 5: Influence of Prestressing Assumptions }{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Quantitative Comparison}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Discussion of Results}{9}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Implications for Design and Tolerance}{9}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Deliverable 6: Boundary Conditions for More Detailed Analysis}{10}{section.7}%
