@@ -275,8 +275,44 @@ Therefore, the required plastic moment capacity of the internal hinge in span \(
 Based on the above result, the plastic moment required at the assumed internal hinge in span \(BC\) is lower than the corresponding plastic moment capacities associated with the end sections. If a single fully plastic moment capacity \(M_p\) is assumed for both sagging and hogging bending, this implies that the section in span \(BC\) would reach the fully plastic state earlier than the end sections \(B\) and \(C\). Consequently, the assumed three-hinge collapse mechanism is not kinematically admissible as the governing failure mechanism for the beam, because the plastic hinge in span \(BC\) would form before the other required hinges had fully developed. In other words, under the assumption that the positive and negative plastic moment capacities are equal, span \(BC\) would not sustain the assumed failure mechanism as drawn; instead, yielding would initiate there prematurely and the actual collapse mechanism would need to be reassessed on the basis of the weaker section controlling the plastic redistribution process.
 
 \newpage
-\subsection{Line Sketch}
+\subsection{Beam Sizing}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{part 1 line sketch.jpg}
+    \caption{Beam Span}
+    \label{fig:line_sketch}
+\end{figure}
+
+Assuming grade S355 steel with $f_y = 355 \, \text{MPa}$, the beam is designed based on the governing plastic moment capacity along span AB, where $M_{p,AB} = 1250 \, \text{kNm}$, which is adopted consistently throughout the beam in Figure \ref{fig:line_sketch}.\\
+
+The required plastic section modulus is obtained from:
+\[
+W_{pl,req} = \frac{M_p \, \gamma_0}{f_y}
+\]
+
+Assuming $\gamma_0 = 1.0$,
+\[
+W_{pl,req} = \frac{1.25 \times 10^9 \times 1.0}{355}
+\]
+
+\[
+W_{pl,req} = 3.521 \times 10^6 \, \text{mm}^3
+\]
+\\
+
+Referring to BS EN 1993-1-1:2005 and BS 4-1:2005 section property tables, a UB 610×229×125 section (Figure \ref{fig:UB_610×229×125}) with $W_{pl}=3680\times 10^6 \text{mm}^3$ is adopted for the full beam.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\linewidth]{610x229x125.png}
+    \caption{The selected UB 610×229×125 section \cite{sections_ub610x229x125}} 
+    \label{fig:UB_610×229×125}
+\end{figure}
+
+A uniform section is selected rather than reducing the section in span BC and introducing transitions, as discrete section changes and associated connections can introduce local deviations from idealised beam behaviour and reduce the reliability of stiffness and plastic capacity distribution \cite{hemstad_cantilever_beam_framing}. Maintaining a constant section ensures a more predictable global response and a clearly defined plastic collapse mechanism.
+
+Furthermore, adopting a single rolled section removes the need for moment-resisting splices or transition detailing, simplifying fabrication and erection. Since fabrication and installation typically account for a significantly larger proportion of total project cost than material alone \cite{structural_steel_cost_estimation}, this improves construction efficiency and offsets any marginal material over-design in span BC.
 
 \newpage
 
