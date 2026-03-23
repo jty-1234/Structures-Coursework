@@ -363,11 +363,11 @@ Mesh 3 is adopted for the remainder of the report.
 \toprule
 \textbf{Response Quantity} & \textbf{Full Frame After Erection} & \textbf{Arch Only Before Lift} & \textbf{Relative Change} \\
 \midrule
-Maximum vertical displacement (mm) & 490 & 175.3 & $-64.2\%$ \\
-Central arch bending moment (kNm) & 9811 & 198.2 & $-98.0\%$ \\
-Critical end/connection bending moment (kNm) & 16490 & 5837 & $-64.6\%$ \\
-High tie force (kN) & 4296 & 9320 & $+116.9\%$ \\
-Horizontal reaction at supports (kN) & 4211 & 3480 & $-17.4\%$ \\
+Maximum vertical displacement (mm) & 213.3 & 175.3 & $-17.8\%$ \\
+Central arch bending moment (kNm) & 4128 & 198.2 & $-95.2\%$ \\
+Critical end/connection bending moment (kNm) & 0 & 5837 & N/A \\
+High tie force (kN) & 11450 & 9320 & $-18.6\%$ \\
+Horizontal reaction at supports (kN) & N/A & 3480 & N/A \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -392,10 +392,10 @@ Horizontal reaction at supports (kN) & 4211 & 3480 & $-17.4\%$ \\
 \end{figure}
 
 \subsection{Discussion of Results}
-Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_stage_comparison} show that the timing of prestress application changes the structural state significantly. In the coursework simplification, the high tie is stressed after the whole roof frame has been erected, so the locked-in force is introduced into the completed frame. In the alternative model, the central arch-and-tie unit is stressed before installation, so the prestress acts while the arch is still working largely as an isolated arch-only system. This produces a different balance between arch action, tie tension and bending redistribution before the tusk rafters and support tree are engaged.
+Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_stage_comparison} show that the timing of prestress application changes the structural state significantly. Relative to the full-frame post-erection assumption, the arch-only model reduces the maximum vertical displacement from \SI{213.3}{\milli\metre} to \SI{175.3}{\milli\metre}, reduces the central arch bending moment from \SI{4128}{\kilo\newton\metre} to \SI{198.2}{\kilo\newton\metre}, and lowers the high-tie force from \SI{11450}{\kilo\newton} to \SI{9320}{\kilo\newton}. At the same time, the arch-only model develops a significant end or connection moment of \SI{5837}{\kilo\newton\metre}, whereas the corresponding value in the simplified full-frame case is zero. This shows that stressing the central arch before installation creates a different locked-in load path rather than simply scaling the final roof response.
 
 \subsection{Implications for Design and Tolerance}
-This distinction matters because the supplementary construction paper states that the central arch section was loaded and prestressed before it was lifted into place, so the stress state in the steelwork is not the same as if the complete frame were first assembled and then stressed. The full-frame post-erection model is still useful for the final in-service roof, but the arch-only model is a better representation of the erection-stage locked-in force state. Therefore, if the two cases differ materially, the simplified post-erection assumption should be used with caution for tolerance assessment, connection design and interpretation of the final force path.
+This distinction matters because the supplementary construction paper states that the central arch section was loaded and prestressed before it was lifted into place, so the stress state in the steelwork is not the same as if the complete frame were first assembled and then stressed. The results here show that the simplified post-erection assumption can substantially overpredict global arch bending while missing local end moments and springing reactions that arise during the erection-stage arch-only condition. The full-frame model is still appropriate for the final in-service roof, but the arch-only model is the better guide for tolerance control, erection-stage interpretation and checking where locked-in forces are likely to concentrate.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
