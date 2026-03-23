@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  23 MAR 2026 14:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  23 MAR 2026 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -640,17 +640,17 @@ Package pdftex.def Info: With_prestress.png  used on input line 337.
 (pdftex.def)             Requested size: 217.42265pt x 109.22528pt.
  [8 <./Mesh1.png> <./Mesh2.png> <./Mesh3.png> <./Noprestress.png> <./With_prest
 ress.png>]
-<With_prestress_stage.png, id=210, 633.86812pt x 318.43968pt>
-File: With_prestress_stage.png Graphic file (type png)
-<use With_prestress_stage.png>
-Package pdftex.def Info: With_prestress_stage.png  used on input line 379.
-(pdftex.def)             Requested size: 212.89546pt x 106.95126pt.
-<Arch_only.png, id=211, 753.41475pt x 392.06474pt>
+<Arch_only.png, id=210, 753.41475pt x 392.06474pt>
 File: Arch_only.png Graphic file (type png)
 <use Arch_only.png>
-Package pdftex.def Info: Arch_only.png  used on input line 386.
+Package pdftex.def Info: Arch_only.png  used on input line 379.
 (pdftex.def)             Requested size: 212.89546pt x 110.78242pt.
- [9 <./With_prestress_stage.png> <./Arch_only.png>]
+<With_prestress_stage.png, id=211, 633.86812pt x 318.43968pt>
+File: With_prestress_stage.png Graphic file (type png)
+<use With_prestress_stage.png>
+Package pdftex.def Info: With_prestress_stage.png  used on input line 386.
+(pdftex.def)             Requested size: 212.89546pt x 106.95126pt.
+ [9 <./Arch_only.png> <./With_prestress_stage.png>]
 <bc_connection.png, id=224, 1541.76pt x 1027.84pt>
 File: bc_connection.png Graphic file (type png)
 <use bc_connection.png>
@@ -682,7 +682,7 @@ Here is how much of TeX's memory you used:
  46515 multiletter control sequences out of 15000+600000
  645194 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,88p,1003b,1048s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,88p,1032b,1048s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
 0900.pk> <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecti0900.pk> <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -707,7 +707,7 @@ s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/31945/AppData/Local
 /Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/31945/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/319
 45/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (11 pages, 1549520 bytes).
+Output written on main.pdf (11 pages, 1549622 bytes).
 PDF statistics:
  786 PDF objects out of 1000 (max. 8388607)
  53 named destinations out of 1000 (max. 500000)

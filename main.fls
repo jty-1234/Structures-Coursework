@@ -272,13 +272,6 @@ INPUT .\With_prestress.png
 INPUT .\With_prestress.png
 INPUT .\With_prestress.png
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx0700.tfm
-INPUT .\With_prestress_stage.png
-INPUT .\With_prestress_stage.png
-INPUT .\With_prestress_stage.png
-INPUT .\With_prestress_stage.png
-INPUT .\With_prestress_stage.png
-INPUT .\With_prestress_stage.png
-INPUT .\With_prestress_stage.png
 INPUT .\Arch_only.png
 INPUT .\Arch_only.png
 INPUT .\Arch_only.png
@@ -286,6 +279,13 @@ INPUT .\Arch_only.png
 INPUT .\Arch_only.png
 INPUT .\Arch_only.png
 INPUT .\Arch_only.png
+INPUT .\With_prestress_stage.png
+INPUT .\With_prestress_stage.png
+INPUT .\With_prestress_stage.png
+INPUT .\With_prestress_stage.png
+INPUT .\With_prestress_stage.png
+INPUT .\With_prestress_stage.png
+INPUT .\With_prestress_stage.png
 INPUT .\bc_connection.png
 INPUT .\bc_connection.png
 INPUT .\bc_connection.png

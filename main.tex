@@ -357,11 +357,11 @@ Mesh 3 is adopted for the remainder of the report.
 \scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.1}
-\caption{Comparison between the completed-frame prestress assumption and the simplified arch-only erection-stage model}
+\caption{Comparison between the simplified arch-only erection-stage model and the completed-frame prestress assumption}
 \label{tab:prestress_comparison}
 \begin{tabularx}{0.95\textwidth}{>{\raggedright\arraybackslash}p{0.37\textwidth} >{\centering\arraybackslash}p{0.17\textwidth} >{\centering\arraybackslash}p{0.17\textwidth} >{\centering\arraybackslash}X}
 \toprule
-\textbf{Response Quantity} & \textbf{Full Frame After Erection} & \textbf{Arch Only Before Lift} & \textbf{Relative Change} \\
+\textbf{Response Quantity} & \textbf{Arch Only Before Lift} & \textbf{Full Frame After Erection} & \textbf{Relative Change} \\
 \midrule
 Maximum vertical displacement (mm) & 213.3 & 175.3 & $-17.8\%$ \\
 Central arch bending moment (kNm) & 4128 & 198.2 & $-95.2\%$ \\
@@ -376,26 +376,26 @@ Horizontal reaction at supports (kN) & N/A & 3480 & N/A \\
 \centering
 \begin{minipage}[t]{0.47\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{With_prestress_stage.png}
+    \includegraphics[width=\linewidth]{Arch_only.png}
 
-    \small Full frame: prestress after erection
+    \small Central arch: prestress before installation
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.47\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{Arch_only.png}
+    \includegraphics[width=\linewidth]{With_prestress_stage.png}
 
-    \small Central arch: prestress before installation
+    \small Full frame: prestress after erection
 \end{minipage}
 \caption{Bending-moment response for the two prestressing assumptions considered in Deliverable 5.}
 \label{fig:prestress_stage_comparison}
 \end{figure}
 
 \subsection{Discussion of Results}
-Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_stage_comparison} show that the timing of prestress application changes the structural state significantly. Relative to the full-frame post-erection assumption, the arch-only model reduces the maximum vertical displacement from \SI{213.3}{\milli\metre} to \SI{175.3}{\milli\metre}, reduces the central arch bending moment from \SI{4128}{\kilo\newton\metre} to \SI{198.2}{\kilo\newton\metre}, and lowers the high-tie force from \SI{11450}{\kilo\newton} to \SI{9320}{\kilo\newton}. At the same time, the arch-only model develops a significant end or connection moment of \SI{5837}{\kilo\newton\metre}, whereas the corresponding value in the simplified full-frame case is zero. This shows that stressing the central arch before installation creates a different locked-in load path rather than simply scaling the final roof response.
+Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_stage_comparison} show that the timing of prestress application changes the structural state significantly. Relative to the arch-only erection-stage model, the full-frame post-erection assumption reduces the maximum vertical displacement from \SI{213.3}{\milli\metre} to \SI{175.3}{\milli\metre}, reduces the central arch bending moment from \SI{4128}{\kilo\newton\metre} to \SI{198.2}{\kilo\newton\metre}, and lowers the high-tie force from \SI{11450}{\kilo\newton} to \SI{9320}{\kilo\newton}. At the same time, the completed frame develops a critical end or connection moment of \SI{5837}{\kilo\newton\metre}, whereas the isolated arch-only model gives zero at the corresponding location. This shows that the erection-stage arch-only condition and the final completed-frame condition are not simply scaled versions of one another; the force path changes once the tusk rafters and support tree are engaged.
 
 \subsection{Implications for Design and Tolerance}
-This distinction matters because the supplementary construction paper states that the central arch section was loaded and prestressed before it was lifted into place, so the stress state in the steelwork is not the same as if the complete frame were first assembled and then stressed. The results here show that the simplified post-erection assumption can substantially overpredict global arch bending while missing local end moments and springing reactions that arise during the erection-stage arch-only condition. The full-frame model is still appropriate for the final in-service roof, but the arch-only model is the better guide for tolerance control, erection-stage interpretation and checking where locked-in forces are likely to concentrate.
+This distinction matters because the supplementary construction paper states that the central arch section was loaded and prestressed before it was lifted into place, so the stress state in the steelwork is not the same as if the complete frame were first assembled and then stressed. The results here show that the arch-only erection stage can be more severe in overall arch bending, tie force and vertical movement, while the completed frame introduces local connection moments after continuity is established. Therefore, the full-frame model is appropriate for the final in-service roof, but the arch-only model is still needed for erection-stage interpretation, tolerance control and checking where the initial locked-in forces are generated.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
