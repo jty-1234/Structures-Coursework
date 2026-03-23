@@ -223,7 +223,7 @@ Because both the arch rafter and tusk rafter vary in depth along their length, t
 \section{Deliverable 2: Material, Section, and Loading Data }
 \subsection{Material and Section Properties and Loading Data}
 
-The global FE model was defined using linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal}, a Poisson's ratio of 0.30 and density of \SI{7850}{\kilogram\per\metre\cubed} were adopted so that self-weight could be included automatically in GSA. S235 steel was adopted for the primary roof members because its elastic modulus complies with the brief requirement, while other material parameters such as shear modulus and strength are not governing in this linear-elastic global analysis. The twin high-tie strands were modelled as a single prestressed tie element with the same total cross-sectional area and an initial prestress of \SI{450}{\mega\pascal}.
+The global FE model was defined using linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal}, a Poisson's ratio of 0.30 and density of \SI{7850}{\kilogram\per\metre\cubed} so that self-weight could be included automatically in GSA. A nominal S235 steel grade was assigned to the primary roof members only to complete the material definition; in this linear-elastic global analysis, the response is governed by the assigned elastic stiffness and density, so any conventional structural steel grade with the same \(E\), \(\nu\), and density would give essentially the same global results. The twin high-tie strands were modelled as a single prestressed tie element with the same total cross-sectional area and an initial prestress of \SI{450}{\mega\pascal}.
 
 Only vertical symmetric loading was considered. The characteristic permanent roof load was taken as the sum of the aluminium standing seam roof (\SI{0.10}{\kilo\pascal}), structural deck (\SI{0.15}{\kilo\pascal}), insulation/acoustic layers (\SI{0.40}{\kilo\pascal}) and the service allowance (\SI{0.15}{\kilo\pascal}), giving $G_k = \SI{0.80}{\kilo\pascal}$. The live load imposed on the roof was taken as $Q_k = \SI{0.60}{\kilo\pascal}$. The governing vertical ultimate limit state (ULS) combination used in the model was
 \begin{equation}
@@ -352,8 +352,6 @@ Although further refinement beyond Mesh 3 might yield minor fluctuations in the 
 \newpage
 \section{Deliverable 5: Influence of Prestressing Assumptions }
 
-\subsection{Quantitative Comparison}
-
 \begin{table}[H]
 \centering
 \scriptsize
@@ -367,12 +365,14 @@ Although further refinement beyond Mesh 3 might yield minor fluctuations in the 
 \midrule
 Maximum vertical displacement (mm) & 213.3 & 175.3 & $-17.8\%$ \\
 Central arch bending moment (kNm) & 4128 & 198.2 & $-95.2\%$ \\
-Critical end/connection bending moment (kNm) & 0 & 5837 & N/A \\
+Tusk-arch connection bending moment (kNm) & 0 & 5837 & Not comparable \\
 High tie force (kN) & 11450 & 9320 & $-18.6\%$ \\
-Horizontal reaction at supports (kN) & N/A & 3480 & N/A \\
+Horizontal reaction at supports (kN) & Not comparable & 3480 & Not comparable \\
 \bottomrule
 \end{tabularx}
 \end{table}
+
+\noindent\footnotesize Here, ``Not comparable'' indicates that the quantity is not defined in the same way in the two simplified models.\normalsize
 
 \begin{figure}[H]
 \centering
@@ -394,10 +394,10 @@ Horizontal reaction at supports (kN) & N/A & 3480 & N/A \\
 \end{figure}
 
 \subsection{Discussion of Results}
-Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_stage_comparison} show that the timing of prestress application changes the structural state significantly. Relative to the arch-only erection-stage model, the full-frame post-erection assumption reduces the maximum vertical displacement from \SI{213.3}{\milli\metre} to \SI{175.3}{\milli\metre}, reduces the central arch bending moment from \SI{4128}{\kilo\newton\metre} to \SI{198.2}{\kilo\newton\metre}, and lowers the high-tie force from \SI{11450}{\kilo\newton} to \SI{9320}{\kilo\newton}. At the same time, the completed frame develops a critical end or connection moment of \SI{5837}{\kilo\newton\metre}, whereas the isolated arch-only model gives zero at the corresponding location. This shows that the erection-stage arch-only condition and the final completed-frame condition are not simply scaled versions of one another; the force path changes once the tusk rafters and support tree are engaged.
+Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_stage_comparison} show that the timing of prestress application changes the structural state significantly. Relative to the arch-only erection-stage model, the full-frame post-erection assumption reduces the maximum vertical displacement from \SI{213.3}{\milli\metre} to \SI{175.3}{\milli\metre}, reduces the central arch bending moment from \SI{4128}{\kilo\newton\metre} to \SI{198.2}{\kilo\newton\metre}, and lowers the high-tie force from \SI{11450}{\kilo\newton} to \SI{9320}{\kilo\newton}. At the same time, the completed frame develops a tusk-arch connection moment of \SI{5837}{\kilo\newton\metre}, whereas the isolated arch-only model gives zero at the corresponding location. This shows that the erection-stage arch-only condition and the final completed-frame condition are not simply scaled versions of one another; the force path changes once the tusk rafters and support tree are engaged.
 
 \subsection{Implications for Design and Tolerance}
-This distinction matters because the supplementary construction paper states that the central arch section was loaded and prestressed before it was lifted into place, so the stress state in the steelwork is not the same as if the complete frame were first assembled and then stressed. The results here show that the arch-only erection stage can be more severe in overall arch bending, tie force and vertical movement, while the completed frame introduces local connection moments after continuity is established. Tensioning the isolated arch on the ground allows contractors to actively tune the high-tie cable to achieve the exact required geometric span. This overcomes minor fabrication deviations and ensures the massive arch fits perfectly between the pre-erected support trees without requiring forced, on-site alignment. Therefore, the full-frame model is appropriate for the final in-service roof, but the arch-only model is still needed for erection-stage interpretation, tolerance control and checking where the initial locked-in forces are generated.
+The supplementary construction paper states that the central arch section was loaded and prestressed before it was lifted into place, so the completed roof does not begin from the same stress state as a model in which prestress is applied only after full erection. From a design point of view, the two assumptions do not govern the same actions: the arch-only erection-stage model gives higher overall arch bending, tie force and vertical movement, whereas the completed-frame model introduces additional connection moments after continuity is established. From a tolerance point of view, fit-up should therefore not be judged only from the final completed-frame model, because the erection-stage arch is more sensitive to locked-in force and deformation before it is connected to the tusk rafters and support tree. In particular, the force state developed during prestressing influences the alignment demand and adjustment required at the tusk-arch connection during erection. Therefore, the arch-only model is the more appropriate basis for interpreting erection-stage behaviour and fit-up tolerance at the tusk-arch connection, while the full-frame post-erection model is more appropriate for assessing the final in-service structural response.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
