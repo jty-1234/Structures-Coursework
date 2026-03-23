@@ -181,15 +181,22 @@ INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cme
 OUTPUT main.toc
 INPUT C:\Users\31945\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1200.tfm
-INPUT .\SpanAB.png
-INPUT .\SpanAB.png
-INPUT .\SpanAB.png
-INPUT .\SpanAB.png
-INPUT .\SpanAB.png
-INPUT .\SpanAB.png
-INPUT .\SpanAB.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
+INPUT .\SpanBC.png
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm0700.tfm
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm0500.tfm
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
+INPUT .\SpanAB.png
 INPUT .\SpanCD.png
 INPUT .\SpanCD.png
 INPUT .\SpanCD.png
@@ -197,13 +204,6 @@ INPUT .\SpanCD.png
 INPUT .\SpanCD.png
 INPUT .\SpanCD.png
 INPUT .\SpanCD.png
-INPUT .\SpanBC.png
-INPUT .\SpanBC.png
-INPUT .\SpanBC.png
-INPUT .\SpanBC.png
-INPUT .\SpanBC.png
-INPUT .\SpanBC.png
-INPUT .\SpanBC.png
 INPUT .\part 1 line sketch.jpg
 INPUT .\part 1 line sketch.jpg
 INPUT .\part 1 line sketch.jpg
@@ -211,13 +211,6 @@ INPUT .\part 1 line sketch.jpg
 INPUT .\part 1 line sketch.jpg
 INPUT .\part 1 line sketch.jpg
 INPUT .\part 1 line sketch.jpg
-INPUT .\610x229x125.png
-INPUT .\610x229x125.png
-INPUT .\610x229x125.png
-INPUT .\610x229x125.png
-INPUT .\610x229x125.png
-INPUT .\610x229x125.png
-INPUT .\610x229x125.png
 INPUT C:\Users\31945\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1000.tfm
 INPUT .\Weixin Image_20260315183303.png
 INPUT .\Weixin Image_20260315183303.png
@@ -278,20 +271,6 @@ INPUT .\With_prestress.png
 INPUT .\With_prestress.png
 INPUT .\With_prestress.png
 INPUT .\With_prestress.png
-INPUT .\Deformed_noprestress.png
-INPUT .\Deformed_noprestress.png
-INPUT .\Deformed_noprestress.png
-INPUT .\Deformed_noprestress.png
-INPUT .\Deformed_noprestress.png
-INPUT .\Deformed_noprestress.png
-INPUT .\Deformed_noprestress.png
-INPUT .\Deformed_prestress.png
-INPUT .\Deformed_prestress.png
-INPUT .\Deformed_prestress.png
-INPUT .\Deformed_prestress.png
-INPUT .\Deformed_prestress.png
-INPUT .\Deformed_prestress.png
-INPUT .\Deformed_prestress.png
 INPUT .\bc_connection.png
 INPUT .\bc_connection.png
 INPUT .\bc_connection.png

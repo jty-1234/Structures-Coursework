@@ -30,70 +30,7 @@
 
 \section{Span calculation}
 
-\subsection{Required plastic moment for span \(AB\)}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.78\linewidth]{SpanAB.png}
-    \caption{Collapse mechanism adopted for span \(AB\).}
-    \label{fig:span_ab}
-\end{figure}
-
-For span \(AB = 10\,\text{m}\) with a midspan point load \(P = 1000\,\text{kN}\), let the end rotations be \(\theta\). The deflection at the load point is
-\[
-\delta = 5\theta
-\]
-The internal and external work are
-\begin{align*}
-W_i &= M_{p,AB}(\theta + 2\theta + \theta) = 4M_{p,AB}\theta \\
-W_e &= P\delta = 1000(5\theta) = 5000\theta
-\end{align*}
-At collapse, \(W_i = W_e\), so
-\[
-5000\theta = 4M_{p,AB}\theta
-\qquad \Rightarrow \qquad
-M_{p,AB} = 1250\,\text{kNm}
-\]
-
-\subsection{Plastic analysis for span \(CD\)}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.72\linewidth]{SpanCD.png}
-    \caption{Collapse mechanism adopted for span \(CD\).}
-    \label{fig:span_cd}
-\end{figure}
-
-From compatibility,
-\[
-x\theta = (12-x)\phi
-\qquad \Rightarrow \qquad
-\phi = \frac{x}{12-x}\theta
-\]
-The external work is
-\[
-W_e = 100\left(\frac{1}{2}\cdot 12 \cdot x\theta\right) = 600x\theta
-\]
-The internal work is
-\[
-W_i = M_{p,CD}\left[\theta + \theta\left(\frac{12}{12-x}\right)\right]
-    = M_{p,CD}\theta\left(\frac{24-x}{12-x}\right)
-\]
-Equating external and internal work gives
-\[
-M_{p,CD} = 600x\left(\frac{12-x}{24-x}\right)
-\]
-The critical mechanism is obtained from
-\[
-\frac{dM_{p,CD}}{dx} = 0
-\qquad \Rightarrow \qquad
-x = 12(2-\sqrt{2}) = 7.03\,\text{m}
-\]
-Hence,
-\[
-M_{p,CD} = 600(7.03)\left(\frac{12-7.03}{24-7.03}\right)
-\approx 1235\,\text{kNm}
-\]
+The beam is assessed by the virtual-work method. Span \(BC\) is solved first so that the support hinge moment at \(B\) and \(C\) can then be carried into spans \(AB\) and \(CD\). The assumed plastic hinge sets are \(A\)-midspan-\(B\) for span \(AB\), \(B\)-load point-\(C\) for span \(BC\), and \(C\)-interior hinge for span \(CD\).
 
 \subsection{Plastic analysis of span \(BC\)}
 
@@ -104,7 +41,7 @@ M_{p,CD} = 600(7.03)\left(\frac{12-7.03}{24-7.03}\right)
     \label{fig:span_bc}
 \end{figure}
 
-Take \(M_{AB} = 1250\,\text{kNm}\), \(M_{CD} = 1235\,\text{kNm}\), \(P = 640\,\text{kN}\), and \(BC = 10\,\text{m}\), with the load placed \(4\,\text{m}\) from \(B\) and \(6\,\text{m}\) from \(C\).
+Take plastic hinges at \(B\), at the \SI{640}{\kilo\newton} load point, and at \(C\). Let the required plastic moment for this span be \(M_{p,BC}\). The span length is \(BC = \SI{10}{\metre}\), with the load acting \SI{4}{\metre} from \(B\) and \SI{6}{\metre} from \(C\).
 
 Compatibility gives
 \[
@@ -120,49 +57,96 @@ W_e = 640(4\theta_B) = 2560\theta_B
 \]
 The internal work is
 \begin{align*}
-W_i &= 1250\theta_B + M_{BC}\left(\theta_B + \frac{2}{3}\theta_B\right)
-     + 1235\left(\frac{2}{3}\theta_B\right) \\
-    &= \left(2073.33 + \frac{5}{3}M_{BC}\right)\theta_B
+W_i &= M_{p,BC}\theta_B + M_{p,BC}\left(\theta_B + \frac{2}{3}\theta_B\right)
+     + M_{p,BC}\left(\frac{2}{3}\theta_B\right) \\
+    &= \frac{10}{3}M_{p,BC}\theta_B
 \end{align*}
 At collapse,
 \[
-2560\theta_B = \left(2073.33 + \frac{5}{3}M_{BC}\right)\theta_B
+2560\theta_B = \frac{10}{3}M_{p,BC}\theta_B
 \]
 so
 \[
-2560 = 2073.33 + \frac{5}{3}M_{BC}
-\]
-\[
-\frac{5}{3}M_{BC} = 486.67
+M_{p,BC} = \frac{2560 \times 3}{10}
 \qquad \Rightarrow \qquad
-M_{BC} \approx 292\,\text{kNm}
+M_{p,BC} = 768\,\text{kNm}
 \]
 
-\subsubsection*{Summary}
+\subsection{Plastic analysis of span \(AB\)}
 
-The span plastic moments obtained are
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.78\linewidth]{SpanAB.png}
+    \caption{Collapse mechanism adopted for span \(AB\).}
+    \label{fig:span_ab}
+\end{figure}
+
+For span \(AB = \SI{10}{\metre}\), take hinges at \(A\), at the midspan of \(AB\), and at \(B\). The support hinge at \(B\) is already fixed by the span \(BC\) mechanism, so \(M_B = M_{p,BC} = \SI{768}{\kilo\newton\metre}\). The fixed-end hinge at \(A\) and the positive hinge in span \(AB\) therefore both require moment \(M_{p,AB}\).
+
+Let the end rotations be \(\theta\). The deflection at the central point load \(P = 1000\,\text{kN}\) is
 \[
-M_{p,AB} = 1250\,\text{kNm},
-\qquad
-M_{p,CD} \approx 1235\,\text{kNm}
+\delta = 5\theta
 \]
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{lll}
-\toprule
-Span & Plastic moment & Comment \\
-\midrule
-\(AB\) & \(1250\,\text{kNm}\) & Governing span for a uniform section \\
-\(CD\) & \(1235\,\text{kNm}\) & Similar to span \(AB\) \\
-\(BC\) & \(292\,\text{kNm}\) & Assumed internal-hinge mechanism not governing \\
-\bottomrule
-\end{tabular}
-\end{table}
-For the assumed mechanism in span \(BC\), the internal hinge moment is only \(M_{BC} \approx 292\,\text{kNm}\). Since this is much lower than the end plastic moments, span \(BC\) would yield first in a uniform beam, so the assumed three-hinge mechanism is not governing. Therefore, span \(AB\) governs the uniform section design.
+The internal and external work are
+\begin{align*}
+W_i &= M_{p,AB}\theta + 2M_{p,AB}\theta + M_{p,BC}\theta \\
+    &= \left(3M_{p,AB} + 768\right)\theta \\
+W_e &= 1000(5\theta) = 5000\theta
+\end{align*}
+At collapse, \(W_i = W_e\), so
 \[
-M_{p,\mathrm{adopt}} = \max(M_{p,AB}, M_{p,CD}) = 1250\,\text{kNm}
+5000 = 3M_{p,AB} + 768
+\qquad \Rightarrow \qquad
+M_{p,AB} \approx 1411\,\text{kNm}
 \]
+
+\subsection{Plastic analysis for span \(CD\)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.72\linewidth]{SpanCD.png}
+    \caption{Collapse mechanism adopted for span \(CD\).}
+    \label{fig:span_cd}
+\end{figure}
+
+For span \(CD\), the negative support hinge at \(C\) is again taken from the span \(BC\) result, so \(M_C = M_{p,BC} = \SI{768}{\kilo\newton\metre}\). Let the positive hinge formed within the span require moment \(M_{p,CD}\), and let its distance from \(C\) be \(x\), while \(D\) remains the actual end support.
+
+From compatibility,
+\[
+x\theta = (12-x)\phi
+\qquad \Rightarrow \qquad
+\phi = \frac{x}{12-x}\theta
+\]
+The external work under the uniform load \(w = 100\,\text{kN/m}\) is
+\[
+W_e = 100\left(\frac{1}{2}\cdot 12 \cdot x\theta\right) = 600x\theta
+\]
+The internal work is
+\[
+W_i = M_{p,BC}\theta + M_{p,CD}\left(\theta + \phi\right)
+    = 768\theta + M_{p,CD}\theta\left(\frac{12}{12-x}\right)
+\]
+Equating external and internal work gives
+\[
+600x = 768 + M_{p,CD}\left(\frac{12}{12-x}\right)
+\]
+so
+\[
+M_{p,CD} = \left(600x - 768\right)\left(\frac{12-x}{12}\right)
+\]
+The critical mechanism is obtained from
+\[
+\frac{dM_{p,CD}}{dx} = 0
+\qquad \Rightarrow \qquad
+x = 6 + \frac{768}{1200} = 6.64\,\text{m}
+\]
+Hence,
+\[
+M_{p,CD} = \left(600(6.64) - 768\right)\left(\frac{12-6.64}{12}\right)
+\approx 1436\,\text{kNm}
+\]
+
+Comparing the three spans, \(M_{p,BC} = 768\,\text{kNm}\), \(M_{p,AB} \approx 1411\,\text{kNm}\), and \(M_{p,CD} \approx 1436\,\text{kNm}\), span \(CD\) governs, so \(M_{p,\mathrm{adopt}} \approx 1436\,\text{kNm}\).
 
 \newpage
 \subsection{Beam Sizing}
@@ -174,7 +158,7 @@ M_{p,\mathrm{adopt}} = \max(M_{p,AB}, M_{p,CD}) = 1250\,\text{kNm}
     \label{fig:line_sketch}
 \end{figure}
 
-Assuming grade S355 steel with $f_y = 355 \, \text{MPa}$, the beam is designed based on the governing plastic moment capacity along span AB, where $M_{p,AB} = 1250 \, \text{kNm}$, which is adopted consistently throughout the beam in Figure \ref{fig:line_sketch}.
+Assuming grade S355 steel with $f_y = 355 \, \text{MPa}$, the beam is designed based on the governing plastic moment capacity from span \(CD\), where $M_{p,\mathrm{adopt}} \approx 1436 \, \text{kNm}$, which is adopted consistently throughout the beam in Figure \ref{fig:line_sketch}.
 
 The required plastic section modulus is obtained from:
 \[
@@ -183,11 +167,11 @@ W_{pl,req} = \frac{M_p \, \gamma_{M0}}{f_y}
 
 Assuming $\gamma_{M0} = 1.0$,
 \[
-W_{pl,req} = \frac{1.25 \times 10^9 \times 1.0}{355}
+W_{pl,req} = \frac{1.436 \times 10^9 \times 1.0}{355}
 \]
 
 \[
-W_{pl,req} = 3.521 \times 10^6 \, \text{mm}^3
+W_{pl,req} \approx 4.05 \times 10^6 \, \text{mm}^3
 \]
 \iffalse
 
@@ -201,14 +185,7 @@ Referring to BS EN 1993-1-1:2005 and BS 4-1:2005 section property tables, a UB 6
 \end{figure}
 \fi
 
-Referring to BS EN 1993-1-1:2005 and BS 4-1:2005 section property tables, a UB 610x229x125 section (Figure \ref{fig:UB_610x229x125}) with $W_{pl} = 3.68 \times 10^6\,\text{mm}^3$ is adopted for the full beam.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.45\linewidth]{610x229x125.png}
-    \caption{The selected UB 610x229x125 section \cite{sections_ub610x229x125}} 
-    \label{fig:UB_610x229x125}
-\end{figure}
+Referring to official British Steel section tables, a UB 610x229x140 section with $W_{pl} = 4.20 \times 10^6\,\text{mm}^3$ is adopted for the full beam \cite{british_steel_ub_datasheet}. This exceeds the required plastic modulus while remaining close to the originally considered 610-series beam depth, so it is still practical to fabricate, handle and connect.
 
 A uniform section is selected rather than reducing the section in span BC and introducing transitions, as discrete section changes and associated connections can introduce local deviations from idealised beam behaviour and reduce the reliability of stiffness and plastic capacity distribution \cite{hemstad_cantilever_beam_framing}. Maintaining a constant section ensures a more predictable global response and a clearly defined plastic collapse mechanism.
 
@@ -300,7 +277,7 @@ Basic verification checks were also completed: the GSA solver ran without instab
 \section{Deliverable 4: Mesh Refinement Sensitivity Study}
 
 \subsection{Convergence Study Methodology}
-Three mesh densities were evaluated under the governing ULS vertical load combination $1.35G_k + 1.5Q_k + 1.0P_s$, where $P_s$ represents the prestress in the high-tie. Mesh 1 is the coarsest representation of the arch, Mesh 2 retains more intermediate points, and Mesh 3 preserves the full coordinate set taken from the supplementary geometry; it is used as the reference mesh for comparison and is also the mesh adopted for the remainder of the report. To judge convergence, one displacement quantity and two force quantities were tracked: arch central deflection, high-tie axial force and arch central bending moment. These parameters give a useful picture of both overall stiffness and the redistribution of internal action as the curved geometry is refined.
+Three mesh densities were evaluated under the governing ULS vertical load combination $1.35G_k + 1.5Q_k + 1.0P_s$, where $P_s$ represents the prestress in the high-tie. Mesh 1 is the coarsest representation of the arch, Mesh 2 retains more intermediate points, and Mesh 3 preserves the full coordinate set taken from the supplementary geometry. Arch central deflection, high-tie axial force and arch central bending moment were tracked to judge convergence.
 
 \begin{table}[H]
 \centering
@@ -346,10 +323,29 @@ Mesh 3 & 22 & 77 & 175.3 & 9320 & 198.2 & 0.0\% \\
 \label{fig:mesh_bending}
 \end{figure}
 
-Table \ref{tab:mesh_sensitivity} and Figure~\ref{fig:mesh_bending} show that the coarsest arch discretisation significantly distorts the response. Relative to Mesh 3, Mesh 1 gives much larger deflection and a very different bending-moment pattern. Moving from Mesh 1 to Mesh 2, the sign of bending moment changes across parts of the arch, showing that the coarsest mesh does not reproduce the qualitative moment distribution reliably. This can be explained by the geometric idealisation: when the arch is represented by only a few straight segments, part of its curvature and stiffness is lost, so the model behaves more like the softer, unprestressed system. Mesh 2 is already close to Mesh 3 for deflection and tie force, but the central bending moment remains much more sensitive to curvature, so Mesh 3 is still required if bending results are to be used with confidence.
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Noprestress.png}
+
+    \small Prestress neglected
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{With_prestress.png}
+
+    \small Prestress included
+\end{minipage}
+\caption{Comparison of bending-moment response with and without high-tie prestress.}
+\label{fig:prestress_response}
+\end{figure}
+
+Table \ref{tab:mesh_sensitivity} and Figures~\ref{fig:mesh_bending} and \ref{fig:prestress_response} show that the coarsest arch discretisation is too flexible. Relative to Mesh 3, Mesh 1 gives much larger deflection and a very different bending-moment pattern. As the arch is reduced towards only a few straight beam segments, its curvature and therefore its stiffness are lost, so the response moves closer to the non-prestressed case: the frame behaves less like a stiff prestressed arch and more like a softer flexural system. Mesh 2 is already close to Mesh 3 for deflection and tie force, but the central bending moment remains much more sensitive to curvature, so Mesh 3 is adopted for the remainder of the report.
 
 \subsection{Conclusion}
-Based on these results, Mesh 3 is adopted for the remainder of the report. Although Mesh 2 is already adequate for deflection and tie force, only Mesh 3 captures the arch curvature accurately enough to stabilise the central bending moment, which is an important response quantity for interpreting the behaviour of the roof frame.
+Mesh 3 is adopted for the remainder of the report.
 
 \newpage
 \section{Deliverable 5: Influence of Prestressing Assumptions }
@@ -376,47 +372,11 @@ Horizontal reaction at supports (kN) & 4211 & 3480 & $-17.4\%$ \\
 \end{tabularx}
 \end{table}
 
-\begin{figure}[H]
-\centering
-\begin{minipage}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{Noprestress.png}
-
-    \small Bending Moment: Prestress Neglected
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{With_prestress.png}
-
-    \small Bending Moment: Prestress Included
-\end{minipage}
-
-\vspace{0.6em}
-
-\begin{minipage}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{Deformed_noprestress.png}
-
-    \small Deformed Shape: Prestress Neglected
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{Deformed_prestress.png}
-
-    \small Deformed Shape: Prestress Included
-\end{minipage}
-\caption{Comparison of bending-moment and deformed-shape response with and without high-tie prestress.}
-\label{fig:prestress_response}
-\end{figure}
-
-
 \subsection{Discussion of Results}
 Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_response} show that prestress changes the global response markedly. Without prestress, the central arch sags under gravity and the two tusks rotate upward to maintain continuity at the arch-tusk junctions. With prestress, the central arch retains a clearer curved profile, so the deformation pattern reverses and the tusks are pushed downward. When the arch sags more, the roof behaves in a more flexural manner and the moment distribution can change sign over parts of the frame, whereas the prestressed case remains closer to arch action.
 
 \subsection{Implications for Design and Tolerance}
-These results show that prestress is critical to design interpretation and tolerance assessment. If prestress is neglected, the model overestimates deflection and rafter bending but underestimates the tensile demand in the high tie and its anchorage. This is consistent with the supplementary construction sequence, where staged stressing was used to control geometry and force state, so the prestressed model is adopted as the minimum realistic representation of the completed roof. As shown in Table \ref{tab:mesh_sensitivity}, the change with prestress is significant would imply that without applied prestres, the arch would not be within construction tolerance. Therefore the arch should be installed after prestress is applied. 
+These results show that prestress is critical to design interpretation and tolerance assessment. If prestress is neglected, the model overestimates deflection and rafter bending but underestimates the tensile demand in the high tie and its anchorage. This is consistent with the supplementary construction sequence, where staged stressing was used to control geometry and force state, so the prestressed model is adopted as the minimum realistic representation of the completed roof. The large change in response also indicates that, without prestress, the arch would be much less stiff and more difficult to keep within a realistic construction-tolerance envelope.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}

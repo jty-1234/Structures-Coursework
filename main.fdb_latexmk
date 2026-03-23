@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1774172885.68962 "main.aux" "main.bbl" "main" 1774172889.04201 0
-  "./references.bib" 1774171476 1800 1624d2c222cc3f7c557ea7bb98b83ac5 ""
+["bibtex main"] 1774274366.01548 "main.aux" "main.bbl" "main" 1774274419.05475 0
+  "./references.bib" 1774274057 2123 e1ded6c6c30f8dbb45afd043f93538b0 ""
   "C:/Users/31945/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1774172888 7165 9c048cb27de6c0c9d735b8b8044d45e7 "pdflatex"
+  "main.aux" 1774274418 6773 697bc962eb5a38c3cb2f63e7f2d27396 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1774172885.98438 "main.tex" "main.pdf" "main" 1774172889.04271 0
-  "610x229x125.png" 1774171476 30350 f7bd0934f6e13d542089aa10e12defed ""
+["pdflatex"] 1774274415.97812 "./main.tex" "main.pdf" "main" 1774274419.0555 0
+  "./main.tex" 1774274410 26698 902b092beb63d91b84a36fd6cdf0131d ""
   "C:/Users/31945/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1774123671 82686 2381c3433487640bf26aa76a10db7eb2 ""
   "C:/Users/31945/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx0800.pk" 1773689784 19872 7eb3b0aa568b2cd09c7d4cd3fbd5578c ""
   "C:/Users/31945/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1773598240 25420 ae3ea01df5a5d7917cef82f70003063f ""
@@ -129,8 +129,6 @@
   "C:/Users/31945/AppData/Local/Programs/MiKTeX/tex/latex/translations/translations.sty" 1644048522 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "C:/Users/31945/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/31945/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Deformed_noprestress.png" 1773866472 7346 5e09734781108ab23274c6fd07d34454 ""
-  "Deformed_prestress.png" 1773866507 7171 0de04681d3ecd804fc6f71e016f80320 ""
   "Mesh1.png" 1773847905 16503 7698711bf998cf54dec6de6c7f5193d9 ""
   "Mesh2.png" 1773847937 20943 5d3e575075a3283434a43ec3bac0583f ""
   "Mesh3.png" 1773847968 21653 e0df3594a433eb59ea83d6c8e7184789 ""
@@ -142,11 +140,11 @@
   "With_prestress.png" 1773848487 21972 b9f779119e5866d82d381dab49c2c004 ""
   "bc_connection.png" 1773689091 603100 4411f81a3798bb93f8c8e7159631998b ""
   "element tyep.png" 1773754287 7475 0b0ffbd62aa530cf28eca0b906b30681 ""
-  "main.aux" 1774172888 7165 9c048cb27de6c0c9d735b8b8044d45e7 "pdflatex"
-  "main.bbl" 1774172885 1123 c3caa963b5d04f8dd4cf256134b202f8 "bibtex main"
-  "main.out" 1774172888 4247 5708ef3163b53091ce88243744653ef3 "pdflatex"
-  "main.tex" 1774172871 27641 5156083bff1c94db00fbd01c4db29944 ""
-  "main.toc" 1774172888 1864 cf3b84e2fd9e323a1dde3ee194955e54 "pdflatex"
+  "main.aux" 1774274418 6773 697bc962eb5a38c3cb2f63e7f2d27396 "pdflatex"
+  "main.bbl" 1774274366 1228 669b4032124b549724892284c996813b "bibtex main"
+  "main.out" 1774274418 4204 ac2effe92cecd07c117eed89f9555964 "pdflatex"
+  "main.tex" 1774274410 26698 902b092beb63d91b84a36fd6cdf0131d ""
+  "main.toc" 1774274418 1856 912a712aa348014dee859ad623de3917 "pdflatex"
   "part 1 line sketch.jpg" 1774171476 109276 1db75b7975fad173e47e41353e75a668 ""
   "validation.png" 1773849385 486864 7408f222ca78f08ba2d1fe57f828dffc ""
   (generated)

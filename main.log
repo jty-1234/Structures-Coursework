@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  22 MAR 2026 09:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  23 MAR 2026 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -557,133 +557,122 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 {C:/Users/31945/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 33.
+(hyperref)                removing `math shift' on input line 35.
 
-<SpanAB.png, id=115, 770.12718pt x 234.1247pt>
-File: SpanAB.png Graphic file (type png)
-<use SpanAB.png>
-Package pdftex.def Info: SpanAB.png  used on input line 37.
-(pdftex.def)             Requested size: 353.31439pt x 107.40929pt.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 58.
-
-<SpanCD.png, id=117, 501.37312pt x 152.82094pt>
-File: SpanCD.png Graphic file (type png)
-<use SpanCD.png>
-Package pdftex.def Info: SpanCD.png  used on input line 62.
-(pdftex.def)             Requested size: 326.13744pt x 99.4117pt.
-[2 <./SpanAB.png> <./SpanCD.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 98.
-
-<SpanBC.png, id=132, 521.69907pt x 156.585pt>
+<SpanBC.png, id=115, 521.69907pt x 156.585pt>
 File: SpanBC.png Graphic file (type png)
 <use SpanBC.png>
-Package pdftex.def Info: SpanBC.png  used on input line 102.
+Package pdftex.def Info: SpanBC.png  used on input line 39.
 (pdftex.def)             Requested size: 353.31439pt x 106.04631pt.
-[3 <./SpanBC.png>]
-<part 1 line sketch.jpg, id=142, 2568.59625pt x 529.98pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 75.
+
+<SpanAB.png, id=117, 770.12718pt x 234.1247pt>
+File: SpanAB.png Graphic file (type png)
+<use SpanAB.png>
+Package pdftex.def Info: SpanAB.png  used on input line 79.
+(pdftex.def)             Requested size: 353.31439pt x 107.40929pt.
+[2 <./SpanBC.png> <./SpanAB.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 103.
+
+<SpanCD.png, id=132, 501.37312pt x 152.82094pt>
+File: SpanCD.png Graphic file (type png)
+<use SpanCD.png>
+Package pdftex.def Info: SpanCD.png  used on input line 107.
+(pdftex.def)             Requested size: 326.13744pt x 99.4117pt.
+[3 <./SpanCD.png>]
+<part 1 line sketch.jpg, id=140, 2568.59625pt x 529.98pt>
 File: part 1 line sketch.jpg Graphic file (type jpg)
 <use part 1 line sketch.jpg>
-Package pdftex.def Info: part 1 line sketch.jpg  used on input line 172.
+Package pdftex.def Info: part 1 line sketch.jpg  used on input line 156.
 (pdftex.def)             Requested size: 271.7835pt x 56.0741pt.
-<610x229x125.png, id=145, 688.82344pt x 659.46375pt>
-File: 610x229x125.png Graphic file (type png)
-<use 610x229x125.png>
-Package pdftex.def Info: 610x229x125.png  used on input line 208.
-(pdftex.def)             Requested size: 203.83417pt x 195.14388pt.
- [4 <./part 1 line sketch.jpg> <./610x229x125.png>]
-<Weixin Image_20260315183303.png, id=163, 992.20688pt x 358.33875pt>
+ [4 <./part 1 line sketch.jpg>]
+<Weixin Image_20260315183303.png, id=156, 992.20688pt x 358.33875pt>
 File: Weixin Image_20260315183303.png Graphic file (type png)
 <use Weixin Image_20260315183303.png>
-Package pdftex.def Info: Weixin Image_20260315183303.png  used on input line 22
-8.
+Package pdftex.def Info: Weixin Image_20260315183303.png  used on input line 20
+5.
 (pdftex.def)             Requested size: 407.66833pt x 143.4112pt.
-<element tyep.png, id=165, 571.38469pt x 150.5625pt>
+<element tyep.png, id=158, 571.38469pt x 150.5625pt>
 File: element tyep.png Graphic file (type png)
 <use element tyep.png>
-Package pdftex.def Info: element tyep.png  used on input line 233.
+Package pdftex.def Info: element tyep.png  used on input line 210.
 (pdftex.def)             Requested size: 407.66833pt x 107.42392pt.
  [5 <./element tyep.png> <./Weixin Image_20260315183303.png (PNG copy)>]
-Overfull \hbox (8.82301pt too wide) in paragraph at lines 263--275
+Overfull \hbox (8.82301pt too wide) in paragraph at lines 240--252
 [][]  
  []
 
 [6]
-<validation.png, id=187, 638.00859pt x 340.64766pt>
+<validation.png, id=180, 638.00859pt x 340.64766pt>
 File: validation.png Graphic file (type png)
 <use validation.png>
-Package pdftex.def Info: validation.png  used on input line 291.
+Package pdftex.def Info: validation.png  used on input line 268.
 (pdftex.def)             Requested size: 317.07614pt x 169.29422pt.
  [7 <./validation.png>]
-<Mesh1.png, id=195, 630.85687pt x 318.43968pt>
+<Mesh1.png, id=188, 630.85687pt x 318.43968pt>
 File: Mesh1.png Graphic file (type png)
 <use Mesh1.png>
-Package pdftex.def Info: Mesh1.png  used on input line 327.
+Package pdftex.def Info: Mesh1.png  used on input line 304.
 (pdftex.def)             Requested size: 144.95303pt x 73.1667pt.
-<Mesh2.png, id=196, 633.86812pt x 318.43968pt>
+<Mesh2.png, id=189, 633.86812pt x 318.43968pt>
 File: Mesh2.png Graphic file (type png)
 <use Mesh2.png>
-Package pdftex.def Info: Mesh2.png  used on input line 334.
+Package pdftex.def Info: Mesh2.png  used on input line 311.
 (pdftex.def)             Requested size: 144.95303pt x 72.81685pt.
-<Mesh3.png, id=197, 633.86812pt x 318.43968pt>
+<Mesh3.png, id=190, 633.86812pt x 318.43968pt>
 File: Mesh3.png Graphic file (type png)
 <use Mesh3.png>
-Package pdftex.def Info: Mesh3.png  used on input line 341.
+Package pdftex.def Info: Mesh3.png  used on input line 318.
 (pdftex.def)             Requested size: 144.95303pt x 72.81685pt.
- [8 <./Mesh1.png> <./Mesh2.png> <./Mesh3.png>]
-<Noprestress.png, id=211, 633.86812pt x 318.43968pt>
+<Noprestress.png, id=191, 633.86812pt x 318.43968pt>
 File: Noprestress.png Graphic file (type png)
 <use Noprestress.png>
-Package pdftex.def Info: Noprestress.png  used on input line 383.
+Package pdftex.def Info: Noprestress.png  used on input line 330.
 (pdftex.def)             Requested size: 217.42265pt x 109.22528pt.
-<With_prestress.png, id=212, 633.86812pt x 318.43968pt>
+<With_prestress.png, id=192, 633.86812pt x 318.43968pt>
 File: With_prestress.png Graphic file (type png)
 <use With_prestress.png>
-Package pdftex.def Info: With_prestress.png  used on input line 390.
+Package pdftex.def Info: With_prestress.png  used on input line 337.
 (pdftex.def)             Requested size: 217.42265pt x 109.22528pt.
-<Deformed_noprestress.png, id=213, 633.86812pt x 318.43968pt>
-File: Deformed_noprestress.png Graphic file (type png)
-<use Deformed_noprestress.png>
-Package pdftex.def Info: Deformed_noprestress.png  used on input line 399.
-(pdftex.def)             Requested size: 217.42265pt x 109.22528pt.
-<Deformed_prestress.png, id=214, 633.86812pt x 318.43968pt>
-File: Deformed_prestress.png Graphic file (type png)
-<use Deformed_prestress.png>
-Package pdftex.def Info: Deformed_prestress.png  used on input line 406.
-(pdftex.def)             Requested size: 217.42265pt x 109.22528pt.
-
-[9 <./Noprestress.png> <./With_prestress.png> <./Deformed_noprestress.png> <./D
-eformed_prestress.png>]
-<bc_connection.png, id=231, 1541.76pt x 1027.84pt>
+ [8 <./Mesh1.png> <./Mesh2.png> <./Mesh3.png> <./Noprestress.png> <./With_prest
+ress.png>] [9]
+<bc_connection.png, id=220, 1541.76pt x 1027.84pt>
 File: bc_connection.png Graphic file (type png)
 <use bc_connection.png>
-Package pdftex.def Info: bc_connection.png  used on input line 430.
+Package pdftex.def Info: bc_connection.png  used on input line 390.
 (pdftex.def)             Requested size: 317.07614pt x 211.38295pt.
- [10 <./bc_connection.png (PNG copy)>] (main.bbl
+ [10 <./bc_connection.png (PNG copy)>]
+(main.bbl
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-)
-[11] (main.aux)
+
+Underfull \hbox (badness 1748) in paragraph at lines 15--22
+\T1/cmtt/m/n/9 / / britishsteel . co . uk / media / pgbhyql1 / british-[]steel-
+[]universal-[]beams-[]datasheet-[]100723 . pdf$[]\T1/cmr/m/n/9 , 2023.
+ []
+
+) [11] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5708EF3163B53091CE88243744653EF3;4247.
+(rerunfilecheck)             Checksum: AC2EFFE92CECD07C117EED89F9555964;4204.
  ) 
 Here is how much of TeX's memory you used:
- 17867 strings out of 467871
- 347213 string characters out of 5418376
- 773579 words of memory out of 5000000
- 46520 multiletter control sequences out of 15000+600000
+ 17842 strings out of 467871
+ 346586 string characters out of 5418376
+ 773469 words of memory out of 5000000
+ 46498 multiletter control sequences out of 15000+600000
  644413 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,88p,1003b,1050s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,88p,1003b,1048s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
 0900.pk> <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecti0900.pk> <C:\Users\31945\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -710,9 +699,9 @@ Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/
 31945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C
 :/Users/31945/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
 8.pfb>
-Output written on main.pdf (11 pages, 1566972 bytes).
+Output written on main.pdf (11 pages, 1533955 bytes).
 PDF statistics:
- 769 PDF objects out of 1000 (max. 8388607)
- 55 named destinations out of 1000 (max. 500000)
- 12023 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 755 PDF objects out of 1000 (max. 8388607)
+ 52 named destinations out of 1000 (max. 500000)
+ 12008 words of extra memory for PDF output out of 14400 (max. 10000000)
 
