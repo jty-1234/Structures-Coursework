@@ -104,7 +104,7 @@ M_{p,AB} \approx 1411\,\text{kNm}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.72\linewidth]{SpanCD.png}
+    \includegraphics[width=0.72\linewidth]{CD.png}
     \caption{Collapse mechanism adopted for span \(CD\).}
     \label{fig:span_cd}
 \end{figure}
@@ -146,7 +146,7 @@ M_{p,CD} = \left(600(6.64) - 768\right)\left(\frac{12-6.64}{12}\right)
 \approx 1436\,\text{kNm}
 \]
 
-Comparing the three spans, \(M_{p,BC} = 768\,\text{kNm}\), \(M_{p,AB} \approx 1411\,\text{kNm}\), and \(M_{p,CD} \approx 1436\,\text{kNm}\), span \(CD\) governs, so \(M_{p,\mathrm{adopt}} \approx 1436\,\text{kNm}\).
+The plastic resistance for the three spans is \(M_{p,BC} = 768\,\text{kNm}\), \(M_{p,AB} \approx 1411\,\text{kNm}\), and \(M_{p,CD} \approx 1436\,\text{kNm}\).
 
 \newpage
 \subsection{Beam Sizing}
@@ -347,7 +347,7 @@ Mesh 3 & 22 & 77 & 175.3 & 9320 & 198.2 & 0.0\% \\
 Table \ref{tab:mesh_sensitivity} and Figures~\ref{fig:mesh_bending} and \ref{fig:prestress_response} show that the coarsest arch discretisation is too flexible. Relative to Mesh 3, Mesh 1 gives much larger deflection and a very different bending-moment pattern. As the arch is reduced towards only a few straight beam segments, its curvature and therefore its stiffness are lost, so the response moves closer to a non-prestressed case, which can be seen in Figure \ref{fig:prestress_response}, and the frame behaves more like a softer flexural system. Mesh 2 is already close to Mesh 3 for deflection and tie force, but the central bending moment remains much more sensitive to curvature.
 
 \subsection{Conclusion}
-Based on the refinement sensitivity study, Mesh 3 is adopted for the remainder of the report.
+Although further refinement beyond Mesh 3 might yield minor fluctuations in the central bending moment, this parameter is not the critical governing action for the arch, which is instead dominated by axial compression and peak moments at the tusk connections. Therefore, Mesh 3 is adopted because it successfully converges for the critical global responses, deflection and high-tie tension, without the unnecessary computational expense of a finer mesh.
 
 \newpage
 \section{Deliverable 5: Influence of Prestressing Assumptions }
@@ -397,7 +397,7 @@ Horizontal reaction at supports (kN) & N/A & 3480 & N/A \\
 Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_stage_comparison} show that the timing of prestress application changes the structural state significantly. Relative to the arch-only erection-stage model, the full-frame post-erection assumption reduces the maximum vertical displacement from \SI{213.3}{\milli\metre} to \SI{175.3}{\milli\metre}, reduces the central arch bending moment from \SI{4128}{\kilo\newton\metre} to \SI{198.2}{\kilo\newton\metre}, and lowers the high-tie force from \SI{11450}{\kilo\newton} to \SI{9320}{\kilo\newton}. At the same time, the completed frame develops a critical end or connection moment of \SI{5837}{\kilo\newton\metre}, whereas the isolated arch-only model gives zero at the corresponding location. This shows that the erection-stage arch-only condition and the final completed-frame condition are not simply scaled versions of one another; the force path changes once the tusk rafters and support tree are engaged.
 
 \subsection{Implications for Design and Tolerance}
-This distinction matters because the supplementary construction paper states that the central arch section was loaded and prestressed before it was lifted into place, so the stress state in the steelwork is not the same as if the complete frame were first assembled and then stressed. The results here show that the arch-only erection stage can be more severe in overall arch bending, tie force and vertical movement, while the completed frame introduces local connection moments after continuity is established. Therefore, the full-frame model is appropriate for the final in-service roof, but the arch-only model is still needed for erection-stage interpretation, tolerance control and checking where the initial locked-in forces are generated.
+This distinction matters because the supplementary construction paper states that the central arch section was loaded and prestressed before it was lifted into place, so the stress state in the steelwork is not the same as if the complete frame were first assembled and then stressed. The results here show that the arch-only erection stage can be more severe in overall arch bending, tie force and vertical movement, while the completed frame introduces local connection moments after continuity is established. Tensioning the isolated arch on the ground allows contractors to actively tune the high-tie cable to achieve the exact required geometric span. This overcomes minor fabrication deviations and ensures the massive arch fits perfectly between the pre-erected support trees without requiring forced, on-site alignment. Therefore, the full-frame model is appropriate for the final in-service roof, but the arch-only model is still needed for erection-stage interpretation, tolerance control and checking where the initial locked-in forces are generated.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
