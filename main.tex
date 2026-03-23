@@ -354,29 +354,48 @@ Mesh 3 is adopted for the remainder of the report.
 
 \begin{table}[H]
 \centering
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.15}
-\caption{Simplified sensitivity of global response to high-tie prestress}
+\renewcommand{\arraystretch}{1.1}
+\caption{Comparison between the completed-frame prestress assumption and the simplified arch-only erection-stage model}
 \label{tab:prestress_comparison}
-\begin{tabularx}{0.95\textwidth}{>{\raggedright\arraybackslash}p{0.39\textwidth} >{\centering\arraybackslash}p{0.15\textwidth} >{\centering\arraybackslash}p{0.15\textwidth} >{\centering\arraybackslash}X}
+\begin{tabularx}{0.95\textwidth}{>{\raggedright\arraybackslash}p{0.37\textwidth} >{\centering\arraybackslash}p{0.17\textwidth} >{\centering\arraybackslash}p{0.17\textwidth} >{\centering\arraybackslash}X}
 \toprule
-\textbf{Response Quantity} & \textbf{Prestress Neglected} & \textbf{Prestress Included} & \textbf{Change With Prestress} \\
+\textbf{Response Quantity} & \textbf{Full Frame After Erection} & \textbf{Arch Only Before Lift} & \textbf{Relative Change} \\
 \midrule
 Maximum vertical displacement (mm) & 490 & 175.3 & $-64.2\%$ \\
-Centre rafter bending moment (kNm) & 9811 & 198.2 & $-98.0\%$ \\
-Tusk-to-arch connection bending moment (kNm) & 16490 & 5837 & $-64.6\%$ \\
+Central arch bending moment (kNm) & 9811 & 198.2 & $-98.0\%$ \\
+Critical end/connection bending moment (kNm) & 16490 & 5837 & $-64.6\%$ \\
 High tie force (kN) & 4296 & 9320 & $+116.9\%$ \\
 Horizontal reaction at supports (kN) & 4211 & 3480 & $-17.4\%$ \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{With_prestress_stage.png}
+
+    \small Full frame: prestress after erection
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Arch_only.png}
+
+    \small Central arch: prestress before installation
+\end{minipage}
+\caption{Bending-moment response for the two prestressing assumptions considered in Deliverable 5.}
+\label{fig:prestress_stage_comparison}
+\end{figure}
+
 \subsection{Discussion of Results}
-Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_response} show that prestress changes the global response markedly. Without prestress, the central arch sags under gravity and the two tusks rotate upward to maintain continuity at the arch-tusk junctions. With prestress, the central arch retains a clearer curved profile, so the deformation pattern reverses and the tusks are pushed downward. When the arch sags more, the roof behaves in a more flexural manner and the moment distribution can change sign over parts of the frame, whereas the prestressed case remains closer to arch action.
+Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_stage_comparison} show that the timing of prestress application changes the structural state significantly. In the coursework simplification, the high tie is stressed after the whole roof frame has been erected, so the locked-in force is introduced into the completed frame. In the alternative model, the central arch-and-tie unit is stressed before installation, so the prestress acts while the arch is still working largely as an isolated arch-only system. This produces a different balance between arch action, tie tension and bending redistribution before the tusk rafters and support tree are engaged.
 
 \subsection{Implications for Design and Tolerance}
-These results show that prestress is critical to design interpretation and tolerance assessment. If prestress is neglected, the model overestimates deflection and rafter bending but underestimates the tensile demand in the high tie and its anchorage. This is consistent with the supplementary construction sequence, where staged stressing was used to control geometry and force state, so the prestressed model is adopted as the minimum realistic representation of the completed roof. The large change in response also indicates that, without prestress, the arch would be much less stiff and more difficult to keep within a realistic construction-tolerance envelope.
+This distinction matters because the supplementary construction paper states that the central arch section was loaded and prestressed before it was lifted into place, so the stress state in the steelwork is not the same as if the complete frame were first assembled and then stressed. The full-frame post-erection model is still useful for the final in-service roof, but the arch-only model is a better representation of the erection-stage locked-in force state. Therefore, if the two cases differ materially, the simplified post-erection assumption should be used with caution for tolerance assessment, connection design and interpretation of the final force path.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
