@@ -154,42 +154,46 @@ Comparing the three spans, \(M_{p,BC} = 768\,\text{kNm}\), \(M_{p,AB} \approx 14
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{part 1 line sketch.jpg}
-    \caption{Beam Span}
+    \caption{Beam span and plastic hinge layout}
     \label{fig:line_sketch}
 \end{figure}
 
-Assuming grade S355 steel with $f_y = 355 \, \text{MPa}$, the beam is designed based on the governing plastic moment capacity from span \(CD\), where $M_{p,\mathrm{adopt}} \approx 1436 \, \text{kNm}$, which is adopted consistently throughout the beam in Figure \ref{fig:line_sketch}.
-
-The required plastic section modulus is obtained from:
+The member is first sized on the basis of the minimum required plastic resistance in span BC, where \(M_{p,BC}=768\ \text{kNm}\). For S355 steel with \(f_y=355\ \text{MPa}\) and \(\gamma_{M0}=1.0\), the required plastic section modulus is
 \[
-W_{pl,req} = \frac{M_p \, \gamma_{M0}}{f_y}
+W_{pl,\text{req}}=\frac{768\times10^6}{355}=2.16\times10^6\ \text{mm}^3
 \]
+A UB \(533\times210\times92\) section, with \(W_{pl}=2.36\times10^6\ \text{mm}^3\), is therefore adopted as the base section. This provides adequate plastic resistance for span BC while maintaining a uniform beam depth.
 
-Assuming $\gamma_{M0} = 1.0$,
+In the critical strengthened region, the required plastic moment resistance is \(1436\ \text{kNm}\). The corresponding required plastic section modulus is
 \[
-W_{pl,req} = \frac{1.436 \times 10^9 \times 1.0}{355}
+W_{pl,\text{req,str}}=\frac{1436\times10^6}{355}=4.05\times10^6\ \text{mm}^3
 \]
-
+Since the selected UB section provides only \(2.36\times10^6\ \text{mm}^3\), an additional plastic modulus of
 \[
-W_{pl,req} \approx 4.05 \times 10^6 \, \text{mm}^3
+\Delta W_{pl}=4.05\times10^6-2.36\times10^6=1.69\times10^6\ \text{mm}^3
 \]
-\iffalse
-
-Referring to BS EN 1993-1-1:2005 and BS 4-1:2005 section property tables, a UB 610×229×125 section (Figure \ref{fig:UB_610×229×125}) with $W_{pl}=3680\times 10^6 \text{mm}^3$ is adopted for the full beam.
+must be provided. This is achieved by welding flange plates to the top and bottom flanges in the regions of high bending moment. Assuming plates of width approximately equal to the flange width, \(b_p=210\ \text{mm}\), the required plate thickness from a first-order plastic modulus estimate is obtained from
+\[
+\Delta W_{pl}\approx 2\,b_p t_p\left(\frac{d}{2}+\frac{t_p}{2}\right)
+\]
+Taking \(d=533\ \text{mm}\),
+\[
+1.69\times10^6 = 2(210)t_p\left(266.5+\frac{t_p}{2}\right)
+\]
+which gives
+\[
+t_p \approx 14.7\ \text{mm}
+\]
+Hence, \(210\times15\ \text{mm}\) flange plates welded to both flanges may be adopted to increase the plastic resistance to the required level such as in Figure \ref{fig:flangeplates}. The plates should be installed only where necessary along spans AB and CD.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\linewidth]{610x229x125.png}
-    \caption{The selected UB 610×229×125 section \cite{sections_ub610x229x125}} 
-    \label{fig:UB_610×229×125}
+    \includegraphics[width=0.1\linewidth]{figure_002.jpg}
+    \caption{Cover Plate reinforcement cross-section}
+    \label{fig:flangeplates}
 \end{figure}
-\fi
 
-Referring to official British Steel section tables, a UB 610x229x140 section with $W_{pl} = 4.20 \times 10^6\,\text{mm}^3$ is adopted for the full beam \cite{british_steel_ub_datasheet}. This exceeds the required plastic modulus while remaining close to the originally considered 610-series beam depth, so it is still practical to fabricate, handle and connect.
-
-A uniform section is selected rather than reducing the section in span BC and introducing transitions, as discrete section changes and associated connections can introduce local deviations from idealised beam behaviour and reduce the reliability of stiffness and plastic capacity distribution \cite{hemstad_cantilever_beam_framing}. Maintaining a constant section ensures a more predictable global response and a clearly defined plastic collapse mechanism.
-
-Furthermore, adopting a single rolled section removes the need for moment-resisting splices or transition detailing, simplifying fabrication and erection. Since fabrication and installation typically account for a significantly larger proportion of total project cost than material alone \cite{structural_steel_cost_estimation}, this improves construction efficiency and offsets any marginal material over-design in span BC.
+A minimum rolled UB section is adopted based on the governing plastic moment demand in span BC, avoiding global over-design and reducing overall steel tonnage. Localised flange strengthening is applied only in high moment regions to increase plastic resistance where required ensuring an economical solution. A single standard UB section is used throughout as the base member to simplify procurement, handling, and erection, and to avoid stepped sections and transition splices. Although welded flange plates introduce local fabrication effort, this is limited in extent and offset by reduced material usage and simplified construction sequencing. Since fabrication and erection typically dominate total steelwork cost over material \cite{structural_steel_cost_estimation}, standardisation combined with targeted strengthening provides an economical and constructable solution while maintaining the required plastic hinge mechanism.
 
 \newpage
 
@@ -328,24 +332,22 @@ Mesh 3 & 22 & 77 & 175.3 & 9320 & 198.2 & 0.0\% \\
 \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\linewidth]{Noprestress.png}
-
-    \small Prestress neglected
+    \small Prestress Neglected
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\linewidth]{With_prestress.png}
-
-    \small Prestress included
+    \small Prestress Included
 \end{minipage}
 \caption{Comparison of bending-moment response with and without high-tie prestress.}
 \label{fig:prestress_response}
 \end{figure}
 
-Table \ref{tab:mesh_sensitivity} and Figures~\ref{fig:mesh_bending} and \ref{fig:prestress_response} show that the coarsest arch discretisation is too flexible. Relative to Mesh 3, Mesh 1 gives much larger deflection and a very different bending-moment pattern. As the arch is reduced towards only a few straight beam segments, its curvature and therefore its stiffness are lost, so the response moves closer to the non-prestressed case: the frame behaves less like a stiff prestressed arch and more like a softer flexural system. Mesh 2 is already close to Mesh 3 for deflection and tie force, but the central bending moment remains much more sensitive to curvature, so Mesh 3 is adopted for the remainder of the report.
+Table \ref{tab:mesh_sensitivity} and Figures~\ref{fig:mesh_bending} and \ref{fig:prestress_response} show that the coarsest arch discretisation is too flexible. Relative to Mesh 3, Mesh 1 gives much larger deflection and a very different bending-moment pattern. As the arch is reduced towards only a few straight beam segments, its curvature and therefore its stiffness are lost, so the response moves closer to a non-prestressed case, which can be seen in Figure \ref{fig:prestress_response}, and the frame behaves more like a softer flexural system. Mesh 2 is already close to Mesh 3 for deflection and tie force, but the central bending moment remains much more sensitive to curvature.
 
 \subsection{Conclusion}
-Mesh 3 is adopted for the remainder of the report.
+Based on the refinement sensitivity study, Mesh 3 is adopted for the remainder of the report.
 
 \newpage
 \section{Deliverable 5: Influence of Prestressing Assumptions }
@@ -378,14 +380,14 @@ Horizontal reaction at supports (kN) & N/A & 3480 & N/A \\
     \centering
     \includegraphics[width=\linewidth]{Arch_only.png}
 
-    \small Central arch: prestress before installation
+    \small Central Arch: Prestress Before Installation
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.47\textwidth}
     \centering
     \includegraphics[width=\linewidth]{With_prestress_stage.png}
 
-    \small Full frame: prestress after erection
+    \small Full Frame: Prestress After Erection
 \end{minipage}
 \caption{Bending-moment response for the two prestressing assumptions considered in Deliverable 5.}
 \label{fig:prestress_stage_comparison}
@@ -400,9 +402,7 @@ This distinction matters because the supplementary construction paper states tha
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
 
-For a more detailed FE study, the rafter splice between the tusk rafter and arch rafter should be extracted from the global frame model and analysed as a local submodel. The purpose of the local model would be to resolve the stress distribution in the splice plates, bolts or welds, and the adjacent box and I-section walls, which cannot be captured accurately by the beam idealisation used in the global model.
-
-The local model should include a short length of member on each side of the splice so that the boundary conditions are applied away from the connection itself. This reduces artificial stress concentrations caused by restraining the model too close to the detail. A practical choice would be to include approximately one section depth of the arch rafter and one section depth of the tusk rafter beyond the splice on either side.
+For detailed analysis, the tusk-to-arch rafter splice should be extracted as a local submodel to resolve the complex stress distributions within the splice plates, bolts, welds, and adjacent section walls, details the global beam idealisation cannot accurately capture. To prevent boundary restraints from inducing artificial stress concentrations, the local model should include a short length of member on each side of the splice so that the boundary conditions are applied away from the connection itself. A practical choice would be to include approximately one section depth on either side of the splice.
 
 \begin{figure}[H]
 \centering
@@ -413,11 +413,11 @@ The local model should include a short length of member on each side of the spli
 
 The preferred boundary condition is to impose the displacement and rotation components extracted from the global beam model at the two cut faces of the local model. In practice, each cut face can be coupled to a reference node so that the sectional deformation remains compatible with the global model. The six kinematic quantities imposed at each end are the three translations ($u_x$, $u_y$, $u_z$) and the three rotations ($r_x$, $r_y$, $r_z$). This approach is preferable to simply fixing one end, because it reproduces the actual deformation state of the connection and avoids introducing artificial restraint moments.
 
-The corresponding section forces should also be checked against the global model outputs. The main actions expected at the splice are axial force $N$, vertical shear $V$, bending moment $M$, and a smaller torsional component due to the curved roof geometry and eccentricity of the connection detail. If the software or modelling approach makes direct displacement transfer difficult, an acceptable alternative is to apply the equivalent set of sectional resultants at the two cut faces, provided that overall equilibrium is maintained.
+The corresponding section forces should also be checked against the global model outputs. The main actions expected at the splice are axial force $N$, vertical shear $V$, bending moment $M$, and a smaller torsional component due to the curved roof geometry and eccentricity of the connection detail. As the model relies on an idealised 2D frame of 1D beam elements, it does not accurately capture the complex 3D stress flow though the splice plates, bolts and welds. Futhermore, according to Saint-Venant's principle, local stresses near idealised joints or load applications in the model are highly dependent on the mathematical simplifications made, meaning that the local stresses at the joint in the model will likely be exaggerated. If the software or modelling approach makes direct displacement transfer difficult, an acceptable alternative is to apply the equivalent set of sectional resultants at the two cut faces, provided that overall equilibrium is maintained.
 
-To prevent rigid body motion in the local model, one reference node may be lightly stabilised after the global displacements have been assigned. This stabilisation should only remove numerical singularities and must not alter the transferred load path. Contact, bolt preload, or weld representation can then be added depending on the intended level of detail. For the purposes of this coursework, the key requirement is that the splice boundaries are driven by the global model response rather than by arbitrary fixed supports.
 
-Section cuts are located approximately  one local section depth  away from the splice connection along the axis of the member. This avoids local stress disturbance. As the depth varies along the rafter, the local section depth is equal to the splice-region depth (3.6 m), cuts A–A and B–B are placed approximately 3.6 m from the splice on either side. At both cut faces, the translational and rotational displacements extracted from the global FE model are imposed. This ensures compatibility between the local splice model and the global structural response.
+
+To prevent rigid body motion in the local model, one reference node may be lightly stabilised after the global displacements have been assigned. This stabilisation should only remove numerical singularities and must not alter the transferred load path. Contact, bolt preload, or weld representation can then be added depending on the intended level of detail. For the purposes of this coursework, the key requirement is that the splice boundaries are driven by the global model response rather than by arbitrary fixed supports. Section cuts are located approximately  one local section depth  away from the splice connection along the axis of the member. This avoids local stress disturbance. As the depth varies along the rafter, the local section depth is equal to the splice-region depth (3.6 m), cuts A–A and B–B are placed approximately 3.6 m from the splice on either side. At both cut faces, the translational and rotational displacements extracted from the global FE model are imposed. This ensures compatibility between the local splice model and the global structural response.
 
 \newpage
 \begingroup
