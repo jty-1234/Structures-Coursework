@@ -8,6 +8,7 @@
 \usepackage{siunitx}   
 \usepackage[hidelinks]{hyperref}   
 \usepackage{caption}   
+\usepackage{subcaption}
 \usepackage{float}    
 \usepackage{microtype}
 \usepackage{tabularx}
@@ -15,6 +16,7 @@
 \microtypesetup{expansion=false}
 \definecolor{myblue}{RGB}{0,162,232}
 \captionsetup{labelfont={color=myblue}}
+\captionsetup[subfigure]{justification=centering,skip=6pt}
 
 \title{\textbf{Structures Coursework}}
 \author{Group 8}
@@ -303,48 +305,47 @@ Mesh 3 & 22 & 77 & 175.3 & 9320 & 198.2 & 0.0\% \\
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{0.32\textwidth}
+\begin{subfigure}[t]{0.32\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{Mesh1.png}
-
-    \small Mesh 1
-\end{minipage}
+    \includegraphics[width=\linewidth,trim={45 0 45 0},clip]{Mesh1.png}
+    \caption{Mesh 1}
+\end{subfigure}
 \hfill
-\begin{minipage}[t]{0.32\textwidth}
+\begin{subfigure}[t]{0.32\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{Mesh2.png}
-
-    \small Mesh 2
-\end{minipage}
+    \includegraphics[width=\linewidth,trim={45 0 45 0},clip]{Mesh2.png}
+    \caption{Mesh 2}
+\end{subfigure}
 \hfill
-\begin{minipage}[t]{0.32\textwidth}
+\begin{subfigure}[t]{0.32\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{Mesh3.png}
-
-    \small Mesh 3
-\end{minipage}
+    \includegraphics[width=\linewidth,trim={45 0 45 0},clip]{Mesh3.png}
+    \caption{Mesh 3}
+\end{subfigure}
 \caption{Bending-moment diagrams for the three mesh densities used in the sensitivity study.}
 \label{fig:mesh_bending}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{0.48\textwidth}
+\begin{subfigure}[t]{0.72\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{Noprestress.png}
-    \small Prestress Neglected
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\textwidth}
+    \includegraphics[width=\linewidth,trim={20 40 20 45},clip]{Deformed_noprestress.png}
+    \par\vspace{0.2em}
+    \caption{Prestress neglected}
+\end{subfigure}
+\par\medskip
+\begin{subfigure}[t]{0.72\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{With_prestress.png}
-    \small Prestress Included
-\end{minipage}
-\caption{Comparison of bending-moment response with and without high-tie prestress.}
+    \includegraphics[width=\linewidth,trim={20 40 20 45},clip]{Deformed_prestress.png}
+    \par\vspace{0.2em}
+    \caption{Prestress included}
+\end{subfigure}
+\caption{Comparison of deformed shape with and without high-tie prestress.}
 \label{fig:prestress_response}
 \end{figure}
 
-Table \ref{tab:mesh_sensitivity} and Figures~\ref{fig:mesh_bending} and \ref{fig:prestress_response} show that the coarsest arch discretisation is too flexible. Relative to Mesh 3, Mesh 1 gives much larger deflection and a very different bending-moment pattern. As the arch is reduced towards only a few straight beam segments, its curvature and therefore its stiffness are lost, so the response moves closer to a non-prestressed case, which can be seen in Figure \ref{fig:prestress_response}, and the frame behaves more like a softer flexural system. Mesh 2 is already close to Mesh 3 for deflection and tie force, but the central bending moment remains much more sensitive to curvature.
+Table \ref{tab:mesh_sensitivity} and Figures~\ref{fig:mesh_bending} and \ref{fig:prestress_response} show that the coarsest arch discretisation is too flexible. Relative to Mesh 3, Mesh 1 gives much larger deflection and a very different bending-moment pattern. As the arch is reduced towards only a few straight beam segments, its curvature and therefore its stiffness are lost, so the resulting deformation shape moves closer to the non-prestressed case shown in Figure \ref{fig:prestress_response}, and the frame behaves more like a softer flexural system. Mesh 2 is already close to Mesh 3 for deflection and tie force, but the central bending moment remains much more sensitive to curvature.
 
 \subsection{Conclusion}
 Although further refinement beyond Mesh 3 might yield minor fluctuations in the central bending moment, this parameter is not the critical governing action for the arch, which is instead dominated by axial compression and peak moments at the tusk connections. Therefore, Mesh 3 is adopted because it successfully converges for the critical global responses, deflection and high-tie tension, without the unnecessary computational expense of a finer mesh.
