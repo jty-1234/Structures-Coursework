@@ -282,35 +282,39 @@ Basic verification checks were also completed: the GSA solver ran without instab
 \section{Deliverable 4: Mesh Refinement Sensitivity Study}
 
 \subsection{Convergence Study Methodology}
-Three mesh densities were evaluated under the governing ULS vertical load combination $1.35G_k + 1.5Q_k + 1.0P_s$, where $P_s$ represents the prestress in the high-tie. Mesh 1 is the coarsest representation of the arch, Mesh 2 retains more intermediate points, and Mesh 3 preserves the full coordinate set taken from the supplementary geometry. Arch central deflection, high-tie axial force and arch central bending moment were tracked to judge convergence.
+Three mesh densities were evaluated under the governing ULS vertical load combination $1.35G_k + 1.5Q_k + 1.0P_s$, where $P_s$ represents the prestress in the high-tie. Mesh 1 is the coarsest representation of the arch, Mesh 2 retains more intermediate points, and Mesh 3 preserves the full coordinate set taken from the supplementary geometry. Arch central deflection, high-tie axial force, arch central bending moment, and tusk-arch connection bending moment were tracked to judge convergence. For a quantity of interest $q$, the convergence measure between successive meshes was taken as
+\[
+\varepsilon_q = \left|\frac{q_n - q_{n-1}}{q_n}\right| \times 100\%
+\]
+and a value below \(2\%\) was adopted for the governing global response quantities; this is conservative relative to the \(1\text{--}5\%\) range reported for average stress-related displacements at high accuracy \cite{ansys_adaptive_convergence}.
 
 \begin{table}[H]
 \centering
-\footnotesize
-\setlength{\tabcolsep}{5pt}
-\renewcommand{\arraystretch}{1.35}
-\caption{Influence of arch mesh density on key global responses}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.1}
+\caption{Influence of arch mesh density on key global responses. Percentages in parentheses denote absolute change relative to Mesh 3.}
 \label{tab:mesh_sensitivity}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{0.13\textwidth} >{\centering\arraybackslash}p{0.08\textwidth} >{\centering\arraybackslash}p{0.13\textwidth} >{\centering\arraybackslash}p{0.15\textwidth} >{\centering\arraybackslash}p{0.16\textwidth} >{\centering\arraybackslash}p{0.12\textwidth}}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.09\textwidth} >{\centering\arraybackslash}p{0.09\textwidth} >{\centering\arraybackslash}p{0.06\textwidth} >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
 \toprule
-\textbf{Mesh} & \textbf{Arch Elements} & \textbf{DoF} & \textbf{Arch Central Deflection (mm)} & \textbf{High-Tie Axial Force (kN)} & \textbf{Arch Central Bending Moment (kNm)} & \textbf{\% Deflection Change vs Mesh 3} \\
+\textbf{Mesh} & \textbf{Arch Elements} & \textbf{DoF} & \textbf{\shortstack{Arch Defl.\\(mm)}} & \textbf{\shortstack{Tie Force\\(kN)}} & \textbf{\shortstack{Arch Mid BM\\(kNm)}} & \textbf{\shortstack{Tusk-Arch\\BM\\(kNm)}} \\
 \midrule
-Mesh 1 & 14 & 53 & 241.2 & 9725 & 12760 & 37.6\% \\
-Mesh 2 & 16 & 59 & 175.7 & 9309 & 960.2 & 0.2\% \\
-Mesh 3 & 22 & 77 & 175.3 & 9320 & 198.2 & 0.0\% \\
+Mesh 1 & 14 & 53 & \mbox{241.2 (37.6\%)} & \mbox{9725 (4.3\%)} & \mbox{12760 (6337.9\%)} & \mbox{4721 (19.1\%)} \\
+Mesh 2 & 16 & 59 & \mbox{175.7 (0.2\%)} & \mbox{9309 (0.1\%)} & \mbox{960.2 (384.5\%)} & \mbox{5753 (1.4\%)} \\
+Mesh 3 & 22 & 77 & \mbox{175.3 (0.0\%)} & \mbox{9320 (0.0\%)} & \mbox{198.2 (0.0\%)} & \mbox{5837 (0.0\%)} \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}[t]{0.47\textwidth}
+\begin{subfigure}[t]{0.38\textwidth}
     \centering
     \includegraphics[width=\linewidth,trim={45 0 45 0},clip]{Mesh1.png}
     \caption{Mesh 1}
 \end{subfigure}
 \hfill
-\begin{subfigure}[t]{0.47\textwidth}
+\begin{subfigure}[t]{0.38\textwidth}
     \centering
     \includegraphics[width=\linewidth,trim={45 0 45 0},clip]{Mesh2.png}
     \caption{Mesh 2}
@@ -321,27 +325,24 @@ Mesh 3 & 22 & 77 & 175.3 & 9320 & 198.2 & 0.0\% \\
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}[t]{0.47\textwidth}
+\begin{subfigure}[t]{0.38\textwidth}
     \centering
     \includegraphics[width=\linewidth,trim={20 40 20 45},clip]{Deformed_noprestress.png}
-    \par\vspace{0.2em}
+    \par\vspace{0em}
     \caption{Prestress neglected}
 \end{subfigure}
 \hfill
-\begin{subfigure}[t]{0.47\textwidth}
+\begin{subfigure}[t]{0.38\textwidth}
     \centering
     \includegraphics[width=\linewidth,trim={20 40 20 45},clip]{Deformed_prestress.png}
-    \par\vspace{0.2em}
+    \par\vspace{0em}
     \caption{Prestress included}
 \end{subfigure}
 \caption{Comparison of deformed shape with and without high-tie prestress.}
 \label{fig:prestress_response}
 \end{figure}
 
-Table \ref{tab:mesh_sensitivity} and Figures~\ref{fig:mesh_bending} and \ref{fig:prestress_response} show that the coarsest arch discretisation is too flexible. Relative to Mesh 3, Mesh 1 gives much larger deflection and a very different bending-moment pattern. As the arch is reduced towards only a few straight beam segments, its curvature and therefore its stiffness are lost, so the resulting deformation shape moves closer to the non-prestressed case shown in Figure \ref{fig:prestress_response}, and the frame behaves more like a softer flexural system. Mesh 2 is already close to Mesh 3 for deflection and tie force, but the central bending moment remains much more sensitive to curvature.
-
-\subsection{Conclusion}
-Although further refinement beyond Mesh 3 might yield minor fluctuations in the central bending moment, this parameter is not the critical governing action for the arch, which is instead dominated by axial compression and peak moments at the tusk connections. Therefore, Mesh 3 is adopted because it successfully converges for the critical global responses, deflection and high-tie tension, without the unnecessary computational expense of a finer mesh.
+Table \ref{tab:mesh_sensitivity} and Figures~\ref{fig:mesh_bending} and \ref{fig:prestress_response} show that Mesh 1 is too coarse. From Mesh 2 to Mesh 3, the convergence measure is \(0.2\%\) for arch central deflection, \(0.1\%\) for high-tie axial force, and \(1.4\%\) for the tusk-arch connection bending moment, so the \(2\%\) criterion is satisfied for the governing global responses. The central arch bending moment still changes by \(384.5\%\), but it is not the governing quantity for this simplified roof model, which is controlled more by deflection, tie force and connection moment. Mesh 3 is therefore adopted for subsequent analysis.
 
 \newpage
 \section{Deliverable 5: Influence of Prestressing Assumptions }
@@ -416,7 +417,7 @@ To prevent rigid body motion in the local model, one reference node may be light
 \newpage
 \begingroup
 \small
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{references}
 \endgroup
 
