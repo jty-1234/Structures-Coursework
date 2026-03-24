@@ -28,7 +28,7 @@
 \newpage
 \newpage
 
-\section{Span calculation}
+\section{Plastic Analysis}
 
 The beam is assessed by the virtual-work method. Span \(BC\) is solved first so that the support hinge moment at \(B\) and \(C\) can then be carried into spans \(AB\) and \(CD\). The assumed plastic hinge sets are \(A\)-midspan-\(B\) for span \(AB\), \(B\)-load point-\(C\) for span \(BC\), and \(C\)-interior hinge for span \(CD\).
 
@@ -149,7 +149,7 @@ M_{p,CD} = \left(600(6.64) - 768\right)\left(\frac{12-6.64}{12}\right)
 The plastic resistance for the three spans is \(M_{p,BC} = 768\,\text{kNm}\), \(M_{p,AB} \approx 1411\,\text{kNm}\), and \(M_{p,CD} \approx 1436\,\text{kNm}\).
 
 \newpage
-\subsection{Beam Sizing}
+\subsection{Line Sketch and Justification}
 
 \begin{figure}[H]
     \centering
@@ -197,7 +197,7 @@ A minimum rolled UB section is adopted based on the governing plastic moment dem
 
 \newpage
 
-\section{Deliverable 1: Geometry}
+\section{Deliverable 1: Structural Idealisation Sketch}
 The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}(a), points labelled \textit{R} define the roof profile and represent the mid-points of the roof section, while points labelled \textit{S} define the support system and lower restraint points. 
 
 The second diagram shows the FE idealisation adopted for analysis. In Figure~\ref{fig:geometry_overview}(b), green denotes beam elements used for the roof profile, red denotes the high tie modelled as a tie element, and blue denotes the support-tree members modelled as bar elements. In GSA, beam elements model axial, bending and torsional effects, bar elements provide axial stiffness only, and tie elements are axial-only elements with zero stiffness in compression. This makes beams suitable for the roof rafters, bars suitable for the tree members, and a tie suitable for the prestressed high tie. Both end supports were modelled as fixed supports, while the pin-connected members were treated consistently on both sides because the connected elements were assumed not to transfer bending moment. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
@@ -221,9 +221,8 @@ Because both the arch rafter and tusk rafter vary in depth along their length, t
 
 \newpage
 \section{Deliverable 2: Material, Section, and Loading Data }
-\subsection{Material and Section Properties and Loading Data}
 
-The global FE model was defined using linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal}, a Poisson's ratio of 0.30 and density of \SI{7850}{\kilogram\per\metre\cubed} so that self-weight could be included automatically in GSA. A nominal S235 steel grade was assigned to the primary roof members only to complete the material definition; in this linear-elastic global analysis, the response is governed by the assigned elastic stiffness and density, so any conventional structural steel grade with the same \(E\), \(\nu\), and density would give essentially the same global results. The twin high-tie strands were modelled as a single prestressed tie element with the same total cross-sectional area and an initial prestress of \SI{450}{\mega\pascal}.
+The global FE model was defined using linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal} (\(E\)), a Poisson's ratio (\(\nu\)) of 0.30 and density (\(\rho\)) of \SI{7850}{\kilogram\per\metre\cubed} so that self-weight could be included automatically in GSA. A nominal S235 steel grade was assigned to the primary roof members only to complete the material definition; in this linear-elastic global analysis, the response is governed by the assigned elastic stiffness and density, so any conventional structural steel grade with the same \(E\), \(\nu\), and \(\rho\) would give essentially the same global results. The twin high-tie strands were modelled as a single prestressed tie element with the same total cross-sectional area and an initial prestress of \SI{450}{\mega\pascal}.
 
 Only vertical symmetric loading was considered. The characteristic permanent roof load was taken as the sum of the aluminium standing seam roof (\SI{0.10}{\kilo\pascal}), structural deck (\SI{0.15}{\kilo\pascal}), insulation/acoustic layers (\SI{0.40}{\kilo\pascal}) and the service allowance (\SI{0.15}{\kilo\pascal}), giving $G_k = \SI{0.80}{\kilo\pascal}$. The live load imposed on the roof was taken as $Q_k = \SI{0.60}{\kilo\pascal}$. The governing vertical ultimate limit state (ULS) combination used in the model was
 \begin{equation}
@@ -397,7 +396,7 @@ Horizontal reaction at supports (kN) & Not comparable & 3480 & Not comparable \\
 Table \ref{tab:prestress_comparison} and Figure~\ref{fig:prestress_stage_comparison} show that the timing of prestress application changes the structural state significantly. Relative to the arch-only erection-stage model, the full-frame post-erection assumption reduces the maximum vertical displacement from \SI{213.3}{\milli\metre} to \SI{175.3}{\milli\metre}, reduces the central arch bending moment from \SI{4128}{\kilo\newton\metre} to \SI{198.2}{\kilo\newton\metre}, and lowers the high-tie force from \SI{11450}{\kilo\newton} to \SI{9320}{\kilo\newton}. At the same time, the completed frame develops a tusk-arch connection moment of \SI{5837}{\kilo\newton\metre}, whereas the isolated arch-only model gives zero at the corresponding location. This shows that the erection-stage arch-only condition and the final completed-frame condition are not simply scaled versions of one another; the force path changes once the tusk rafters and support tree are engaged.
 
 \subsection{Implications for Design and Tolerance}
-The supplementary construction paper states that the central arch section was loaded and prestressed before it was lifted into place, so the completed roof does not begin from the same stress state as a model in which prestress is applied only after full erection. From a design point of view, the two assumptions do not govern the same actions: the arch-only erection-stage model gives higher overall arch bending, tie force and vertical movement, whereas the completed-frame model introduces additional connection moments after continuity is established. From a tolerance point of view, fit-up should therefore not be judged only from the final completed-frame model, because the erection-stage arch is more sensitive to locked-in force and deformation before it is connected to the tusk rafters and support tree. In particular, the force state developed during prestressing influences the alignment demand and adjustment required at the tusk-arch connection during erection. Therefore, the arch-only model is the more appropriate basis for interpreting erection-stage behaviour and fit-up tolerance at the tusk-arch connection, while the full-frame post-erection model is more appropriate for assessing the final in-service structural response.
+The supplementary construction paper states that the central arch section was loaded and prestressed before it was lifted into place, so the completed roof does not begin from the same stress state as a model in which prestress is applied only after full erection. From a design point of view, the two assumptions do not govern the same actions: the arch-only erection-stage model gives higher overall arch bending, tie force and vertical movement, whereas the completed-frame model introduces additional connection moments after continuity is established. Tensioning the isolated arch on the ground allows contractors to actively tune the high-tie cable to achieve the exact required geometric span. This overcomes minor fabrication deviations and ensures the massive arch fits perfectly between the pre-erected support trees without requiring forced, on-site alignment. Therefore, from a tolerance point of view, fit-up should not be judged only from the final completed-frame model, because the erection-stage arch is more sensitive to locked-in force and deformation before it is connected to the tusk rafters and support tree. In particular, the force state developed during prestressing influences the alignment demand and adjustment required at the tusk-arch connection during erection. Therefore, the arch-only model is the more appropriate basis for interpreting erection-stage behaviour and fit-up tolerance at the tusk-arch connection, while the full-frame post-erection model is more appropriate for assessing the final in-service structural response.
 
 \newpage
 \section{Deliverable 6: Boundary Conditions for More Detailed Analysis}
@@ -406,7 +405,7 @@ For detailed analysis, the tusk-to-arch rafter splice should be extracted as a l
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{bc_connection.png}
+\includegraphics[width=0.45\linewidth]{bc_connection.png}
 \caption{Recommended boundary conditions for the local splice model}
 \label{fig:bc_connection}
 \end{figure}
@@ -417,7 +416,7 @@ The corresponding section forces should also be checked against the global model
 
 
 
-To prevent rigid body motion in the local model, one reference node may be lightly stabilised after the global displacements have been assigned. This stabilisation should only remove numerical singularities and must not alter the transferred load path. Contact, bolt preload, or weld representation can then be added depending on the intended level of detail. For the purposes of this coursework, the key requirement is that the splice boundaries are driven by the global model response rather than by arbitrary fixed supports. Section cuts are located approximately  one local section depth  away from the splice connection along the axis of the member. This avoids local stress disturbance. As the depth varies along the rafter, the local section depth is equal to the splice-region depth (3.6 m), cuts A–A and B–B are placed approximately 3.6 m from the splice on either side. At both cut faces, the translational and rotational displacements extracted from the global FE model are imposed. This ensures compatibility between the local splice model and the global structural response.
+To prevent rigid body motion in the local model, one reference node may be lightly stabilised after the global displacements have been assigned. This stabilisation should only remove numerical singularities and must not alter the transferred load path. Contact, bolt preload, or weld representation can then be added depending on the intended level of detail. For the purposes of this coursework, the key requirement is that the splice boundaries are driven by the global model response rather than by arbitrary fixed supports. Section cuts are located approximately  one local section depth  away from the splice connection along the axis of the member. This avoids local stress disturbance. As the depth varies along the rafter, the local section depth is equal to the splice-region depth, cuts A–A and B–B are placed approximately one section depth from the splice on either side. At both cut faces, the translational and rotational displacements extracted from the global FE model are imposed. This ensures compatibility between the local splice model and the global structural response.
 
 \newpage
 \begingroup
