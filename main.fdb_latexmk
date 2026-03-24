@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1774355643.37577 "main.aux" "main.bbl" "main" 1774356665.87695 0
+["bibtex main"] 1774357526.16536 "main.aux" "main.bbl" "main" 1774357530.00861 0
   "./references.bib" 1774280601 1608 c361080c8434912b8187b12321b0f587 ""
   "C:/Users/31945/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1774356665 7232 4eca6a3aad4473cd2ee8e64cd25dc8f9 "pdflatex"
+  "main.aux" 1774357529 7105 c89c3e472a4cbdf24abe785786bb33a2 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1774356662.59364 "main.tex" "main.pdf" "main" 1774356665.87818 0
+["pdflatex"] 1774357526.47118 "main.tex" "main.pdf" "main" 1774357530.00975 0
   "Arch_only.png" 1774274946 19593 4fb4efa5333806f7cf67423d13cb4a88 ""
   "C:/Users/31945/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1774123671 82686 2381c3433487640bf26aa76a10db7eb2 ""
   "C:/Users/31945/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx0700.pk" 1774029905 17380 578ee8f509d3d2aff22e2057cf006362 ""
@@ -131,23 +131,22 @@
   "C:/Users/31945/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/31945/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "CD.png" 1774279525 248276 73012a0249a91a06793038ff99d74c96 ""
-  "Deformed_noprestress.png" 1774355975 4140 257a0f17bf1ad27a0471292f21c25f5b ""
-  "Deformed_prestress.png" 1774355966 3484 4fda22a7985a408bab1ca2cbd1c7f7af ""
+  "Deformed_noprestress.png" 1774357412 15714 fc7d2bd709fbc6e37e091bd0760531a5 ""
+  "Deformed_prestress.png" 1774357420 15288 b5cddcf77bd9402628eabaab4461b516 ""
   "Mesh1.png" 1774355772 18184 c396a17a1bacd86cf0f712d2fa78cba2 ""
   "Mesh2.png" 1774355785 23097 3698a859617ecb780244e3f42b8b8f5d ""
-  "Mesh3.png" 1774355795 24191 9eb6875789051481709ef3a698d967c0 ""
   "SpanAB.png" 1773869206 22666 aae0fbd47b31ce469aa80e0bdee3e7f5 ""
   "SpanBC.png" 1773869206 17312 e17fa79a9e3097fb19f613162ec9bed7 ""
   "Weixin Image_20260315183303.png" 1773599588 55601 85ec6a819cd4cc97f94550a5bb0566b4 ""
   "With_prestress_stage.png" 1773848487 21972 b9f779119e5866d82d381dab49c2c004 ""
-  "bc_connection.png" 1773689091 603100 4411f81a3798bb93f8c8e7159631998b ""
+  "bc_connection.png" 1774356883 1261541 1b84cef9c2a53b6a24812b05ffa12746 ""
   "element tyep.png" 1773754287 7475 0b0ffbd62aa530cf28eca0b906b30681 ""
   "figure_002.jpg" 1774280601 322658 38abcc4b71ac465c437bdaeb17c21950 ""
-  "main.aux" 1774356665 7232 4eca6a3aad4473cd2ee8e64cd25dc8f9 "pdflatex"
-  "main.bbl" 1774355643 753 10b2b4887218daca51f3dc604588084a "bibtex main"
-  "main.out" 1774356665 4028 0cde541ef8f05dfa61e494b04d128e44 "pdflatex"
-  "main.tex" 1774356656 30039 44d15fbf41a3f43be1a2b6f7f9e14d43 ""
-  "main.toc" 1774356665 1767 2a0d872b36f239053270008c0d44b350 "pdflatex"
+  "main.aux" 1774357529 7105 c89c3e472a4cbdf24abe785786bb33a2 "pdflatex"
+  "main.bbl" 1774357526 753 10b2b4887218daca51f3dc604588084a "bibtex main"
+  "main.out" 1774357529 3924 c2921c1406fbd6fea54fb765748d8998 "pdflatex"
+  "main.tex" 1774357515 30219 b3a50e0fe444156f011f4eb8c32c29e3 ""
+  "main.toc" 1774357529 1693 976fe4b5f5da47397b091b2bf357eae7 "pdflatex"
   "part 1 line sketch.jpg" 1774171476 109276 1db75b7975fad173e47e41353e75a668 ""
   "validation.png" 1773849385 486864 7408f222ca78f08ba2d1fe57f828dffc ""
   (generated)
