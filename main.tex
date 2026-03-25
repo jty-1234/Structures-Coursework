@@ -207,7 +207,7 @@ The roof geometry was reconstructed from the supplementary drawing using a one-t
 
 The second diagram shows the FE idealisation adopted for analysis. In Figure~\ref{fig:geometry_overview}(b), green denotes beam elements used for the roof profile, red denotes the high tie modelled as a tie element, and blue denotes the support-tree members modelled as bar elements. In GSA, beam elements model axial, bending and torsional effects, bar elements provide axial stiffness only, and tie elements are axial-only elements with zero stiffness in compression. This makes beams suitable for the roof rafters, bars suitable for the tree members, and a tie suitable for the prestressed high tie. Both end supports were modelled as fixed supports, while the pin-connected members were treated consistently on both sides because the connected elements were assumed not to transfer bending moment. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
 
-Because both the arch rafter and tusk rafter vary in depth along their length, the roof-profile members were implemented in GSA using tapered 1D beam elements rather than prismatic sections. Oasys GSA states that a 1D element can taper between end 1 and end 2 when it is assigned a tapering section profile with two section sizes, and that when a tapering member is divided into multiple elements a taper offset is used so that each element retains the correct local dimensions from its position along the original member \cite{gsa_tapered_elements}. The taper-offset schematic reproduced in Figure~\ref{fig:geometry_overview}(c), adapted from Oasys GSA \cite{gsa_tapered_elements}, shows how each subdivided element inherits the correct section size from its position along the original tapered member. This is important for the present roof model because the varying rafter depth changes the member bending stiffness along the span, so representing that taper improves the fidelity of the global frame idealisation.
+Because both the arch rafter and tusk rafter vary in depth along their length, the roof-profile members were implemented in GSA using tapered 1D beam elements rather than prismatic sections. Oasys GSA states that a 1D element can taper between end 1 and end 2 when it is assigned a tapering section profile with two section sizes, and that when a tapering member is divided into multiple elements a taper offset is used so that each element retains the correct local dimensions from its position along the original member \cite{gsa_tapered_elements}. This is important for the present roof model because the varying rafter depth changes the member bending stiffness along the span, so representing that taper improves the fidelity of the global frame idealisation.
 
 \begin{figure}[H]
 \centering
@@ -219,19 +219,13 @@ Because both the arch rafter and tusk rafter vary in depth along their length, t
 
 \vspace{0.5em}
 
-\begin{subfigure}[t]{0.62\textwidth}
+\begin{subfigure}[t]{0.78\textwidth}
     \centering
     \includegraphics[width=\linewidth]{element tyep.png}
     \caption{Idealised FE member types.}
 \end{subfigure}
-\hfill
-\begin{subfigure}[t]{0.25\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{tapered_1d_elements.png}
-    \caption{Taper offset used for subdivided tapered 1D elements.}
-\end{subfigure}
 
-\caption{Geometry and tapered-element modelling adopted for the global model.}
+\caption{Geometry adopted for the global model.}
 \label{fig:geometry_overview}
 \end{figure}
 
@@ -239,24 +233,32 @@ Because both the arch rafter and tusk rafter vary in depth along their length, t
 \newpage
 \section{Deliverable 2: Material, Section, and Loading Data }
 
-The global FE model was defined using linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal} (\(E\)), a Poisson's ratio (\(\nu\)) of 0.30 and density (\(\rho\)) of \SI{7850}{\kilogram\per\metre\cubed} so that self-weight could be included automatically in GSA. A nominal S235 steel grade was assigned to the primary roof members only to complete the material definition; in this linear-elastic global analysis, the response is governed by the assigned elastic stiffness and density, so any conventional structural steel grade with the same \(E\), \(\nu\), and \(\rho\) would give essentially the same global results. The twin high-tie strands were modelled as a single prestressed tie element with the same total cross-sectional area and an initial prestress of \SI{450}{\mega\pascal}.
+The global FE model used linear-elastic steel. In accordance with the brief, all members were assigned an elastic modulus of \SI{200}{\giga\pascal} (\(E\)), a Poisson's ratio (\(\nu\)) of 0.30 and density (\(\rho\)) of \SI{7850}{\kilogram\per\metre\cubed} so that self-weight could be included automatically in GSA. A nominal S235 grade was assigned to the primary roof members only to complete the material definition; for this linear-elastic study, the response is governed by stiffness and density. The twin high-tie strands were represented by one equivalent prestressed tie element with the same total area and an initial prestress of \SI{450}{\mega\pascal}.
 
-Only vertical symmetric loading was considered. The characteristic permanent roof load was taken as the sum of the aluminium standing seam roof (\SI{0.10}{\kilo\pascal}), structural deck (\SI{0.15}{\kilo\pascal}), insulation/acoustic layers (\SI{0.40}{\kilo\pascal}) and the service allowance (\SI{0.15}{\kilo\pascal}), giving $G_k = \SI{0.80}{\kilo\pascal}$. The live load imposed on the roof was taken as $Q_k = \SI{0.60}{\kilo\pascal}$. The governing vertical ultimate limit state (ULS) combination used in the model was
+Only vertical symmetric loading was considered. The characteristic permanent roof load was taken as the sum of the aluminium standing seam roof (\SI{0.10}{\kilo\pascal}), structural deck (\SI{0.15}{\kilo\pascal}), insulation/acoustic layers (\SI{0.40}{\kilo\pascal}) and the service allowance (\SI{0.15}{\kilo\pascal}), giving $G_k = \SI{0.80}{\kilo\pascal}$. The imposed live load was $Q_k = \SI{0.60}{\kilo\pascal}$. The governing vertical ultimate limit state (ULS) combination used in the model was
 \begin{equation}
 1.35G_k + 1.5Q_k
 \label{eq:uls_vertical_combination}
 \end{equation}
-Here, $G_k$ and $Q_k$ were converted to line loads using the projected tributary width carried by one transverse frame. The supplementary roof information states that the main rafters and associated tie-rods are spaced at \SI{18}{\metre} centres, so a tributary width of \SI{18}{\metre} was adopted for the 2D frame idealisation. On this basis, the superimposed permanent roof load is \SI{14.4}{\kilo\newton\per\metre} $(0.80 \times 18)$ and the imposed live load is \SI{10.8}{\kilo\newton\per\metre} $(0.60 \times 18)$, with member self-weight still included separately through the material density. This projected-area treatment is consistent with common roof-loading practice and with the basis commonly used for roof snow loading in Eurocode 1 \cite{bsen_snow}.
+Using the \SI{18}{\metre} frame spacing stated in the supplementary roof information, these area loads were converted to line loads for one 2D frame. This gives a superimposed permanent load of \SI{14.4}{\kilo\newton\per\metre} $(0.80 \times 18)$ and an imposed live load of \SI{10.8}{\kilo\newton\per\metre} $(0.60 \times 18)$, while member self-weight was included separately through the material density. This projected-area conversion is consistent with common roof-loading practice and Eurocode 1 snow-load treatment \cite{bsen_snow}.
 
-The strap members were modelled as bar elements. Therefore, only their axial stiffness was represented in the global model, using an equivalent steel area of $A = 2 \times 500 \times 40 = \SI{40000}{\milli\metre\squared}$. The spacing between the two plates was neglected in this idealisation because the bar elements do not carry bending.
+The strap members were modelled as bar elements, so only axial stiffness was represented using an equivalent steel area of $A = 2 \times 500 \times 40 = \SI{40000}{\milli\metre\squared}$. The spacing between the two plates was neglected because the bar elements do not carry bending.
 
-The adopted member sections and the associated modelling notes are summarised in Table~\ref{tab:section_data}.
+Because the arch and tusk rafters vary in depth along their length, they were assigned tapered 1D sections in GSA. The taper-offset concept used when such members are subdivided is shown in Figure~\ref{fig:tapered_element_graph}, adapted from Oasys GSA \cite{gsa_tapered_elements}. The adopted member sections and modelling notes are summarised in Table~\ref{tab:section_data}.
+
+\begin{center}
+\includegraphics[width=0.28\textwidth]{tapered_1d_elements.png}
+\captionof{figure}{Taper offset used for subdivided tapered 1D elements, adapted from Oasys GSA \cite{gsa_tapered_elements}.}
+\label{fig:tapered_element_graph}
+\end{center}
 
 \begin{table}[H]
 \raggedright
 \caption{Section data adopted for the global model}
 \label{tab:section_data}
-\renewcommand{\arraystretch}{1.35}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.23\textwidth} >{\raggedright\arraybackslash}p{0.32\textwidth} >{\raggedright\arraybackslash}p{0.39\textwidth}}
 \toprule
 \textbf{Member} & \textbf{Section} & \textbf{Modelling Note} \\
@@ -271,7 +273,6 @@ Straps & Equivalent rod area \SI{40000}{\milli\metre\squared} & Based on two \SI
 \end{tabular}
 \end{table}
 
-\newpage
 \section{Deliverable 3: Initial Model Validation}
 \subsection{Assumptions}
 
