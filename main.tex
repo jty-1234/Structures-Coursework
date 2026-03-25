@@ -17,8 +17,18 @@
 \definecolor{myblue}{RGB}{0,162,232}
 \captionsetup{labelfont={color=myblue}}
 \captionsetup[subfigure]{justification=centering,skip=6pt}
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}
+  {-3.5ex \@plus -1ex \@minus -.2ex}
+  {2.3ex \@plus .2ex}
+  {\normalfont\Large}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}
+  {-3.25ex \@plus -1ex \@minus -.2ex}
+  {1.5ex \@plus .2ex}
+  {\normalfont\large}}
+\makeatother
 
-\title{\textbf{Structures Coursework}}
+\title{Structures Coursework}
 \author{Group 8}
 \date{\today}
 
@@ -261,7 +271,7 @@ Because the arch and tusk rafters vary in depth along their length, they were as
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.23\textwidth} >{\raggedright\arraybackslash}p{0.32\textwidth} >{\raggedright\arraybackslash}p{0.39\textwidth}}
 \toprule
-\textbf{Member} & \textbf{Section} & \textbf{Modelling Note} \\
+Member & Section & Modelling Note \\
 \midrule
 Arch rafter & Welded box, \SI{800}{\milli\metre} wide, \SI{50}{\milli\metre} wall thickness & Depth varies from about \SI{1.8}{\metre} to \SI{3.8}{\metre} along the roof profile \\
 Tusk rafter & Welded I-section, \SI{50}{\milli\metre} plate thickness & Overall depth varies from about \SI{0.9}{\metre} to \SI{3.8}{\metre} \\
@@ -320,7 +330,7 @@ Only the bending-dominated roof-profile members were discretised further in this
 \label{tab:mesh_sensitivity}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.09\textwidth} >{\centering\arraybackslash}p{0.09\textwidth} >{\centering\arraybackslash}p{0.06\textwidth} >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
 \toprule
-\textbf{Mesh} & \textbf{Arch Elements} & \textbf{DoF} & \textbf{\shortstack{Arch Defl.\\(mm)}} & \textbf{\shortstack{Tie Force\\(kN)}} & \textbf{\shortstack{Arch Mid BM\\(kNm)}} & \textbf{\shortstack{Tusk-Arch\\BM\\(kNm)}} \\
+Mesh & Arch Elements & DoF & \shortstack{Arch Defl.\\(mm)} & \shortstack{Tie Force\\(kN)} & \shortstack{Arch Mid BM\\(kNm)} & \shortstack{Tusk-Arch\\BM\\(kNm)} \\
 \midrule
 Mesh 1 & 14 & 53 & \mbox{241.2 (37.6\%)} & \mbox{9725 (4.3\%)} & \mbox{12760 (6337.9\%)} & \mbox{4721 (19.1\%)} \\
 Mesh 2 & 16 & 59 & \mbox{175.7 (0.2\%)} & \mbox{9309 (0.1\%)} & \mbox{960.2 (384.5\%)} & \mbox{5753 (1.4\%)} \\
@@ -379,7 +389,7 @@ Table \ref{tab:mesh_sensitivity} and Figures~\ref{fig:mesh_bending} and \ref{fig
 \label{tab:prestress_comparison}
 \begin{tabularx}{0.95\textwidth}{>{\raggedright\arraybackslash}p{0.37\textwidth} >{\centering\arraybackslash}p{0.17\textwidth} >{\centering\arraybackslash}p{0.17\textwidth} >{\centering\arraybackslash}X}
 \toprule
-\textbf{Response Quantity} & \textbf{Arch Only Before Lift} & \textbf{Full Frame After Erection} & \textbf{Relative Change} \\
+Response Quantity & Arch Only Before Lift & Full Frame After Erection & Relative Change \\
 \midrule
 Maximum vertical displacement (mm) & 213.3 & 175.3 & $-17.8\%$ \\
 Central arch bending moment (kNm) & 4128 & 198.2 & $-95.2\%$ \\
