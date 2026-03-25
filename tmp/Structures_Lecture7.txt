@@ -1,0 +1,393 @@
+CEGE0024
+
+
+
+Structures and Materials:
+Plastic Analysis and Finite Element Modelling
+
+
+
+Dr. Leo de Waal
+l.waal@ucl.ac.uk
+Seventh session objectives
+
+• Understand and be able to apply a mesh sensitivity analysis
+
+• Understand basic checks you may complete to verify your model
+
+• Be aware of different material models that are available
+
+
+
+
+                                                                  2
+Recap: Sixth session objectives
+
+Brief introduction to FE modelling and understand the effect of the following
+fundamental aspects for applying an FE model:
+
+• Discretisation
+• Shape functions
+• Element types
+
+
+
+
+                                                                                3
+Recap from last week                          • Choice of shape function (element order)
+
+                                                             𝑢(𝑥)
+                                                  𝑟𝑖                         𝑟𝑗
+
+
+
+                                                            Linear
+
+
+                  • Element type                              𝑢(𝑥)
+                  • Level of discretisation
+                                                   𝑟𝑖           𝑟𝑘            𝑟𝑗
+
+
+  𝑟1         𝑟2             𝑟3
+                                                           Quadratic
+
+       (1)         (2)
+                                                                                           4
+Recap from last week             𝑢(𝑥)
+                           𝑟1           𝑟2
+
+
+
+
+                                𝑢(𝑥)
+ Modeling choices:
+ Element type              𝑟1     𝑟2    𝑟3
+ Level of discretization
+ Shape function
+
+
+
+
+                                𝑢(𝑥)
+                           𝑟1      𝑟3   𝑟2
+Recap from last week
+                                                                                Constitutive equation
+                                                                                             𝑑
+                                                                                𝜎 = 𝐸𝜀 = 𝐸     𝑢(𝑥)
+                                                                                            𝑑𝑥
+
+
+ Modeling choices:                                                           • External equilibrium
+ Element type
+ Level of discretization                                                     • Internal equilibrium
+ Shape function                                                                      *It is approximate!
+
+
+
+
+                   *In this example the exact displacement field is a cubic function, so to recover the exact
+                   solution we would need to assume a cubic shape function for the element. In this case
+                   internal equilibrium would be met.
+  Recap from last week: Element types
+  types
+
+                              Reducing the
+                              dimension of the
+                              problem through
+                              assumptions
+
+
+
+                                Use the lowest-dimensional
+                                element that still captures
+                                the physics you need!
+
+
+[5] Sharma, K. (2019).                                        8
+ General points on discretisation
+                         Coarse mesh                          Fine mesh
+
+
+
+
+                                                                              How do we
+                                                                              select an
+                                                                              appropriate
+                                                                              mesh density?
+
+
+                 • A finer mesh density → generally increases accuracy
+                 • Computationally → costs more
+                 • Higher order shape functions → require less discretisation, and generally have
+                   less numerical issues
+[6] Duffour, P (2026).                                                                          12
+Mesh refinement
+Discretisation error arises after the conceptual model is defined, when the structure is
+divided into finite elements.
+This error comes from two main sources:
+
+
+1. Element behaviour error - caused by the assumptions used to describe how each
+   element deforms (the shape functions). Using higher-order shape functions generally
+   gives a more accurate representation of the behaviour within each element.
+
+
+2. Mesh density error - caused by how fine or coarse the mesh is. Increasing the number of
+   elements (refining the mesh) usually improves accuracy and causes the solution to
+   approach the exact solution of the conceptual model.
+
+
+Finite element analysis gives an approximation, not the exact solution. Mesh refinement is
+how we check whether that approximation is acceptable.                [1] MacLeod, I. A. (2005)
+                                                                                                  13
+Mesh refinement
+How do we determine whether that approximation is acceptable?
+
+• If the results have convergence towards the exact solutions.
+
+
+             What results?                                 What if we do not know the
+                                                           exact solution?
+
+
+
+
+                                                                                  14
+Mesh refinement
+How do we determine whether that approximation is acceptable?
+
+
+
+
+                                                                                       15
+                                                           [1] MacLeod, I. A. (2005)
+Mesh refinement
+How do we determine whether that approximation is acceptable?
+
+
+
+
+                                                                                       16
+                                                           [1] MacLeod, I. A. (2005)
+Mesh refinement
+How do we determine whether that approximation is acceptable?
+
+
+
+
+                                                                                       17
+                                                           [1] MacLeod, I. A. (2005)
+Mesh refinement
+How do we determine whether that approximation is acceptable?
+
+
+
+
+                                                                                       18
+                                                           [1] MacLeod, I. A. (2005)
+Mesh refinement
+How do we determine whether that approximation is acceptable?
+
+
+
+
+          We have a stress singularity here!
+                                                                                       19
+                                                           [1] MacLeod, I. A. (2005)
+Mesh refinement
+Singularities arise from idealised geometry and the
+material model. They are not a numerical artifact.
+
+Types of singularities:
+
+1. Re-entrant corners
+Analytical (exact) solutions for linear elastic stress
+around a corner with radius r:
+                      𝜎 ∝ 𝑟 𝜆−1
+Where: 𝜆 depend on the geometry of the corner
+and is within the bounds 0 < 𝜆 < 1
+A sharp internal corner creates infinite stress!         [1] MacLeod, I. A. (2005)
+                                                                                     20
+Mesh refinement
+Singularities arise from idealised geometry and the
+material model. They are not a numerical artifact.
+
+Types of singularities:
+
+2. Point loads
+Area of contact 𝐴 = 0.
+
+                     𝑃 𝑃
+                   𝜎= = =∞
+                     𝐴 0
+
+                                                                                  21
+                                                      [1] MacLeod, I. A. (2005)
+Mesh refinement
+
+• Can you have a singularity in 1D elements?
+                                       P
+
+
+
+
+                                               22
+Mesh refinement
+Should you apply modelling techniques to avoid singularities?
+…..it depends what physics is important.
+
+St-Venant principle: The detailed stress distribution near where a load is applied only
+matters locally. Far away, only the resultant force matter.
+
+• Local stresses: highly dependent on how a load or constraint is applied
+• Resultant stresses: govern global response (deformation, stresses)
+
+
+
+
+                                                                                    23
+Mesh refinement
+St-Venant’s principle: The detailed stress distribution near where a load is applied
+only matters locally. Far away, only the resultant force matter.
+                                              “The St-Venant principle has the following
+                                              consequences.
+
+                                              • The effect of local stresses tends to
+                                                become negligible at distances twice the
+                                                length over which the stress
+                                                concentration acts.
+
+                                              • When calculating resultant stresses, the
+                                                force actions can be replaced by static
+                                                equivalents. This is not so for local
+                                                stresses” [1]
+                                                                                             24
+                                                                 [1] MacLeod, I. A. (2005)
+Mesh refinement
+• Are the local stresses important for modelling the failure of this concrete beam?
+
+
+
+
+                                                                                      25
+ Singularity vs stress concentration
+                         Coarse mesh                  Fine mesh
+
+
+
+
+                                                                  Do we need a fine mesh
+                                                                  everywhere?
+
+                                                                  • Mesh should be finer
+                                                                    in areas where there
+                                                                    are large gradients in
+                                                                    the field variable.
+                 • Singularity 𝜎 → ∞
+                 • Stress concentrations are finite
+
+
+[6] Duffour, P (2026).                                                                       26
+Mesh refinement
+How do we determine whether that approximation is acceptable?
+
+• Convergence implies that as the mesh density is increased the results will converge
+  towards the exact solution. The rate of convergence depends on the type of
+  element and the number of elements in the mesh.
+
+• A solution is converged when further refinement causes negligible change in the
+  quantity of interest.
+
+
+
+
+                                                                                    27
+Mesh refinement
+How do we determine whether that approximation is acceptable?
+
+• You must decide what quantities you check for convergence!
+    ➢Quantities of interest that should converge: Global displacements, reactions
+     forces, internal stress (away from boundaries)
+    ➢ Quantities of interest that do not converge: peak stress at corners or loading
+     points (singularities)
+
+
+
+
+                                                                                       28
+Mesh refinement
+How to perform a basic mesh convergence study:
+
+1. Choose a quantity of interest: i.e. 𝛿
+
+2. Create a refinement sequence: rule of thumb is to half the element size each
+   iteration.
+
+3. Plot or tabulate the result                               Remember, a converged
+                                                             answer to an incorrect
+                                           𝛿𝑛 −𝛿𝑛−1          model is still wrong!
+4. Apply a convergence criterion: i.e.                < 2%
+                                              𝛿𝑛
+
+                                                                                      29
+Model verification
+“Do the results correspond to what is expected from the model? or have any errors
+been made in implementing the solution process?” [1]
+
+Checklist:
+• Error warnings in FE program outputs
+
+• Overall equilibrium check
+                                    ෍𝐹 = 𝑅 ≈ 0
+
+Where 𝑅 are the residuals.
+
+                                                                                          30
+                                                              [1] MacLeod, I. A. (2005)
+Model verification
+“Do the results correspond to what is expected from the model? or have any errors
+been made in implementing the solution process?” [1]
+
+Checklist:
+• Confirm restraints are correctly applied by inspecting the deformations here
+
+• If the structure and loading is symmetric, check that the solution is also symmetric.
+
+• Qualitative check: check the deflected shape, forces/stresses follow your expectation
+
+• Quantitative check: simplified model/hand calculations to predict deformation or
+  forces                                                        [1] MacLeod, I. A. (2005)
+                                                                                            31
+Material model
+          Liner elastic                                    Plastic
+
+
+
+
+• Many other material models are available that may be required when trying to
+  capture the correct physics of the problem.
+                                                                                                 32
+                                                                     [1] MacLeod, I. A. (2005)
+References
+[1] MacLeod, I. A. (2005). Modern structural analysis : modelling process and guidance / Iain A. MacLeod. Thomas Telford
+
+[2] Debney, P., & Institution of Structural Engineers. (2020). Computational engineering / Peter Debney. Institution of
+Structural Engineers.
+
+[3] Khennane, A. (2013). Introduction to finite element analysis using MATLAB and Abaqus / Amar Khennane. Taylor &
+Francis.
+
+[4] Newman, G. M., J. T. Robinson, and C. G. Bailey. (2000). Fire Safe Design: A New Approach to Multi-Storey Steel-
+Framed Buildings. SCI Publication Fire and Steel Construction 288. Steel Construction Institute.
+
+[5] Sharma, K. (2019). Introduction to FEA [SlideShare slides]. SlideShare.
+https://www.slideshare.net/KishanSharma26/introduction-to-fea-77358694
+
+[6] Duffour, P. Personal communications – CEGE0009 lecture slides, (2026).
+
+[7] Mandal, N. K., & Lees, M. (2016). An investigation into monitoring rail stress in continuously welded rails through stress-
+free temperature [Conference paper]. Conference on Railway Engineering, Melbourne, Australia.
+
+                                             CEGE0024                                                                             33
+

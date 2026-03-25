@@ -1,0 +1,314 @@
+CEGE0024
+
+
+
+Structures and Materials:
+Plastic Analysis and Finite Element Modelling
+
+
+
+Dr. Leo de Waal
+l.waal@ucl.ac.uk
+Eighth session objectives
+
+• Modelling with 1D elements
+
+• Sub-modelling boundary conditions
+
+
+
+
+                                      2
+Select all correct statements. Under which conditions is it appropriate to
+model a structural member using 1D beam or truss elements?
+
+
+a) One dimension of the structure is much larger than the others (slender
+   geometry)
+b) The cross-sectional behaviour can be represented using section
+   properties (A, I, J)
+c) The primary interest is global stiffness, deflection, or internal force
+d)    Local 3D stress concentrations (e.g. near holes or contacts) are
+     critical
+e) The member carries only axial force
+f)   The exact through-thickness stress distribution is required
+
+
+
+
+                                  CEGE0024                                   3
+Connections
+Pin connections: Transfers axial but no moment
+
+
+
+
+.
+
+
+
+                                                                             4
+                                                 [1] MacLeod, I. A. (2005)
+Connections
+
+Moment connection
+• Full continuity between members
+• The connection is able to transfer moments
+
+
+
+
+                                                                           5
+                                               [1] MacLeod, I. A. (2005)
+Connections
+
+What type of connection is this?
+
+
+
+
+                                                               6
+                                   [1] MacLeod, I. A. (2005)
+Connections
+
+Semi-rigid connection
+• In reality, connections usually fall somewhere between pinned and completed
+  moment transfer.
+
+
+
+
+                                                                                               7
+                                                                   [1] MacLeod, I. A. (2005)
+Connection
+Treatment of finite depth of beams
+• Sometimes it is necessary to take account of the finite depth of the beam to model
+  more accurately the effect of the connection or a support.
+
+
+
+
+                                                                                                 8
+                                                                     [1] MacLeod, I. A. (2005)
+Connections
+
+
+
+• Neglecting the effect of the finite sizes of the members will tend to underestimate the
+  stiffness of the connection.
+• It would be conservative to take the design support moment for the beam at the
+  intersection point, but it is normal to take it at the face of the column
+
+
+
+
+                                                                                                9
+                                                                    [1] MacLeod, I. A. (2005)
+Connections
+
+
+
+
+• Finite width of the column can be modelled using a rigid link
+• The inclusion of the rigid links will increase the effective stiffness of the beam.
+
+
+
+
+                                                                                                   10
+                                                                       [1] MacLeod, I. A. (2005)
+ Connections
+
+
+
+• Finite width of the column can be modelled using a rigid link – increases stiffness
+• A rotational spring between the end of the stub and the beam to take account of the rotational
+  stiffness of the connection - it reduces the stiffness
+• The conventional model may therefore give reasonable predictions of stiffness due to
+  compensating assumptions.
+• Whether or not the rigid links and the rotational springs are important can be assessed using
+  a sensitivity analysis.
+• Appendix J of Eurocode 3 (CEN 2004b) gives rules for estimating values of the rotational
+  stiffness of steelwork connections.                                [1] MacLeod, I. A. (2005)
+                                                                                                 11
+Connections
+
+• Modelling of pinned connections
+
+
+
+
+                                                                12
+                                    [1] MacLeod, I. A. (2005)
+Connections
+
+• At a joint, if m members meet at a joint, only m-1 members should be released.
+  The single unreleased member end provides a rotational stiffness, but since there
+  is no other element with bending stiffness to connect to it, the joint behaves as a
+  pin.
+
+
+
+
+                                                                                            13
+                                                                [1] MacLeod, I. A. (2005)
+Connections
+
+Eccentricities:
+• Ideally deign without them but
+  sometimes it is not possible, in this
+  case you should consider them.
+
+
+
+
+                                                                      14
+                                          [1] MacLeod, I. A. (2005)
+Modelling varying thickness
+
+
+
+
+                                                          15
+                              [1] MacLeod, I. A. (2005)
+Questions related to the assignment
+Part 2:
+6. Boundary Conditions for more detailed analysis (1 x A4 page maximum)
+Assuming the rafter splice connection between the tusk rafter and arch rafter is a candidate for
+more detailed analysis, provide:
+• A clear sketch showing the boundary conditions you would apply to a local FE model of this
+  connection
+• A description of the forces and/or displacements that would be imposed
+You are not required to build the detailed FE model. The focus is on appropriate boundary condition
+definition.
+
+
+
+
+                                                                                                      16
+Recap L6: Modelling principles   [3] Duffour, P (2026)
+
+
+
+
+                                                    17
+Recap L7: Mesh refinement
+
+St-Venant principle: The detailed stress distribution near where a load is applied only
+matters locally. Far away, only the resultant force matter.
+
+• Local stresses: highly dependent on how a load or constraint is applied
+• Resultant stresses: govern global response (deformation, stresses)
+
+
+
+
+                                                                                    18
+Recap L7: Mesh refinement
+St-Venant’s principle: The detailed stress distribution near where a load is applied
+only matters locally. Far away, only the resultant force matter.
+                                              “The St-Venant principle has the following
+                                              consequences.
+
+                                              • The effect of local stresses tends to
+                                                become negligible at distances twice the
+                                                length over which the stress
+                                                concentration acts.
+
+                                              • When calculating resultant stresses, the
+                                                force actions can be replaced by static
+                                                equivalents. This is not so for local
+                                                stresses” [1]
+                                                                                             19
+                                                                 [1] MacLeod, I. A. (2005)
+How should you apply boundary
+conditions?
+At the interface between global and local models you have two broad ways to “connect”
+them:
+
+(1) Enforce compatibility (match displacements)
+You prescribe the boundary motion (translations/rotations) on the sub-model boundary so it
+deforms like the global structure at that location. This tends to work well because:
+• the global model is usually good at predicting global deformations
+• St-Venant’s principle: away from the detailed joint, the solution is governed mainly by the
+  overall deformation state, not exact traction distribution
+
+
+
+                                                                                                20
+How should you apply boundary
+conditions?
+At the interface between global and local models you have two broad ways to “connect”
+them:
+
+(2) Enforce equilibrium (apply forces/tractions)
+You apply the section forces/moments from the beam model to the sub-model boundary. This is
+riskier because:
+• the local stiffness of the sub-model is different (shells, bolt rows, plates, contact, etc.). Small
+  changes in stiffness/details can cause big changes in reaction forces and their distribution
+• the true traction distribution across the cut is not known from a 1D beam model
+
+
+
+                                                                                                   21
+Questions related to the assignment
+Part 2:
+6. Boundary Conditions for more detailed analysis (1 x A4 page maximum)
+Assuming the rafter splice connection between the tusk rafter and arch rafter is a candidate for
+more detailed analysis, provide:
+• A clear sketch showing the boundary conditions you would apply to a local FE model of this
+  connection
+• A description of the forces and/or displacements that would be imposed
+You are not required to build the detailed FE model. The focus is on appropriate boundary condition
+definition.
+
+
+
+
+                                                                                                      22
+Questions related to the
+assignment
+
+
+
+
+                                                        23
+                           [4] Supplementary material
+Questions related to the assignment
+• Part 1:
+Design requirement: You are required to design the beam such that the
+solution is economical and practical to construct.
+
+
+
+
+                                                                        24
+ Recap L3 - Multiple spans
+ • Continuous beams are analysed in a similar way.            Number of hinges required for collapse:
+                                                                          𝐷 =4−2=2
+                                                                    ∴ 𝑛 = 𝐷 + 1 = 3 ℎ𝑖𝑛𝑔𝑒𝑠
+
+
+
+
+       Possible collapse mechanisms:
+
+       ➢Complete collapse: 𝐴𝑐𝑡𝑢𝑎𝑙 𝑛𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 ℎ𝑖𝑛𝑔𝑒𝑠 = 𝑛
+
+       ➢Partial collapse: 𝐴𝑐𝑡𝑢𝑎𝑙 𝑛𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 ℎ𝑖𝑛𝑔𝑒𝑠 < 𝑛
+
+       ➢Over-Complete collapse: 𝐴𝑐𝑡𝑢𝑎𝑙 𝑛𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 ℎ𝑖𝑛𝑔𝑒𝑠 > 𝑛
+
+[2] Williams and Todd, 2020                                                                             25
+References
+[1] MacLeod, I. A. (2005). Modern structural analysis : modelling process and guidance / Iain A. MacLeod. Thomas Telford
+
+[2] Williams, M., and J. D. Todd. Structures: Theory and Analysis. Macmillan Education UK, 2000.
+
+[3] Duffour, P. Personal communications – CEGE0009 lecture slides, (2026).
+
+
+
+
+                                           CEGE0024                                                                        26
+

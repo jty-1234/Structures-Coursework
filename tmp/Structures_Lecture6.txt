@@ -1,0 +1,592 @@
+CEGE0024
+
+
+
+Structures and Materials:
+Plastic Analysis and Finite Element Modelling
+
+
+
+Dr. Leo de Waal
+l.waal@ucl.ac.uk
+Feedback
+
+
+
+
+           2
+Feedback
+What should I continue doing because it’s working well?
+• Going through examples
+• Making it easy to ask questions
+
+What should I start doing in the course to improve your leaning?
+• Slow down, went a bit too fast
+• Vidcast to enable review of lecture
+• Releasing PowerPoints ahead of the classes
+• More examples, exam practise questions
+
+                                                                   3
+Feedback
+• Example problems
+
+
+
+
+                     4
+Feedback
+What should I stop continue doing because it’s working well?
+• Going too fast, especially lectures 4-5
+• Mistakes within worked examples
+
+What have you found to be the hardest concept covered so far?
+• Virtual work                    • Mp for frames
+• Continuous beams                • Lectures 4-5
+• Portal frame                    • Finite element
+• ICR
+
+                                                                5
+Feedback
+How satisfied are you with your learning so far and why?
+• Quite satisfied – going through examples
+• Decently satisfied
+• Okay, could do with more resources to supplement
+• I didn’t understand too much
+• Content too difficult
+
+
+
+
+                                                           6
+Sixth session objectives
+
+Brief introduction to FE modelling and understand the effect of the following
+fundamental aspects for applying an FE model:
+
+• Discretisation
+• Shape functions
+• Element types
+
+
+
+
+                                                                                7
+FE Modelling
+“One of the big problems facing engineers is that we can solve only the simplest of
+structures by hand because the mathematical process rapidly becomes too complex.
+This means that we need techniques such as FEA working on computers to solve them
+for us. Our job is to produce good answers, and we do that by putting good data into
+appropriate software. But how do we know what is good data and good software?” [2]
+
+Learning outcomes:
+• Understand the importance of implementing an effective structural Finite
+  Element modelling process and its fundamental principles
+
+                    This is not a fundamental FE theory course.
+However, you need some understanding of the theory to appreciate the importance of
+your modelling choices.
+[2] Debney, P., (2020).                                                          8
+Reference material
+
+
+
+
+                     9
+What is a FE model?
+• FE method is a numerical technique that can be used to obtain an
+  approximate solutions to engineering problem
+
+
+ They are wrong but can be useful if done correctly
+                   Real system                 Mathematical representation
+
+
+
+
+                                                                             10
+  The FE modelling process at a glance
+Real structure           Idealisation                                    Discretisation   Numerical Solution
+                                            Mathematical model
+                                        • Analysis type
+                                        • Constitutive relationship
+                                          (i.e. Material properties)
+                                        • Boundary conditions
+                                          (Restraints and loads)
+                                                                       • Element type
+                                                                       • Element order
+
+   FE Solvers are very powerful
+   and they will generally give               How do we know if we have implemented and effective
+   you a solution                             FE model?
+    Garbage in = Garbage out                   To answer this question effectively - we first need some
+                                               basic understanding of how FE models work – some
+[5] Sharma, K. (2019).                                                                                11
+                                               fundamental principals
+How it works
+• FE model solves a boundary value problem – solves differential equations (PDEs)
+  within a specific domain
+
+• Typical ingredients in the context of physical systems:
+    1. Domain with a boundary
+    2. Kinematics: a field of interest what are we solving for i.e. displacement,
+       velocities, temperature etc.
+    3. Equilibrium/balance principles: laws of physics (i.e. force balance) - Equation
+       we want to solve
+   4. Constitutive equations: How the kinematics relates to the equilibrium (material
+      response)
+   5. Boundary conditions
+                                                                                         12
+ How it works: Exact solution
+                               • Kinematics: We want to find the displacement field 𝑢 𝑥 along the bar.
+
+𝑇𝑟𝑎𝑐𝑡𝑖𝑜𝑛 𝑓𝑜𝑟𝑐𝑒 𝑇 𝑥 = −𝑥 𝑁/𝑚𝑚                                      𝑑
+                                                             𝜀 = 𝑑𝑥 𝑢 𝑥
+
+                                                                                          −𝑥𝑑𝑥
+                               • Equilibrium:
+                                              𝑑
+                                    𝐹− 𝐹−       𝐹𝑑𝑥 − 𝑥𝑑𝑥 = 0                  𝑑
+                                             𝑑𝑥                           𝐹−      𝐹. 𝑑𝑥                  𝐹
+ 𝑥                                          𝑑                                  𝑑𝑥
+     𝐿𝑒𝑛𝑔𝑡ℎ = 1000𝑚𝑚                           𝐹−𝑥 =0
+                                           𝑑𝑥                                               𝑑𝑥
+      𝐴𝑟𝑒𝑎 = 500𝑚𝑚2                        𝑑
+      𝐸 = 2 ∗ 105 𝑀𝑃𝑎                         𝜎𝐴 − 𝑥 = 0
+                                           𝑑𝑥
+                               • Constitutive equation:
+                                                               𝜎 = 𝐸𝜀
+
+                                                    𝑑              𝑑2𝑢
+                                                  𝐸𝐴 𝜀 − 𝑥 = 0 → 𝐸𝐴 2 − 𝑥 = 0                            13
+                                                    𝑑𝑥             𝑑𝑥
+ How it works: Exact solution
+                           𝑑 𝑢                                   2
+                                                           𝐸𝐴          −𝑥 =0
+                                                                𝑑𝑥 2
+                               • Boundary conditions:
+𝑇𝑟𝑎𝑐𝑡𝑖𝑜𝑛 𝑓𝑜𝑟𝑐𝑒 𝑇 𝑥 = −𝑥 𝑁/𝑚𝑚
+                               𝜎 𝑥=0 =0
+                               𝑢 𝑥 = 1000𝑚𝑚 = 0
+
+                               • This PDE can be solved analytically quite easily:
+𝑥                                 • Integrate once to give the stress field and apply BC
+                                  • Integrate twice for the displacement field and apply BC
+    𝐿𝑒𝑛𝑔𝑡ℎ = 1000𝑚𝑚
+     𝐴𝑟𝑒𝑎 = 500𝑚𝑚2
+     𝐸 = 2 ∗ 105 𝑀𝑃𝑎
+
+
+
+
+                                                                                              14
+                                                          Example
+How it works: FE
+For complex geometries, it is difficult to solve for an
+analytical expression for the field 𝑢(𝑥), so instead we
+want to discretize and just solve at specific nodal
+locations 𝑟 .
+                                                          Modelling choice: element type
+                      𝑢 𝑥 = 𝑁 𝑟
+                                                          • Here we are trying to solve for axial
+Where: 𝑁 is the shape function that is used to              displacements and stress due to the axially
+approximate the displacement field within the element       applied loads. The only degree of freedom that
+using nodal degrees of freedom 𝑟 .                          are therefore of interest are axial degrees of
+                                                            freedom.
+Here there are three key modelling choices for FEM:       • Therefore, we will choose a truss element (the
+                                                            element options will be discussed later in the
+1. What element type can sufficiently model the system      lecture)
+
+
+
+                                                                                                             15
+                                                          Example:
+How it works: FE
+For complex geometries, it is difficult to solve for an
+analytical expression for the field 𝑢(𝑥), so instead we
+want to discretize and just solve at specific nodal
+locations 𝑟 .
+                                                          Modelling choice: Level of discretization
+                      𝑢 𝑥 = 𝑁 𝑟                                                              𝑟2
+                                                                𝑟1
+Where: 𝑁 is the shape function that is used to
+approximate the displacement field within the element                             (1)
+using nodal degrees of freedom 𝑟 .
+                                                                 𝑟1                 𝑟2              𝑟3
+Here there are three key modelling choices for FEM:
+                                                                       (1)               (2)
+1. What degrees of freedom are important
+2. How you choose to discretize (i.e. how many                   𝑟1          𝑟2          𝑟3         𝑟4
+   elements)
+                                                                      (1)          (2)        (3)
+                                                                                                         16
+                                                          Truss element example:
+How it works: FE                                                                           𝑢 𝑥 = 𝑵 𝑟
+
+                                                               𝑟1                  𝑟2                       𝑟
+                                                                                        𝑢 𝑥 = [𝑁1      𝑁2 ] 𝑟1
+For complex geometries, it is difficult to solve for an                                                     2
+analytical expression for the field 𝑢(𝑥), so instead we              (1)
+                                                                𝑥                       𝑢 𝑥 = 𝑁1 𝑟1 + 𝑁2 𝑟2
+want to discretize and just solve at specific nodal                        𝐿
+locations 𝑟 .
+                                                          Modelling choice: Assume a linear displacement field
+                      𝑢 𝑥 = 𝑁 𝑟                           exists within the element
+                                                                      𝑢(𝑥)
+Where: 𝑁 is the shape function that is used to
+approximate the displacement field within the element     𝑟1                       𝑟2
+using nodal degrees of freedom 𝑟 .
+                                                                𝑥
+Here there are three key modelling choices for FEM:
+                                                           1                                       𝑥
+                                                                                        𝑁1 = 1 −
+1. What degrees of freedom are important                                                           𝐿
+2. How you choose to discretize (i.e. how many
+   elements)                                                                        1          𝑥
+                                                                                        𝑁2 =
+3. How you wish to approximate your displacement                                               𝐿
+                                                                                                             17
+   field.
+How it works: FE
+Using this approximation, the FEM method transforms the equilibrium equation into a system of simultaneous
+algebraic equations. For linear static analysis, these simultaneous algebraic equations have the form:
+
+                                                𝐹 = 𝐾 {𝑟}
+
+    Where: 𝐾 is the stiffness matrix and is found numerically (it depends on the choice of shape function.)
+
+
+ NOTE: Direct stiffness method also discretises the system, however the stiffness matrix is found analytically
+ and the displacements are discontinuous.
+
+ Applying the boundary conditions, you can solve for the nodal displacement {𝑟} by inverting [𝐾].
+
+                                                𝑟 = 𝐾 −1 {𝐹}
+
+ *Note: to be able to invert the stiffness matrix the 𝐝𝐞𝐭 𝑲 ≠ 𝟎. If the matrix is singular your FE model will
+ not be able to solve. Look at your constraints which you applied or if the stiffness values are very small.
+
+                                                                                                                 18
+                                      Truss element example:
+How it works: FE                                               𝑇 𝑥 = −𝑥 𝑁/𝑚𝑚
+
+                                      𝐿𝑒𝑛𝑔𝑡ℎ = 1000𝑚𝑚
+  Based on these modelling choices     𝐴𝑟𝑒𝑎 = 500𝑚𝑚2
+  what will the solution look like?    𝐸 = 2 ∗ 105 𝑀𝑃𝑎
+
+
+
+                                      Modelling choice: One element+ linear shape
+                                      function
+                                                                   𝑢(𝑥)
+                                                         𝑟1                         𝑟2
+                                                               Truss element example:
+  How it works: FE                                                                         𝑇 𝑥 = −𝑥 𝑁/𝑚𝑚
+
+                                                               𝐿𝑒𝑛𝑔𝑡ℎ = 1000𝑚𝑚
+                                                                𝐴𝑟𝑒𝑎 = 500𝑚𝑚2
+                                                                𝐸 = 2 ∗ 105 𝑀𝑃𝑎
+
+                                     333.3 𝑀𝑃𝑎
+
+                                                               Modelling choice: One element+ linear shape
+                                                               function
+                                                                                            𝑢(𝑥)
+                                                    𝑑
+                                         𝜎 = 𝐸𝜀 = 𝐸    𝑢(𝑥)                                                  𝑟2
+                                                    𝑑𝑥                                𝑟1
+
+• External equilibrium                      • Internal equilibrium
+
+                    𝑓𝑟𝑜𝑚 𝐹 = 𝐾 𝑟
+                       𝑓2 = 500𝑘𝑁         333.3 ∗ 500
+                                                                       𝑓2 = 500𝑘𝑁
+                                          = 167𝑘𝑁
+     1000∗1000
+               = 500𝑘𝑁   satisfied           167𝑘𝑁 = 500𝑘𝑁      Not satisfied (It is approximate!)
+         2
+                                                     Truss element example:
+  How it works: FE                                                            𝑇 𝑥 = −𝑥 𝑁/𝑚𝑚
+
+                                                    𝐿𝑒𝑛𝑔𝑡ℎ = 1000𝑚𝑚
+                                                     𝐴𝑟𝑒𝑎 = 500𝑚𝑚2
+                                                     𝐸 = 2 ∗ 105 𝑀𝑃𝑎
+
+
+
+                                                     Modelling choice: Two elements + linear shape
+                                                     functions                   𝑢(𝑥)
+
+                                                                         𝑟1           𝑟2             𝑟3
+
+• External equilibrium   • Internal equilibrium
+        Satisfied                Not satisfied (It is approximate!)
+                                                                 Truss element example:
+  How it works: FE                                                                           𝑇 𝑥 = −𝑥 𝑁/𝑚𝑚
+
+                                                                𝐿𝑒𝑛𝑔𝑡ℎ = 1000𝑚𝑚
+                                                                 𝐴𝑟𝑒𝑎 = 500𝑚𝑚2
+                                                                 𝐸 = 2 ∗ 105 𝑀𝑃𝑎
+
+
+
+                                                                 Modelling choice: One elements + quadratic
+                                                                 shape function              𝑢(𝑥)
+
+                                                                                        𝑟1            𝑟2      𝑟3
+
+• External equilibrium               • Internal equilibrium
+        Satisfied                            Not satisfied (It is approximate!)
+
+
+
+              Note: In this example the displacement field is a cubic function, so to recover the exact
+              solution we would need to assume a cubic shape function for the element
+ General points on discretisation
+                         Coarse mesh                          Fine mesh
+
+
+                                                                                 We will discuss
+                                                                                 mesh sensitivity
+                                                                                 study in the next
+                                                                                 lecture!
+
+
+
+
+                 • A finer mesh density → generally increases accuracy
+                 • Computationally → costs more
+                 • Higher order shape functions → require less discretisation, and generally have
+                   less numerical issues
+[6] Duffour, P (2026).                                                                               23
+  Element types
+
+
+
+                         Reducing the
+                         dimension of the
+                         problem through
+                         assumptions
+
+
+
+
+[5] Sharma, K. (2019).                      24
+Element types
+1D element
+
+• Member is slender: length is much larger than the cross-section dimensions → the
+  members behavior can be represented along its centerline; field variable varies in
+  one-dimension only.
+• The stress variation within the cross-section is not explicitly solved
+• Cross-section properties have to be defined for all elements.
+
+
+
+
+                                                                                       25
+  Element types
+  1D element: Truss element
+  • Kinematic assumption: only axial deformation
+  • No rotational degrees of freedom, can only carry axial loads
+                                                         In 2D with first order shape function:
+
+                                                                     𝐹 = 𝐾 𝑢
+
+                                                                   𝐹𝑥1            𝑢1
+                                                                   𝐹𝑦1            𝑣1
+                                                                         = 𝐾      𝑢2
+                                                                   𝐹𝑥2
+                                                                   𝐹𝑦2            𝑣2
+
+
+                                                                                                  26
+[3] Khennane, A. (2013).
+  Element types
+  1D element: Beam-column elements
+  • Kinematic assumption: Axial deformation and beam theory (e.g. Euler-Bernoulli
+    beam theory, Timoshenko beam theory etc.)
+
+                                                       In 2D with first order shape function:
+
+                                                                 𝐹 = 𝐾 𝑢
+
+                                                             𝐹𝑥1              𝑢1
+                                                             𝐹𝑦1              𝑣1
+                                                             𝑀1               𝜃1
+                                                                    = 𝐾       𝑢2
+                                                             𝐹𝑦1
+                                                             𝐹𝑥2              𝑣2
+                                                             𝑀2               𝑀2
+                                                                                                27
+[3] Khennane, A. (2013).
+  Element types
+
+
+
+
+                         Beam elements or truss elements?
+
+
+[6] Duffour, P (2026).                                      28
+  Element types
+
+                         𝑲 is singular!
+
+
+
+
+[6] Duffour, P (2026).                29
+Element types
+Can beam-column elements be used to model:
+
+• Thick short beams?       • The thermal                   • The thermal
+                             induced buckling                induced local
+                             of railway tracks?              buckling
+
+
+
+
+                            [7] Mandal and Lees (2016).   [4] Newman et al. (2000)
+
+                                                                                     30
+Element types
+2D element
+
+• One dimension (thickness) is much smaller than the other two dimensions →out-of-
+  plane stresses are negligible; field variable varies in two dimensions. Shell
+  geometry is defined at the mid-surface.
+
+• Thickness has to be defined for the element.
+
+
+
+
+                                                                                 31
+  Element types
+  2D element:
+  • Displacement and rotational degrees of freedom at each node.
+
+
+
+              With first order shape function:        With second order shape function:
+
+
+
+
+[6] Duffour, P (2026).                                                                    32
+Element types
+Can shell elements be used to model:
+
+• Thick short beams?         • The thermal                  • The thermal
+                               induced buckling               induced local
+                               of railway tracks?             buckling
+
+
+
+
+                              [7] Mandal and Lees (2016)   [4] Newman et al. (2000)
+
+                                                                                      33
+Element types
+Can shell elements be used to model:
+
+• Failure of a concrete girder?
+
+
+
+
+                                       34
+  Element types
+  3D element
+
+  • No geometric reduction; field variable varies in three dimensions.
+
+  • Translation degrees of freedom at all nodes.
+              With first order shape function:           With second order shape function:
+
+
+
+
+[6] Duffour, P (2026).                                                                       35
+Element types
+Can solid elements be used to model:
+
+• Thick short beams?         • The thermal                   • The thermal
+                               induced buckling                induced local
+                               of railway tracks?              buckling
+
+
+
+
+                              [7] Mandal and Lees (2016).   [4] Newman et al. (2000)
+
+                                                                                       36
+Summary
+
+Brief introduction to FE modelling and understand the effect of the following
+fundamental aspects for applying an FE model:
+
+• Discretisation
+• Shape functions
+• Element types
+
+
+
+
+                                                                                37
+Modelling principles
+
+1. Use the simplest practical model
+2. Estimate results before you run the analysis
+3. Increment the complexity
+4. When you get a result, assume that they may have errors
+5. Troubleshoot errors
+
+
+
+
+                                                             38
+Modelling principles
+1. Use the simplest practical model
+
+Define the modelling objectives:
+
+   • What questions are you trying to answer with the
+     model?
+
+   • What accuracy do you require?
+
+   • What behaviour is important (global vs local)?
+
+
+
+
+                                                        [6] Duffour, P (2026).   39
+Modelling principles   [6] Duffour, P (2026)
+
+
+
+
+                                           40
+References
+[1] MacLeod, I. A. (2005). Modern structural analysis : modelling process and guidance / Iain A. MacLeod. Thomas Telford
+
+[2] Debney, P., & Institution of Structural Engineers. (2020). Computational engineering / Peter Debney. Institution of
+Structural Engineers.
+
+[3] Khennane, A. (2013). Introduction to finite element analysis using MATLAB and Abaqus / Amar Khennane. Taylor &
+Francis.
+
+[4] Newman, G. M., J. T. Robinson, and C. G. Bailey. (2000). Fire Safe Design: A New Approach to Multi-Storey Steel-Framed
+Buildings. SCI Publication Fire and Steel Construction 288. Steel Construction Institute.
+
+[5] Sharma, K. (2019). Introduction to FEA [SlideShare slides]. SlideShare.
+https://www.slideshare.net/KishanSharma26/introduction-to-fea-77358694
+
+[6] Duffour, P. Personal communications – CEGE0009 lecture slides, (2026).
+
+[7] Mandal, N. K., & Lees, M. (2016). An investigation into monitoring rail stress in continuously welded rails through stress-
+free temperature [Conference paper]. Conference on Railway Engineering, Melbourne, Australia.
+
+                                             CEGE0024                                                                             41
+
