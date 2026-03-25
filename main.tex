@@ -296,6 +296,8 @@ Three mesh densities were evaluated under the governing ULS vertical load combin
 \]
 and a value below \(2\%\) was adopted for the governing global response quantities; this is conservative relative to the \(1\text{--}5\%\) range reported for average stress-related displacements at high accuracy \cite{ansys_adaptive_convergence}.
 
+Only the bending-dominated roof-profile members were discretised further in this mesh study. Pure axial members, such as those represented by bar or tie elements, were not subdivided because the present analysis is geometrically linear and does not update the structural geometry during the solution. Since no updated geometry is introduced, splitting one straight axial-only member into several collinear elements would not change its force path or stiffness representation in any meaningful way, so further discretisation of those members would not improve the results.
+
 \begin{table}[H]
 \centering
 \scriptsize

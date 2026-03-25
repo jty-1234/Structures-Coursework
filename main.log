@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  25 MAR 2026 16:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  25 MAR 2026 16:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -640,47 +640,47 @@ Package pdftex.def Info: validation.png  used on input line 280.
 <Mesh1.png, id=175, 630.85687pt x 253.69781pt>
 File: Mesh1.png Graphic file (type png)
 <use Mesh1.png>
-Package pdftex.def Info: Mesh1.png  used on input line 321.
+Package pdftex.def Info: Mesh1.png  used on input line 323.
 (pdftex.def)             Requested size: 172.13pt x 80.7901pt.
 <Mesh2.png, id=177, 633.86812pt x 243.91125pt>
 File: Mesh2.png Graphic file (type png)
 <use Mesh2.png>
-Package pdftex.def Info: Mesh2.png  used on input line 327.
+Package pdftex.def Info: Mesh2.png  used on input line 329.
 (pdftex.def)             Requested size: 172.13pt x 77.24556pt.
 <Deformed_noprestress.png, id=179, 753.41475pt x 343.88475pt>
 File: Deformed_noprestress.png Graphic file (type png)
 <use Deformed_noprestress.png>
-Package pdftex.def Info: Deformed_noprestress.png  used on input line 338.
+Package pdftex.def Info: Deformed_noprestress.png  used on input line 340.
 (pdftex.def)             Requested size: 172.13pt x 62.39635pt.
 <Deformed_prestress.png, id=181, 753.41475pt x 345.08925pt>
 File: Deformed_prestress.png Graphic file (type png)
 <use Deformed_prestress.png>
-Package pdftex.def Info: Deformed_prestress.png  used on input line 345.
+Package pdftex.def Info: Deformed_prestress.png  used on input line 347.
 (pdftex.def)             Requested size: 172.13pt x 62.68703pt.
  [8 <./Mesh1.png> <./Mesh2.png> <./Deformed_noprestress.png> <./Deformed_prestr
-ess.png>]
-<Arch_only.png, id=203, 753.41475pt x 392.06474pt>
+ess.png>] [9]
+<Arch_only.png, id=207, 753.41475pt x 392.06474pt>
 File: Arch_only.png Graphic file (type png)
 <use Arch_only.png>
-Package pdftex.def Info: Arch_only.png  used on input line 384.
+Package pdftex.def Info: Arch_only.png  used on input line 386.
 (pdftex.def)             Requested size: 212.89546pt x 110.78242pt.
-<With_prestress_stage.png, id=204, 633.86812pt x 318.43968pt>
+<With_prestress_stage.png, id=208, 633.86812pt x 318.43968pt>
 File: With_prestress_stage.png Graphic file (type png)
 <use With_prestress_stage.png>
-Package pdftex.def Info: With_prestress_stage.png  used on input line 391.
+Package pdftex.def Info: With_prestress_stage.png  used on input line 393.
 (pdftex.def)             Requested size: 212.89546pt x 106.95126pt.
- [9 <./Arch_only.png> <./With_prestress_stage.png>]
-<bc_connection.png, id=216, 1027.84pt x 1027.84pt>
+ [10 <./Arch_only.png> <./With_prestress_stage.png>]
+<bc_connection.png, id=220, 1027.84pt x 1027.84pt>
 File: bc_connection.png Graphic file (type png)
 <use bc_connection.png>
-Package pdftex.def Info: bc_connection.png  used on input line 412.
+Package pdftex.def Info: bc_connection.png  used on input line 414.
 (pdftex.def)             Requested size: 203.83417pt x 203.82349pt.
- [10 <./bc_connection.png (PNG copy)>] (main.bbl
+ [11 <./bc_connection.png (PNG copy)>] (main.bbl
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-) [11] (main.aux)
+) [12] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -689,9 +689,9 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 3A3CEFEFF3B352AB20E2F636599F5AB7;3831.
  ) 
 Here is how much of TeX's memory you used:
- 17966 strings out of 467871
- 349329 string characters out of 5418376
- 776502 words of memory out of 5000000
+ 17967 strings out of 467871
+ 349336 string characters out of 5418376
+ 777504 words of memory out of 5000000
  46622 multiletter control sequences out of 15000+600000
  644418 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -719,9 +719,9 @@ eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/31945/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/31945/AppData/Loca
 l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/31945/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (11 pages, 2470352 bytes).
+Output written on main.pdf (12 pages, 2471085 bytes).
 PDF statistics:
- 764 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
+ 767 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
  12024 words of extra memory for PDF output out of 14400 (max. 10000000)
 
