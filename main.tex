@@ -153,12 +153,22 @@ The plastic resistance for the three spans is \(M_{p,BC} = 768\,\text{kNm}\), \(
 \newpage
 \subsection{Line Sketch and Justification}
 
-\begin{figure}[H]
+\noindent
+\begin{minipage}[t]{0.62\textwidth}
     \centering
-    \includegraphics[width=0.4\linewidth]{reinforced beam line sketch.jpg}
-    \caption{Reinforced beam layout}
+    \includegraphics[width=0.78\linewidth]{reinforced beam line sketch.jpg}
+    \captionof{figure}{Reinforced beam layout}
     \label{fig:line_sketch}
-\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{reinforced cross section.jpg}
+    \captionof{figure}{Welded cover plate reinforced beam cross-section}
+    \label{fig:flangeplates}
+\end{minipage}
+
+\medskip
 
 The member is first sized on the basis of the minimum required plastic resistance in span BC, where \(M_{p,BC}=768\ \text{kNm}\). For S355 steel with \(f_y=355\ \text{MPa}\) and \(\gamma_{M0}=1.0\), the required plastic section modulus is
 \[
@@ -187,13 +197,6 @@ which gives
 t_p \approx 14.7\ \text{mm}
 \]
 Hence, \(180\times15\ \text{mm}\) flange plates welded to both flanges may be adopted to increase the plastic resistance to the required level such as in Figure \ref{fig:flangeplates}. The plates should be installed along spans AB and CD where the design bending moment $M_{Ed}$ exceeds the orginal bending moment resistance of the beam.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.15\linewidth]{reinforced cross section.jpg}
-    \caption{Welded cover plate reinforced beam cross-section}
-    \label{fig:flangeplates}
-\end{figure}
 
 A minimum rolled UB section is adopted based on the governing plastic moment demand in span BC, avoiding global over-design and reducing overall steel tonnage. Localised flange strengthening is applied only in high moment regions to increase plastic resistance where required ensuring an economical solution. A single standard UB section is used throughout as the base member to simplify procurement, handling, and erection, and to avoid stepped sections and transition splices. Although welded cover plates introduce local fabrication effort, this is limited in extent and offset by reduced material usage and simplified construction sequencing. Since fabrication and erection typically dominate total steelwork cost over material \cite{structural_steel_cost_estimation}, standardisation combined with targeted strengthening provides an economical and constructable solution while maintaining the required plastic hinge mechanism.
 
