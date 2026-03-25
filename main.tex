@@ -155,8 +155,8 @@ The plastic resistance for the three spans is \(M_{p,BC} = 768\,\text{kNm}\), \(
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{part 1 line sketch.jpg}
-    \caption{Beam span and plastic hinge layout}
+    \includegraphics[width=0.4\linewidth]{reinforced beam line sketch.jpg}
+    \caption{Reinforced beam layout}
     \label{fig:line_sketch}
 \end{figure}
 
@@ -186,16 +186,16 @@ which gives
 \[
 t_p \approx 14.7\ \text{mm}
 \]
-Hence, \(210\times15\ \text{mm}\) flange plates welded to both flanges may be adopted to increase the plastic resistance to the required level such as in Figure \ref{fig:flangeplates}. The plates should be installed only where necessary along spans AB and CD.
+Hence, \(180\times15\ \text{mm}\) flange plates welded to both flanges may be adopted to increase the plastic resistance to the required level such as in Figure \ref{fig:flangeplates}. The plates should be installed along spans AB and CD where the design bending moment $M_{Ed}$ exceeds the orginal bending moment resistance of the beam.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.1\linewidth]{figure_002.jpg}
-    \caption{Cover Plate reinforcement cross-section}
+    \includegraphics[width=0.15\linewidth]{reinforced cross section.jpg}
+    \caption{Welded cover plate reinforced beam cross-section}
     \label{fig:flangeplates}
 \end{figure}
 
-A minimum rolled UB section is adopted based on the governing plastic moment demand in span BC, avoiding global over-design and reducing overall steel tonnage. Localised flange strengthening is applied only in high moment regions to increase plastic resistance where required ensuring an economical solution. A single standard UB section is used throughout as the base member to simplify procurement, handling, and erection, and to avoid stepped sections and transition splices. Although welded flange plates introduce local fabrication effort, this is limited in extent and offset by reduced material usage and simplified construction sequencing. Since fabrication and erection typically dominate total steelwork cost over material \cite{structural_steel_cost_estimation}, standardisation combined with targeted strengthening provides an economical and constructable solution while maintaining the required plastic hinge mechanism.
+A minimum rolled UB section is adopted based on the governing plastic moment demand in span BC, avoiding global over-design and reducing overall steel tonnage. Localised flange strengthening is applied only in high moment regions to increase plastic resistance where required ensuring an economical solution. A single standard UB section is used throughout as the base member to simplify procurement, handling, and erection, and to avoid stepped sections and transition splices. Although welded cover plates introduce local fabrication effort, this is limited in extent and offset by reduced material usage and simplified construction sequencing. Since fabrication and erection typically dominate total steelwork cost over material \cite{structural_steel_cost_estimation}, standardisation combined with targeted strengthening provides an economical and constructable solution while maintaining the required plastic hinge mechanism.
 
 \newpage
 
@@ -268,7 +268,7 @@ Because the prestressed arch-and-tie system is difficult to solve reliably by ha
 \[
 W = (1.35 \times 0.80 + 1.5 \times 0.60)\times 175 \times 18 \approx \SI{6237}{\kilo\newton}
 \]
-GSA gives a corresponding total vertical load of about \SI{6277}{\kilo\newton}, a difference of only \SI{0.6}{\percent}, which confirms that the roof surface loads have been converted and applied consistently.
+GSA gives a corresponding total vertical load of about \SI{6277}{\kilo\newton}, a difference of only \SI{0.6}{\percent}, which confirms that the roof surface loads have been converted and applied consistently considering the dead load is not projected in the real model.
 
 The tusk-to-arch connection moment was then checked by idealising the loaded tusk as a \SI{25}{\metre} cantilever under the equivalent ULS line load $w = 1.35 \times 14.4 + 1.5 \times 10.8 = \SI{35.64}{\kilo\newton\per\metre}$. This gives $M = wL^2/2 \approx \SI{11125}{\kilo\newton\metre}$, compared with an FE result of about \SI{16490}{\kilo\newton\metre}, as shown in Figure~\ref{fig:validation_handcalc}. The FE value is higher because it includes the stiffness of the curved arch and frame redistribution, but the hand check confirms the correct order of magnitude. Together, the two checks validate both the applied gravity loading and the level of bending response at a critical connection.
 
