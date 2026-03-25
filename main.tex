@@ -155,8 +155,8 @@ The plastic resistance for the three spans is \(M_{p,BC} = 768\,\text{kNm}\), \(
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{part 1 line sketch.jpg}
-    \caption{Beam span and plastic hinge layout}
+    \includegraphics[width=0.4\linewidth]{reinforced beam line sketch.jpg}
+    \caption{Reinforced beam layout}
     \label{fig:line_sketch}
 \end{figure}
 
@@ -186,16 +186,16 @@ which gives
 \[
 t_p \approx 14.7\ \text{mm}
 \]
-Hence, \(210\times15\ \text{mm}\) flange plates welded to both flanges may be adopted to increase the plastic resistance to the required level such as in Figure \ref{fig:flangeplates}. The plates should be installed only where necessary along spans AB and CD.
+Hence, \(180\times15\ \text{mm}\) flange plates welded to both flanges may be adopted to increase the plastic resistance to the required level such as in Figure \ref{fig:flangeplates}. The plates should be installed along spans AB and CD where the design bending moment $M_{Ed}$ exceeds the orginal bending moment resistance of the beam.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.1\linewidth]{figure_002.jpg}
-    \caption{Cover Plate reinforcement cross-section}
+    \includegraphics[width=0.15\linewidth]{reinforced cross section.jpg}
+    \caption{Welded cover plate reinforced beam cross-section}
     \label{fig:flangeplates}
 \end{figure}
 
-A minimum rolled UB section is adopted based on the governing plastic moment demand in span BC, avoiding global over-design and reducing overall steel tonnage. Localised flange strengthening is applied only in high moment regions to increase plastic resistance where required ensuring an economical solution. A single standard UB section is used throughout as the base member to simplify procurement, handling, and erection, and to avoid stepped sections and transition splices. Although welded flange plates introduce local fabrication effort, this is limited in extent and offset by reduced material usage and simplified construction sequencing. Since fabrication and erection typically dominate total steelwork cost over material \cite{structural_steel_cost_estimation}, standardisation combined with targeted strengthening provides an economical and constructable solution while maintaining the required plastic hinge mechanism.
+A minimum rolled UB section is adopted based on the governing plastic moment demand in span BC, avoiding global over-design and reducing overall steel tonnage. Localised flange strengthening is applied only in high moment regions to increase plastic resistance where required ensuring an economical solution. A single standard UB section is used throughout as the base member to simplify procurement, handling, and erection, and to avoid stepped sections and transition splices. Although welded cover plates introduce local fabrication effort, this is limited in extent and offset by reduced material usage and simplified construction sequencing. Since fabrication and erection typically dominate total steelwork cost over material \cite{structural_steel_cost_estimation}, standardisation combined with targeted strengthening provides an economical and constructable solution while maintaining the required plastic hinge mechanism.
 
 \newpage
 
@@ -260,23 +260,28 @@ Straps & Equivalent rod area \SI{40000}{\milli\metre\squared} & Based on two \SI
 \section{Deliverable 3: Initial Model Validation}
 \subsection{Assumptions}
 
-The validation assumes a 2D in-plane frame subjected to vertical symmetric loading. Out-of-plane bending, torsion, adjacent-frame load sharing and detailed connection stiffness are neglected, so the check is intended only to confirm that the global model gives a realistic level of response rather than an exact local solution. This 3D-to-2D simplification is most reasonable near the middle of the roof, where out-of-plane bending moments are expected to remain limited under symmetric loading, but it may be less accurate near the roof edges where edge effects can make out-of-plane bending more significant. Torsion is expected to be a secondary effect because both the applied loading and the main structural arrangement are predominantly symmetric. Lateral buckling and shear buckling are also not represented in the present global model, so these stability modes would need to be checked separately in a more detailed assessment.
+The validation uses a simplified 2D in-plane frame under symmetric vertical loading only. Out-of-plane action, torsion, adjacent-frame load sharing, detailed connection stiffness and local stability effects are excluded, so the check is intended to validate the global gravity-load response rather than detailed 3D behaviour.
 
 
 \subsection{Model Validation}
-As the prestressed arch-and-tie behaviour is difficult to analyse by simple hand calculations, the initial validation was carried out on the non-prestressed model and focused on the bending moment at the tusk-to-arch connection. The loaded tusk was idealised as a \SI{25}{\metre} cantilever under the equivalent ULS line load $w = 1.35 \times 14.4 + 1.5 \times 10.8 = \SI{35.64}{\kilo\newton\per\metre}$, giving a tusk-to-arch connection moment $M = wL^2/2 \approx \SI{11125}{\kilo\newton\metre}$, as shown in Figure~\ref{fig:validation_handcalc}. The corresponding FE result is about \SI{16490}{\kilo\newton\metre}, so the model predicts the correct order of magnitude for this key bending action. The difference is expected because the hand check neglects the stiffness of the curved arch, frame interaction between both sides of the roof, and the more complex redistribution captured by the FE model.
+Because the prestressed arch-and-tie system is difficult to solve reliably by hand, the initial validation was carried out on the non-prestressed model using two simple checks. Using the projected roof length of about \SI{175}{\metre} from the supplementary information and the tributary frame spacing of \SI{18}{\metre}, the total ULS vertical load from roof dead and live loads is
+\[
+W = (1.35 \times 0.80 + 1.5 \times 0.60)\times 175 \times 18 \approx \SI{6237}{\kilo\newton}
+\]
+GSA gives a corresponding total vertical load of about \SI{6277}{\kilo\newton}, a difference of only \SI{0.6}{\percent}, which confirms that the roof surface loads have been converted and applied consistently considering the dead load is not projected in the real model.
 
-An additional source of modelling error was observed at the high-tie connection. The FE model predicts a relatively large vertical deformation there, even though the vertical nodal force associated with the high tie is small compared with the forces transferred by the surrounding members. Using the largest adjacent vertical force from the connection check, the high-tie vertical force is only about $114.6/5901 \approx 1.9\%$ of the neighbouring member force. This suggests that the large vertical movement is more likely to arise from compatibility within the simplified 2D global model and the axial-only idealisation of the tie than from a large vertical load carried by the high tie itself.
+The tusk-to-arch connection moment was then checked by idealising the loaded tusk as a \SI{25}{\metre} cantilever under the equivalent ULS line load $w = 1.35 \times 14.4 + 1.5 \times 10.8 = \SI{35.64}{\kilo\newton\per\metre}$. This gives $M = wL^2/2 \approx \SI{11125}{\kilo\newton\metre}$, compared with an FE result of about \SI{16490}{\kilo\newton\metre}, as shown in Figure~\ref{fig:validation_handcalc}. The FE value is higher because it includes the stiffness of the curved arch and frame redistribution, but the hand check confirms the correct order of magnitude. Together, the two checks validate both the applied gravity loading and the level of bending response at a critical connection.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.70\textwidth]{validation.png}
+\includegraphics[width=0.95\textwidth,trim=20 10 20 10,clip]{validation.png}
 \caption{Hand validation of the tusk-to-arch connection bending moment.}
 \label{fig:validation_handcalc}
 \end{figure}
 
-\subsection{Model Adequacy}
-Basic verification checks were also completed: the GSA solver ran without instability warnings, the vertical reactions balanced the applied gravity loads, and the reconstructed model matched the original drawing on both sides with an overall geometric deviation of approximately 0.5\%. Taken together, the modelling assumptions, validation considerations and verification checks indicate that the global frame model is adequate for an initial study of the roof under symmetric vertical loading. However, it should still be understood as a simplified global model rather than a full representation of the three-dimensional structural behaviour.
+\subsection{Validated Aspects}
+The checks validate three key features of the model: conversion of roof area loads into the equivalent 2D frame loads, overall vertical equilibrium through the support reactions, and the order of magnitude of bending at the tusk-to-arch connection.
+The GSA solver ran without instability warnings, the vertical reactions balanced the applied gravity loads, and the reconstructed geometry matched the source drawing within about 0.5\%. The model is therefore adequate for initial global behaviour and sensitivity studies under symmetric vertical loading, but not for detailed 3D local assessment.
 
 \newpage
 \section{Deliverable 4: Mesh Refinement Sensitivity Study}

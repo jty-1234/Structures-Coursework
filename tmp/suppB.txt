@@ -1,0 +1,488 @@
+                                                                                                   evening meeting: mckechnie et al
+
+
+Evening meeting:
+The paper is to be presented at an evening meeting held at IStructE, 11 Upper Belgrave Street, London SW1X 8BH, on
+4 November 2004, at 18.00h
+
+
+
+Design and construction of Terminal 5 roof
+Synopsis                                                             pleasure, anticipation, waiting, frustration, and big boards        Steve
+This paper covers the evolution of the structural form and           with long lists of flight numbers.                                  McKechnie
+build sequence; the innovative node design; the analysis of            But despite the frenetic activity that will fill the terminal,
+tolerances and fit-up; the fabrication and castings; the             BAA, and architects Richard Rogers Partnership, wanted to
+                                                                                                                                         BSc, CEng, MIStructE
+                                                                                                                                         Arup
+temporary works and strand jacking; the behaviour during             give the building a feeling of calm and unity. It should help
+prestressing and load transfer and demonstrates how good             people to find their place; both in the world, by having a strong
+design, construction and teamwork can bring additional               identity, and in the terminal, by providing visual cues.            Paul Hulme
+value to our clients.                                                  Crucially, BAA wanted to create a building that will have a       BEng
+                                                                     place amongst the great transport interchanges of the world:        Watson Steel Structures
+Introduction                                                         The Gare du Nord, Grand Central Station, Paddington                 Ltd
+Terminal 5 at Heathrow is a major new transport interchange          Station, and provide a memorable experience for travellers
+sited at the western end of the airfield on the site of the former   that will make them want to return time and again. This led         Gursharan
+Perry Oaks sludge treatment works. The project has a long            them to choose a building with an exceptional architectural
+history: the first schemes were discussed in 1988; the project       and structural vision: A single span roof that would vault
+                                                                                                                                         Thind
+team was constituted in 1992; a public inquiry ran from 1995 to      over the superstructure of the entire building.                     BSc, MSc, DIC,
+1999; and the government gave the go ahead in November 2001.                                                                             CEng, MIStructE
+   Phase 1 of the development will increase capacity at              Schemes                                                             Arup
+Heathrow by 30M passengers per annum and will consist of             The design team considered many possible configurations of
+two new terminal buildings, extensions to the Piccadilly line        the structure. A truss or a pure beam would have had the            Dervilla
+and Heathrow Express with associated stations, a new link to         advantage of not requiring any tying force, but beams turned
+the M25, a large bus station and a multi-storey car park.            out to be very heavy and trusses were visually too busy,
+                                                                                                                                         Mitchell
+   The scale and nature of this project presented major chal-        detracting from that feeling of calm.                               BE, CEng, MICE, MIEI
+lenges. Rather than pursue a conventional approach BAA,                A very exciting early concept used a diagrid of tubular steel-    Arup
+the client, assembled a team working under a bespoke part-           work to form a folded plate shell 7.5m deep, spanning the
+nering contract: ‘The T5 Agreement’. That document sets out          whole 156m. Sadly the cost proved prohibitive and the site
+                                                                                                                                         Keywords: Terminal 5,
+how the parties would ‘achieve success together and deliver          welding would have required 40 welders to be on site for 80         Heathrow Airport,
+world class performance’. It specifies:                              weeks.                                                              London, Roofs, Design,
+                                                                                                                                         Analysis, Steel,
+                                                                                                                                         Fabricating,
+                                                                                                                                         Construction Work
+
+                                                                                                                                         © S. McKechnie,
+                                                                                                                                         P. Hulme, G. Thind and
+                                                                                                                                         D. Mitchell
+
+
+
+
+                                                                                                                                         (Left)
+                                                                                                                                         Roof cross section
+                                                                                                                                         (Below)
+                                                                                                                                         Design visualisation
+
+• Collocated, integrated teams with all suppliers involved
+  from the outset
+• An emphasis on design for manufacture and assembly
+• A focus on safety
+• All financial and program risk ultimately remains with
+  BAA
+• Project insurance policies for PI, public liability and
+  contractors all risks
+
+‘Partnering’ and ‘teamwork’ are buzzwords in today’s indus-
+try. They are often applied to situations where the people
+involved continue with the same old adversarial ways of
+working. We believe that the success of this project has been
+achieved through teamwork based on mutual respect, trust,
+and openness. This enabled Watsons to influence the design
+and gave Arup a say in the erection methodology. The archi-
+tecture, the structural design and the erection strategy were
+all developed concurrently.
+
+Structural form
+Concepts
+Airports are places of change, movement, of separations and
+new beginnings, dislocation, looking forward and looking back,
+
+                                                                                                          21 September 2004 – The Structural Engineer|25
+ evening meeting: mckechnie et al
+
+
+                                                                                         we used second order analysis (P∆) for all the ultimate limit
+                                                                                         state analyses and secondly, we made specific design
+                                                                                         allowances for the effects of possible initial imperfections in
+                                                                                         the erected structure. These allowances were established by
+                                                                                         generating a set of design forces that consisted of the directly
+                                                                                         applied forces added to the forces that would arise from the
+                                                                                         compressive forces acting on a structure that had initial
+                                                                                         imperfections built into it. The geometry and magnitude of
+                                                                                         these imperfections were derived from a series of buckling
+                                                                                         mode analyses in the GSA analysis program scaled to match
+                                                                                         the strut action moments that are implied by BS 5950, part
+                                                                                         1, Annex C.
+
+                                                                                         Wind load and deflections
+                                                                                         The structural geometry of the roof means that it deflects
+                                                                                         significantly when loaded asymmetrically. In order to ensure
+                                                                                         that we had fully accounted for the asymmetrical effects of
+                                                                                         wind loading we carried out a time history dynamic analysis
+                                                                                         of the results from the wind tunnel test.
+                                                                                            The wind tunnel laboratory (RWDI of Guelph, Ontario)
+                                                                                         instrumented one half of the T5A building model with 284
+                                                                                         pressure taps and recorded pressure data in real time at a rate
+                                                                                         of 512 measurements per second. These results were passed
+                                                                                         to the Arup Advanced Technology Group (ATG) who converted
+                                                                                         them into a series of time varying loadings and ran a time
+   That made an arch or portal frame very much the front-           Frame nomenclature   history dynamic analysis using a version of the structural
+runner. After studying the various possible fabrication                                  analysis model of the roof that they had converted to run in
+methods the team decided on a hybrid structure with arched                               NASTRAN. They ran a data set that was equivalent to a 1-
+steel box girder rafters, 800mm wide and up to 3.8m deep. We                             hour wind event and this was repeated for 8 different wind
+adopted pairs of 115mm prestressed locked coil strand ties at                            directions. This modelled, in real time, the way in which real
+high level to control spread of the arch and reduce midspan                              turbulent wind flows would create varying pressures over the
+bending moments. The substructure has an 18m grid; the roof                              roof and the way that the roof would move in response to
+supports are therefore at 36m to allow for the departure gates                           these pressures. Arup ATG also wrote post-processing soft-
+and their circulation spaces. We inclined the compression                                ware that abstracted critical deflection data, carried out struc-
+elements of the support system (columns) and formed them                                 tural utilisation checks and abstracted the critical force
+into the ‘cross bracing’ to provide longitudinal stability.                              combinations for each member in the structure.
+   The tension elements were kept vertical, adjacent to the                                 The deflections were significantly less in the time history
+façade, where they could also act as a direct support to the                             analysis than had been suggested by our initial assumptions.
+façade. They use the significant tensions that arise from their                          As such, we were able to take 800te of steel out of the struc-
+role in the roof system to help resist the moments that are                              ture by making the rafter flanges and webs thinner. After the
+generated by wind loads. This made it possible to give them a                            analysis had been re-run for this lighter frame, we recombined
+very slim profile that would only cause minimal visual intru-                            the element forces data that they produced with the data
+sion into the views looking obliquely out through the façade.                            from the rest of the analysis so that we could use it for final
+   We realised that once the centre section of roof was                                  member and connection design checks.
+prestressed it would, in itself, form a spanning structure that
+would be capable of being assembled at low level and subse-                              Presets
+quently lifted into place. This became a key driver for the                              The team calculated preset values from the design models so
+development of the erection method.                                                      that, after erection, the structure would end up in the position
+   The secondary beams (purlins) span 18m so we made them                                shown on the drawings. The central arched rafter was fabri-
+610mm deep steel box sections. The roofing is prefabricated                              cated low and wide, ready to be pulled in at the ends during
+into ‘cassettes’ that are lifted into place between the second-                          prestressing. The abutment CHSs were fabricated long, or
+aries.                                                                                   short, depending on whether they were to be in compression
+                                                                    Lift 1 During        or tension. The overall frame (abutments and central arch)
+Analysis                                                            temporary works      was assembled high, ready for the downwards deflection
+Construction stages                                                 slide                during load transfer.
+The fact that the central arch section is loaded and
+prestressed before it is lifted into place means that the state
+of stress in the steelwork is very different from what you
+would get if you started with a complete frame and then
+applied the loads to it. We used GSA, the structural analysis
+program, to model the roof as a 3D skeletal frame. This
+allowed us to define ‘construction stages’, analyse the part
+completed frame and add the results to an analysis of the
+whole frame.
+   Each of the six ‘lifts’ of four rafters have to stand alone on
+the site for several weeks. The wind (and other) loads on this
+structure are very different to the loads that will be exerted
+on the completed building. So we analysed these part complete
+states in addition to a full half building model of the final
+state.
+
+P∆ and buckling
+The team were keen to make sure that we had fully accounted
+for P∆ effects and overall buckling. We did two things; firstly,
+
+26|The Structural Engineer – 21 September 2004
+                                                                                                 evening meeting: mckechnie et al
+
+
+Tolerances and fit up                                                                         Connections
+We made it a priority that the frame should be capable of                                     See ‘Frame nomenclature’ figure, page 26.
+being built to defined and yet achievable levels of dimensional
+accuracy without compromising the design or the programme.                                    Torso node
+Our first step was to make a quantitative estimate of the                                     Six large diameter CHS elements (914 x 40 and 711 x 50) node
+effect that individual element tolerances would have on the                                   out at this point. The primary forces are axial, around
+dimensions of the overall frame. We then combined the results                                 18000kN per CHS. Our first thought was to use a large steel
+of all the possible deviations using the square root of the sum                               casting; we also considered the use of a fabrication made up
+of the squares.                                                                               from welding plates or tubes. However, our welding engineer
+   It became clear that the connection of the centre section to                               told us to be very cautious about the large and complex welds
+the abutments would need to be adjustable for both length and                                 that would be required for the fabricated solution because
+angle. We achieved this with TCBs (a proprietary HSFG bolt)                                   any remedial works could be extensive and lead to programme
+in slotted holes in a traditional I section splice. In addition, the                          delay. Furthermore, our metallurgist told us to be equally
+connection of the strap to the foot allowed the level of the                                  cautious about large castings since difficulties in prototyping
+eaves to be set independently of the position of the torso node.                              could lead to delays late on during the design programme.
+                                                                                                 As a result of these warnings we developed a third option;
+                                                                       Splice between         nodes assembled from machined steel pieces that slot
+                                                                       centre section and     together. The load would be transferred from the leg into a
+                                                                       abutment               thick plate. The two legs would share the same plate. The
+                                                                                              forces in the north-south direction thus would be resolved
+                                                                                              and we would do the same for the arms and the wings. The
+                                                                                              plates would be 250mm thick – it wasn’t long before the
+                                                                                              team dubbed them ‘megaplates’.
+                                                                                                 Where the three plates meet the force would be transferred
+                                                                                              via a pin to allow angular adjustment during erection.
+                                                                                              However, in order to fit a horizontal pin through a plate, the
+                                                                                              plate itself would have to be vertical and the pin section
+                                                                                              required to transfer 18000kN/leg would be huge. Therefore we
+                                                                                              used several interfaces on the pin to transfer the shear, reduc-
+                                                                                              ing the pin diameter to 400mm. These shear planes would be
+                                                                                              provided by a series of vertical plates (the ‘teeth’) that would
+                                                                                              slot over the main megaplates.
+                                                                                                 The ends of the tubes would be capped by a cast steel ‘claw’
+                                                                       (Left) Foot node       that transfers the load to the megaplate via a cylindrically
+                                                                                              machined bearing surface. That would allow fit-up with
+                                                                                              angular adjustment in both directions and it would also bolt
+                                                                                              to the megaplate for robustness, and to carry self weight and
+                                                                                              strut action moments.
+                                                                                                 We carried out a study that compared the technical merits,
+                                                                                              risks, costs and programme implications of the three possible
+                                                                                              options. The welded fabrication was a clear loser from this
+                                                                                              process, while the castings and the megaplates had similar
+                                                                                              costs, but different risks and opportunities.
+                                                                                                 After much deliberation the team chose the megaplate solu-
+                                                                                              tion because it offered:
+                                                                                              • A wider range of possible suppliers.
+                                                                                              • Detailing that was better suited to the node installation on
+                                                                                                 site.
+                                                                                              • A strong ‘gusto’ engineering aesthetic that would set the
+                                                                                                 ‘scale’ and ‘grain’ of the building.
+
+
+
+
+                                                                                    (Right)
+                                                                                Torso node
+
+                                                                                                       21 September 2004 – The Structural Engineer|27
+ evening meeting: mckechnie et al
+
+
+
+
+Other nodes                                                          (Above)
+After this strategic decision had been taken on the torso node       View of abutment
+it became clear that we could use a similar approach for the         showing hand and
+design of the other two nodes. Pins could pass straight through      wingtip nodes
+the rafter section at the centroid of the hand and the wingtip,      (Top right)
+transferring load to reinforced sections of the webs. The north      Rendering of claw
+south components of the arm and wing forces are resolved at          casting from
+the node position by CHS tie members between the two hands           ‘RhinoCERUS’
+or wingtips.                                                         (Right)
+                                                                     Claw castings before
+Megaplates                                                           removal of vent        eters, dimensions and tolerances were added to the ‘2D’ draw-
+We specified S355 for the 250mm and 150mm plates, giving             tubes                  ings. We defined a permissible deviation of –0 / +10mm on cast
+a py of 275 and 295N/mm2 respectively. A fracture mechanics                                 surfaces. All connection surfaces were machined.
+analysis showed that Charpy V notch toughnesses of 27J at                                      William Cooks proposed locations for the feeder head and
+–30°C and –20°C were required for the 250mm and 150mm                                       vent tubes and where the split in the pattern would be best
+plates respectively so we used S355 K2G3 and S355 J2G3. The                                 suited. As the visible surfaces of all the castings were to be ‘as-
+standard method in BS 5950 cl2.4.4 would have required a                                    cast’ finishes it was crucial that no feeder heads or vent tubes
+test temperature of –90°C!                                                                  would impinge on these locations. They also made allowances
+   We specified a flatness tolerance of Class S (Special                                    for shrinkage and tolerances before using the 3D ‘Rhino’
+Flatness) and a thickness tolerance of Class C to BS EN 10029                               models to programme the CNC pattern cutting machines.
+to guarantee a minimum thickness of plate. This resulted in                                    Before cutting any patterns, Cooks carried out a solidifica-
+the plates having a positive tolerance of 3.2mm for the 150mm                               tion simulation using ‘Magmasoft’. This software gives an
+thick plates. We designed these values into the overall node                                insight into the process of solidification that the casting will
+dimensions so that the tooth plates, nominally 150 thick, are                               undergo as it cools. The aim is to eliminate defect spots and
+spaced at 154mm centres so that they do not clash with each                                 shrinkage cracks caused by differential cooling rates within
+other.                                                                                      the body of the casting as the melt solidifies.
+
+Castings                                                                                    Pins
+The basic raw material for any casting is scrap metal. It is                                Due to high in service stresses the pins at the centre of the
+crucial, therefore, to monitor closely the chemical content. We                             nodes need a yield strength of 413N/mm2 and the fracture
+specified that the high strength castings should have a py of                               mechanics requires a toughness of 27J at –30C. This is a very
+413N/mm2 and a Charpy V notch toughness of 27J at –30°C.                                    tough requirement for a 400mm thick section. It was decided
+An easy way to increase strength is to add more carbon but                                  to use forged steel and to specify a testing regime that used
+this reduces the ductility and causes problems with welding.                                100% MPI over the machined surface to ensure that there
+Consequently, we specified a Carbon Equivalent Value of
+<0.49. William Cooks, the castings supplier, achieved these
+requirements by using steel with high nickel content since
+this adds strength but has only a limited effect on the CEV.
+   To verify the ‘mix design’, Cooks casted a sacrificial proto-
+type of the largest high strength casting. It was destructively
+tested with test pieces cut from the critical structural sections.
+Good results were achieved for the strength but there were
+some low values for the toughness. We adjusted the heat treat-
+ment regime (quenching and tempering) and re-tested. This
+solved the problem. The resulting castings require a weld
+procedure with a pre-heat of 150°C applied via heating blan-
+kets and maintained for 12h before welding takes place.
+   RRP used ‘RhinoCERUS’, a 3D modelling package, to draw
+the initial geometry of the castings. Cross-sections were taken
+for use in the structural calculations and for inclusion on the      An early Magmasoft
+2D Autocad drawings. Critical structural setting out param-          run
+
+28|The Structural Engineer – 21 September 2004
+                                                                                                evening meeting: mckechnie et al
+
+
+                                                                     Design visualisation    design issues to be resolved early and allowed us to commence
+                                                                     of foot node and        the production of fabrication drawings with the necessary
+                                                                     buckets                 information.
+                                                                                                Watson modelled the steel in 3D using XSteel. Presets and
+                                                                                             precambers were built into the XSteel model and so the job
+                                                                                             had to be split into sub models of the pre-assemblies. Special
+                                                                                             consideration was given to buildability; for example, special
+                                                                                             lifting brackets were designed for each major lift so that the
+                                                                                             piece would naturally swing into the correct attitude ready for
+                                                                                             connection and the splice plates on the hand were given a
+                                                                                             temporary hinge detail to avoid the need to lift the plates to
+                                                                                             high level.
+
+                                                                                             Fabrication
+                                                                                             The main fabrication centres were Watson Steel at Bolton
+                                                                                             and PPTH in Finland. William Cook’s in Burton on Trent
+                                                                                             supplied the castings. Corus at Workington undertook the
+                                                                                             manufacture and assembly of nodes and the machining of the
+                                                                                             castings. Bridon supplied the high tie cables.
+                                                                                               Manufacture was carried out using machined jigs to ensure
+                                                                                             dimensional accuracy of the complex parts.
+                                                                                               The sourcing of materials was undertaken to minimise the
+were no cracks, tears or planar indications over the surface                                 need for butt-welding which would have been both costly and
+that could give rise to crack propagation in service.                                        unsightly. This was achieved by arranging with the mills for
+                                                                                             the procurement of materials that were outside the normal
+Foot node                                                                                    mill-rolling catalogue.
+As the name suggests this node connects the frame to the
+substructure. The node out point is 550mm below SSL, close                                   Erection and strand jacking
+to the centroid of the steel that frames the apron level (base-                              The project preference for prefabrication off-site, concerns
+ment lid) slab. The roof steels will rotate measurably at this                               regarding the availability of sufficient skilled labour and
+point during service, under wind and thermal loads, so we use                                the limits on craneage due to the radar ceiling led the team
+a pot bearing set at an angle which is as near as possible to                                to decide on an erection strategy which involved the
+the line of combined axial force under all possible loading                                  construction of the central section of the roof at low level,
+conditions.                                                                                  strand jacking it into position and then connecting it to the
+   In order to avoid any dependence on the positional accuracy       (Below)                 abutment supports that had been built in situ.
+of the substructure steel erection we put the pot bearing into       Rafter splice showing      The development of the erection scheme started with a
+an inner bucket (as it were) that fits into an ‘outer bucket’ with   female shear key        detailed desktop study of the installation procedure. This
+a 40mm grout layer between them.                                                             helped to verify that the scope and interfaces between the
+                                                                                             work done by the various suppliers was fully co-ordinated.
+Typical rafter splice                                                                           As a result of this process, a ‘site assembly manual’ was put
+The rafter splices have saved a vast amount of site work                                     together. This comprehensive document contains a detailed
+compared with the more conventional welded alternative. The                                  sequence of the site operations that were agreed by all the
+splices carry significant compressive loads; they are always in                              team members before work started. It also defines, in detail,
+overall compression. As a result, the primary load transfer can                              the roles and responsibilities of the site team. External audits
+be in bearing over the machined end faces of the flanges and                                 were instigated to ensure that the procedures were being
+webs. There are, of course, moments in both directions as well                               closely followed during the site operations.
+and so bolts are needed; fortunately, they fit inside the box                                   There were many consequential benefits resulting from the
+section. Vertical shears are carried by friction between the                                 production of the manual, for instance, it was realised that
+bearing surfaces but horizontal shears and torsions are trans-                               weather dependency could be taken out of the equation with
+ferred through the two shear keys which also act as erection                                 a couple of relatively minor changes.
+guides.
+   The positions of the splices were agreed very early on since                              Temporary works
+they had to be coordinated with the temporary supports,                                      To carry out the scheme, a complex series of temporary
+which, themselves, had to be above substructure column posi-                                 works were required to support and manoeuvre the perma-
+tions.                                                                                       nent works and also to enable the use of plant, both on the
+                                                                                             concrete slab of the supporting structure and around the
+Manufacture                                                                                  perimeter of the building. Watson and The Rolton Group
+Abutment first run study                                                                     designed these. It would be possible to write a paper on these
+BAA, recognising the complexity of the roof structure and the                                alone.
+effect that its build duration would have on the overall T5                                     Here are just a couple of examples; the abutment temporary
+construction programme, backed the team’s view that full                                     works, which could be described as a machine, rather than
+scale trials should be carried out to prove the design, fit and                              temporary works, provide 3 dimensional adjustments of the
+assembly of the elements.                                                                    abutment permanent works and can be moved from phase to
+   The most striking exercise that was undertaken was the                                    phase. A series of crane mats, that more resembled and acted
+building of one complete abutment structure at Dalton in                                     as a bridge spanning between the steels of structure below,
+North Yorkshire. This trial allowed the erection team to gain                                allowed the use of 70te crawler cranes on the top of the
+specific experience and highlighted some problems which                                      200mm slab.
+were addressed prior to ‘real’ production; it also added signif-
+icant impetus to the commencement of the production of the                                   The build
+castings and nodes in earnest ahead of the project critical                                  Unfortunately it is not possibly to describe in detail each of the
+path.                                                                                        operations that have been developed and adopted in the build
+                                                                                             so we have summarised them in the following section.
+Shop drawings                                                                                  The roof is constructed in six phases which are typically
+One major benefit of the AFRS was that it enabled detailed                                   three bays wide (54m), one phase is a single bay of 18m.
+
+                                                                                                      21 September 2004 – The Structural Engineer|29
+ evening meeting: mckechnie et al
+
+
+                                                                                            withstand the large ground pressures exerted by the cranes,
+                                                                                            this includes the strengthening of the buried structures.
+                                                                                            Where crane access is restricted by excavations for the under-
+                                                                                            ground rail lines the cranes are rigged with additional jib
+                                                                                            length. Crane set-ups and moves are a significant determin-
+                                                                                            ing factor for the programme.
+
+                                                                                            Prestressing
+                                                                                            The first part of the sequence involves lifting the ends of the
+                                                                                            rafters clear of their supports to eliminate friction from the
+                                                                                            stressing process. The dead load of the centre arch is trans-
+                                                                                            ferred into the strand jacks incrementally. At each stage the
+                                                                                            verticality of the strand jack towers and structural integrity
+                                                                                            of both the temporary and permanent works is checked and
+                                                                                            signed off. The effect of the stressing induces compression
+                                                                                            into the rafter, which in turn deflects upwards along its length
+                                                                                            causing them to lift clear of the temporary supports.
+                                                                                               The cables are tensioned incrementally in pairs. Initially,
+                                                                                            the cables are stressed in load increments until the rafters lift
+                                                                                            off the temporary supports. The stressing is then completed
+                                                                                            by increasing the load in order to limit the differential deflec-
+                                                                                            tion of the rafters as they deflect upwards. This is monitored
+Centre arch section                                                  Central arch section   in real time using wireless instrumentation (a guy on a cherry
+The rafters are installed onto a series of temporary props,          rafters being          picker with a radio) at each rafter location.
+which are connected directly to the sub structure. The rafters,      assembled on props        It should be noted that the cables are tensioned to a design
+weighing up to 55t, and the secondaries are installed using the                             load, not final length of span. Thus far the calculations have
+two 70t crawlers.                                                                           proved reliable and in every case the span achieved is well
+   Starting at one end the rafters are connected sequentially                               within the tolerances.
+via the shear key connection on their ends. The final section                                  A final adjustment of the tensions in the cables is carried
+is installed using a retractable shear key.                                                 out after a further 12h to adjust for creep.
+   The cladding system, a composite cassette system, is
+installed onto the roof module at low level and the remaining                               Lifting
+materials required to complete the cladding are loaded so                                   The roof is lifted up into place using the strand jacks. The jacks
+that they get lifted, with the roof, up to high level.                                      are equipped with transducers that give an indication of lift
+   Following the rafter build the high tie cables are installed.                            load and stroke deflection but we discovered that to maintain
+The cables are delivered in one length, rolled into a coil, placed                          levels of the rafter ends within the predefined limits an exter-
+on a turntable at one end of the rafters, unrolled over a series                            nal measuring system is required. The final position that the
+of rollers and linked to the dead end. The cable is then lifted                             roof is jacked to is preset higher than the final design position
+sequentially onto supports and attached to the live end. The                                to allow for deflection during load transfer.
+stressing equipment is installed and a nominal tension of
+around 10% of the design load induced.                                                      Connection and load transfer
+   A hand restraint truss is installed to provide torsional                                 In the final stage the remaining connections are completed
+restraint to the rafters during cable tensioning.                                           and the load is released from the various jacking points,
+   The strand jacks are installed on top of 30m high temporary                              ending with the lowering away of the strand jacks. The final
+towers that sit on the main structure below the apron slab.                                 deflection is a combination of elastic deformation of the steel
+There are two strand jacks, 180t capacity, at the end of each                               and the closing of gaps in the interfaces.
+rafter.                                                                                       The load transfer is carried out in three stages.
+                                                                                              Firstly, the load is released from the abutment temporary
+Abutment structures                                                                         works, leaving the structure supported on the strand jack
+The pieces are craned into their final position supported by                                towers and at the foot connection.
+the temporary works and aligned using the jacking systems            (Below left)             Secondly, the strand jacks are lowered until a shedding of
+within it.                                                           Abutment steel         load into the permanent foot support is observed. This indi-
+  Four large crawler cranes are used. On each side of the            being placed on        cates that the initial deflection due to gap closing has
+building there is a 285t Liebherr LR1280 and a 450t Demag            temporary works        occurred.
+CC2500. The cranes run in a 30m wide crane track around the          (Below right)            Finally, the splice connection is completed and the remain-
+perimeter of the building. This area is specially prepared to        The ‘big lift’         ing load released from the strand jacks.
+
+
+
+
+30|The Structural Engineer – 21 September 2004
+                                                                                               evening meeting: mckechnie et al
+
+
+                                                                   (Left)                   than predicted because of the impossibility of fully packing the
+                                                                   Temporary works in       arm to hand connection but this went far beyond that. We
+                                                                   use for lift 2           suspected that all the steel-to-steel connections had been
+                                                                                            fitted together with a small gap remaining at each interface
+                                                                                            and so we ran a structural model in which each member was
+                                                                                            shortened by 1mm for each steel-to-steel interface. This
+                                                                                            produced a pattern of deflection that was very similar to the
+                                                                                            additional deflections. We used this model to estimate the
+                                                                                            forces generated by the additional deflections. We checked the
+                                                                                            reserve of strength in the structure and, happily, it was great
+                                                                                            enough to carry the additional forces.
+
+                                                                                            Improved load transfer procedure
+                                                                                            The first lift dropped by an extra 95mm so we preset the
+                                                                                            second lift by an extra 90mm upwards. In order to prevent the
+                                                                                            build up of additional moments in the rafter the TCB bolts in
+Temporary works relocation                                                                  the top flange and web of the tusk rafter splice remained un-
+Following load transfer the temporary works can be relocated                                torqued for the first 90mm of the load transfer. This allowed
+and the permanent structure completed.                                                      the roof weight to close the gaps at the bearing surfaces. The
+   The relocation has two stages: the strand jack towers are                                splice bolts were then torqued and the rest of the load trans-
+dismantled and moved piece small onto the next phase, whilst                                ferred. This worked well. The load readout on the strand jacks
+the abutment temporary works are launched along the slab.                                   indicated that for the first 70mm of the load transfer very little
+The frame has been designed to fit under the permanent                                      load was transferred. The load increased to 25% transfer by
+works whilst moving to its next position. To eliminate loadings                             the 90mm point. By 100% load the roof had dropped by around
+onto the concrete slab the structure is pulled using long stroke                            80mm further than the elastic prediction.
+jacks over ‘Hillman’ rollers at main grid lines.
+   Once the structure has been moved to its new position the                                Conclusion
+rollers are replaced with bearings and the process starts all                               This paper is littered with examples of how the integrated
+over again.                                                                                 team has woven together the requirements of architecture,
+                                                                                            fabrication, erection and structural design to produce a
+Learning from lift 1 load transfer                                                          momentous piece of engineering. BAA are pleased with the
+Having the whole team involved in the construction means we                                 financial safety and programme performance of the roof team
+can improve the process as we go along. For example, elastic                                as well as with the ‘product’ itself. This is a result of good
+analysis predicted that the frame would drop by 87mm during                                 design and good construction by a team that has worked
+load transfer but on lift 1 the actual deflection was 182mm.                                together with but one single aim; the creation of a great
+We had expected the actual movements to be a little greater                                 building.
+
+
+
+
+                                                              7XVYGXYVEPE[EVHW‘
+                                                                                    Gibson Hall, City of London
+                                                                       Wednesday 10 November 2004 at 11.30am
+
+
+
+
+                                                              IStructE invites you to join the President for this gala lunch celebrating
+                                                                the work of the world's most talented structural designers and their
+                                                                        indispensable contribution to the built environment.
+
+   WXVYGXYVEP                                                                      Tickets £75 each or £650 for a table of 10
+
+
+   E[EVHW ‘                                                To book, contact Sharon Stephenson on 020 7235 4535, or email stephenson@istructe.org.uk
+
+
+
+
+                                                                                                     21 September 2004 – The Structural Engineer|31
+

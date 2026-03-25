@@ -1,0 +1,99 @@
+HEATHROW TERMINAL 5
+Figure 1 – Principle Elements of T5A Structure
+TYPICAL MAIN ROOF STRUCTURE                      The main roof structure is about 175m wide by
+                                                 396m long on plan. It is 27m high at the eaves, rising
+                                                 to 39m at centre span. It has a clear span of 156m
+                                                 across the width of the building.
+
+                                                 The main roof structure is independent of the
+                                                 terminal's superstructure floors.
+
+                                                 Main roof rafters and associated tie-rods are at 18m
+                                                 centres, supported by 'tree' assemblies at 36m
+                                                 centres, which in turn are supported at ground floor
+                                                 level at 18m centres.
+
+
+
+
+                              Tree assembly
+                              supports roof
+                              rafters at 18m
+                              centres
+
+
+
+
+                              Whole tree
+                              assembly occurs
+                              at 36m centres
+
+
+
+
+                              Tree assembly
+                              supported at 18m
+                              centres
+TYPICAL MAIN ROOF STRUCTURE
+
+
+
+
+                              https://www.designingbuildings.co.uk/wiki/Heathrow_Terminal_5
+TYPICAL MAIN ROOF STRUCTURE
+
+
+
+
+                              https://www.bernardsmith.name/airports_and_lounges/london_heathrow_t5/
+         TYPICAL MAIN ROOF STRUCTURE
+
+                                                                                                                                                         120x80RHS bracing (not visible on
+                                                                'Tusk' rafter - I cross-section, simialir   'Arch' rafter - rectangular cross-section    section) between each pair of rafters -
+                                                                overall dims to arch rafter, depth var.     800mm wide, depth var. btw 1.8-3.8m          act in conjunction with secondaries in
+                                                                btw 0.9-3.8m
+                                                                                                                                                         restrainting rafters against lateral
+                                                                                                                                                         instability
+                                                                                                                                                         + 2 bays of bracing btw rafter pairs
+                                                                                                                                                         (limit racking movement btw adjacent
+                                                                                                                                                         bays)
+
+
+
+
+external tie - 457dia CHS
+
+
+
+
+   wings - 711dia CHS (711mm x 50mm)                                    internal tie - 457dia CHS
+
+                                                                    arms - 914mm dia. CHS (914mm x 40mm)
+
+
+                                                                                                              twin 115dia. locked coil strand ties;
+                                                                                                              tensioned to control spread of arch       secondary members -
+                                                                                                              and reduce midspan BMs                    610mm deep box girders
+
+
+
+
+          straps - pair of parallel steel                 legs - 914mm dia CHS(914mm x 40mm
+          flange plates, spaced apart
+          by vertical web plates
+
+
+
+
+                                                                                                                                                        Roof covered externally with aluminium standing seam profile,
+                                                                                                                                                        supported on profiled metal deck. Deck also supports thermal,
+                                                                                                                                                        accoustic insulation.
+
+                                                                                                                                                        Assume:
+                                                                                                                                                        aluminium standing seam roof - 0.1kPa
+                                                                                                                                                        structural deck - 0.15kPa
+                                                                                                                                                        insulation/acoustic layers - 0.4kPa
+                                                                                                                                                        general services allowance (lighting/signage etc) - 0.15kPa
+     drawing from IStructE Structural Awards 2008 entry
+                                                                                                                                                        roof live load - 0.6kPa
+
