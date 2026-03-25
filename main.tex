@@ -207,19 +207,31 @@ The roof geometry was reconstructed from the supplementary drawing using a one-t
 
 The second diagram shows the FE idealisation adopted for analysis. In Figure~\ref{fig:geometry_overview}(b), green denotes beam elements used for the roof profile, red denotes the high tie modelled as a tie element, and blue denotes the support-tree members modelled as bar elements. In GSA, beam elements model axial, bending and torsional effects, bar elements provide axial stiffness only, and tie elements are axial-only elements with zero stiffness in compression. This makes beams suitable for the roof rafters, bars suitable for the tree members, and a tie suitable for the prestressed high tie. Both end supports were modelled as fixed supports, while the pin-connected members were treated consistently on both sides because the connected elements were assumed not to transfer bending moment. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
 
-Because both the arch rafter and tusk rafter vary in depth along their length, the roof-profile members were implemented in GSA using tapered 1D beam elements rather than prismatic sections. Oasys GSA states that a 1D element can taper between end 1 and end 2 when it is assigned a tapering section profile with two section sizes, and that when a tapering member is divided into multiple elements a taper offset is used so that each element retains the correct local dimensions from its position along the original member \cite{gsa_tapered_elements}. This is important for the present roof model because the varying rafter depth changes the member bending stiffness along the span, so representing that taper improves the fidelity of the global frame idealisation.
+Because both the arch rafter and tusk rafter vary in depth along their length, the roof-profile members were implemented in GSA using tapered 1D beam elements rather than prismatic sections. Oasys GSA states that a 1D element can taper between end 1 and end 2 when it is assigned a tapering section profile with two section sizes, and that when a tapering member is divided into multiple elements a taper offset is used so that each element retains the correct local dimensions from its position along the original member \cite{gsa_tapered_elements}. The taper-offset schematic reproduced in Figure~\ref{fig:geometry_overview}(c), adapted from Oasys GSA \cite{gsa_tapered_elements}, shows how each subdivided element inherits the correct section size from its position along the original tapered member. This is important for the present roof model because the varying rafter depth changes the member bending stiffness along the span, so representing that taper improves the fidelity of the global frame idealisation.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth,trim={70 30 60 25},clip]{Weixin Image_20260315183303.png}
+\begin{subfigure}[t]{0.84\textwidth}
+    \centering
+    \includegraphics[width=\linewidth,trim={70 30 60 25},clip]{Weixin Image_20260315183303.png}
+    \caption{Reconstructed nodal geometry.}
+\end{subfigure}
 
-\small (a) Reconstructed nodal geometry
+\vspace{0.5em}
 
-\vspace{0.4em}
-\includegraphics[width=0.9\textwidth]{element tyep.png}
+\begin{subfigure}[t]{0.62\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{element tyep.png}
+    \caption{Idealised FE member types.}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.25\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{tapered_1d_elements.png}
+    \caption{Taper offset used for subdivided tapered 1D elements.}
+\end{subfigure}
 
-\small (b) Idealised FE member types
-\caption{Geometry adopted for the global model.}
+\caption{Geometry and tapered-element modelling adopted for the global model.}
 \label{fig:geometry_overview}
 \end{figure}
 
