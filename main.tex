@@ -215,13 +215,13 @@ A minimum rolled UB section is adopted based on the governing plastic moment dem
 \section{Deliverable 1: Structural Idealisation Sketch}
 The roof geometry was reconstructed from the supplementary drawing using a one-to-one SketchUp model and then transferred into GSA. As shown in Figure~\ref{fig:geometry_overview}(a), points labelled \textit{R} define the roof profile and represent the mid-points of the roof section, while points labelled \textit{S} define the support system and lower restraint points. 
 
-The second diagram shows the FE idealisation adopted for analysis. In Figure~\ref{fig:geometry_overview}(b), green denotes beam elements used for the roof profile, red denotes the high tie modelled as a tie element, and blue denotes the support-tree members modelled as bar elements. In GSA, beam elements model axial, bending and torsional effects, bar elements provide axial stiffness only, and tie elements are axial-only elements with zero stiffness in compression. This makes beams suitable for the roof rafters, bars suitable for the tree members, and a tie suitable for the prestressed high tie. Both end supports were modelled as fixed supports, while the pin-connected members were treated consistently on both sides because the connected elements were assumed not to transfer bending moment. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies.
+The second diagram shows the FE idealisation adopted for analysis. In Figure~\ref{fig:geometry_overview}(b), green denotes beam elements used for the roof profile, red denotes the high tie modelled as a tie element, and blue denotes the support-tree members modelled as bar elements. In GSA, beam elements model axial, bending and torsional effects, bar elements provide axial stiffness only, and tie elements are axial-only elements with zero stiffness in compression. This makes beams suitable for the roof rafters, bars suitable for the tree members, and a tie suitable for the prestressed high tie. Both end supports were modelled as fixed supports, while the pin-connected members were treated consistently on both sides because the connected elements were assumed not to transfer bending moment. This idealisation captures the main load path and preserves the key dimensions required for later loading, validation and mesh sensitivity studies. The corresponding baseline Mesh 1 arrangement used for the later refinement study is shown in Figure~\ref{fig:geometry_overview}(c).
 
 Because both the arch rafter and tusk rafter vary in depth along their length, the roof-profile members were implemented in GSA using tapered 1D beam elements rather than prismatic sections. Oasys GSA states that a 1D element can taper between end 1 and end 2 when it is assigned a tapering section profile with two section sizes, and that when a tapering member is divided into multiple elements a taper offset is used so that each element retains the correct local dimensions from its position along the original member \cite{gsa_tapered_elements}. This is important for the present roof model because the varying rafter depth changes the member bending stiffness along the span, so representing that taper improves the fidelity of the global frame idealisation.
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}[t]{0.84\textwidth}
+\begin{subfigure}[t]{0.78\textwidth}
     \centering
     \includegraphics[width=\linewidth,trim={70 30 60 25},clip]{Weixin Image_20260315183303.png}
     \caption{Reconstructed nodal geometry.}
@@ -229,13 +229,19 @@ Because both the arch rafter and tusk rafter vary in depth along their length, t
 
 \vspace{0.5em}
 
-\begin{subfigure}[t]{0.78\textwidth}
+\begin{subfigure}[t]{0.46\textwidth}
     \centering
     \includegraphics[width=\linewidth]{element tyep.png}
     \caption{Idealised FE member types.}
 \end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.46\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Mesh1_layout.png}
+    \caption{Baseline Mesh 1 layout used for the later refinement study.}
+\end{subfigure}
 
-\caption{Geometry adopted for the global model.}
+\caption{Geometry adopted for the global model and baseline mesh layout.}
 \label{fig:geometry_overview}
 \end{figure}
 
